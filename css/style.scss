@@ -142,6 +142,173 @@ nav#mobile-nav{
         }
     }
 }
+
+#index_content{
+    width:100%;
+    >.course{
+        background-color: #eee;
+        width:100%;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        >.title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            margin-bottom: 30px;
+            >span.line{
+                width:80px;
+                height: 2px;
+                display: block;
+                background-color: #333;
+                margin:0 10px;
+            }
+            >h2{
+                font-family: sans-serif;
+                font-weight: 100;
+                font-size: 36px;
+                color:#333;
+                text-transform: uppercase;
+            }
+        }
+        >p.small-title{
+            font-family: sans-serif;
+            font-size: 20px;
+            color:#345;
+            font-style: italic;
+        }
+        >div.courseList{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            >.courseItem{
+                width:300px;
+                display: block;
+                margin:0 20px;
+                >img{
+                    width:300px;
+                    height: 300px;
+                    object-fit: cover;
+                    display: block;
+                }
+                >h3{
+                    margin-top: 10px;
+                    font-size: 20px;
+                    color:#222;
+                    font-family: sans-serif;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+    >.news{
+        background-color: #1C1C1C;
+        width:100%;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#fff;
+        >.title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            margin-bottom: 30px;
+            >span.line{
+                width:80px;
+                height: 2px;
+                display: block;
+                background-color: #fff;
+                margin:0 10px;
+            }
+            >h2{
+                font-family: sans-serif;
+                font-weight: 100;
+                font-size: 36px;
+                color:#fff;
+                text-transform: uppercase;
+            }
+        }
+        >p.small-title{
+            font-family: sans-serif;
+            font-size: 20px;
+            color:#ccc;
+            font-style: italic;
+        }
+        >.newsList{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            >.newsItem{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                width:720px;
+                margin:30px 0;
+                >img{
+                    width:300px;
+                    height: 250px;
+                    object-fit:cover;
+                    margin-right: 15px;
+                }
+                >.text-content{
+                    display: flex;
+                    flex-direction: column;
+                    height: 250px;
+                    >h3{
+                        font-family: sans-serif;
+                        margin-bottom: 20px;
+                    }
+                    >p{
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;
+                        overflow: hidden;
+                        line-height: 1.6;
+                        color:#ccc;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    >a{
+                        display: block;
+                        width:180px;
+                        height: 40px;
+                        text-align: center;
+                        line-height: 38px;
+                        border:1px #fff solid;
+                        color:#fff;
+                        margin-left: auto;
+                        margin-top: auto;
+                        font-family:raleway ;
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 999;
+                        >.back{
+                            position: absolute;
+                            top: 0;
+                            left:0px;
+                            width:180px;
+                            height: 38px;
+                            background-color: #fff;
+                            transform: translateX(-180px);
+                            transition: .5s;
+                            z-index: -1;
+                        }
+                        &:hover{
+                            color:#222;
+                        }
+                        &:hover > .back{
+                            transform: translateX(0px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 footer{
     background-color: #3A3A3A;
     width:100%;
