@@ -14,15 +14,15 @@
         <p class="small-title">Most Interesting Popular Courses & Upcoming Courses & Current Courses</p>
         <div class="courseList">
             <a href="javascript:;" class="courseItem">
-                <img src="./images/a.jpg" alt="">
+                <div class="imgBox"><img src="./images/c.jpg" alt=""></div>
                 <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
             </a>
             <a href="javascript:;" class="courseItem">
-                <img src="./images/b.jpg" alt="">
+            <div class="imgBox"><img src="./images/b.jpg" alt=""></div>
                 <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself<br>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
             </a>
             <a href="javascript:;" class="courseItem">
-                <img src="./images/c.jpg" alt="">
+                <div class="imgBox"><img src="./images/a.jpg" alt=""></div>
                 <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
             </a>
         </div>
@@ -70,6 +70,23 @@
             </div>
             <?php } ?>
         </div>
+        <a href="./?page=news" class="seemore">SEE MORE</a>
+    </div>
+
+    <div class="cooperate">
+         <div class="title">
+            <span class="line"></span>
+            <h2>cooperate</h2>
+            <span class="line"></span>
+            <div class="cooperate"></div>
+        </div>
+        <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
+        <div class="cooperateList">
+            <a href="https://www.edu-aequitas.com/"><img src="./images/chin.png" alt=""></a>
+            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
+            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
+        </div>
+        <a href="./?page=cooperate" class="allCooperate">All cooperate</a>
     </div>
 </div>
 

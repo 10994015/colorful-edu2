@@ -24,7 +24,7 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <h2 class="hidden">新竹市安親班</h2>
     <?php include_once('./shared/header.php'); ?>
     
-
+    <div id="toTop"><i class="fa-solid fa-chevron-up"></i></div>
     <main>
       <?php
         if($page==''){
@@ -39,6 +39,7 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     
     <script src="./js/script.js"></script>
     <script src="./js/header.js"></script>
+    <script src="./js/toTop.js"></script>
     <style>
       .hidden{
         position: absolute;
