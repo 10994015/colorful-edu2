@@ -4,7 +4,7 @@
         <a href="./">home</a>
         <a href="./?page=news">news</a>
         <a href="javascript:;">course</a>
-        <a href="javascript:;">cooperate</a>
+        <a href="javascript:;">Cooperation</a>
         <a href="javascript:;">about</a>
     </nav>
 </header>
@@ -15,6 +15,6 @@
     <a href="./">home</a>
     <a href="./?page=news">news</a>
     <a href="javascript:;">course</a>
-    <a href="javascript:;">cooperate</a>
+    <a href="javascript:;">Cooperation</a>
     <a href="javascript:;">about</a>
 </nav>

@@ -54,7 +54,7 @@
                         <img src="./images/00<?php echo $i+1; ?>.png" class="coverImg">
                     </div>
                     <div class="text-content">
-                        <h3>現在的同學們都有這麼強的創意思考力嗎</h3>
+                        <h3>現在的同學們都有這麼強的創意思考力嗎現在的同學們都有這麼強的創意思考力嗎現在的同學們都有這麼強的創意思考力嗎</h3>
                         <p>冰芬文教祝全天下偉大的媽媽們
                             母親節快樂 Happy Mother’s Day❤️❤️
                             小編腦中出現這首歌，世上只有媽媽好，有媽的孩子像個寶😍
@@ -96,7 +96,7 @@
     <div class="cooperate">
          <div class="title">
             <span class="line"></span>
-            <h2>cooperate</h2>
+            <h2>Cooperation</h2>
             <span class="line"></span>
             <div class="cooperate"></div>
         </div>
