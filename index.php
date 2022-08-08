@@ -19,9 +19,6 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 <body>
-    <h1 class="hidden">新竹市補習班</h1>
-    <h2 class="hidden">新竹市私立美語補習班</h2>
-    <h2 class="hidden">新竹市安親班</h2>
     <?php include_once('./shared/header.php'); ?>
     
     <div id="toTop"><i class="fa-solid fa-chevron-up"></i></div>
@@ -40,14 +37,5 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <script src="./js/script.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/toTop.js"></script>
-    <style>
-      .hidden{
-        position: absolute;
-        top: -99999999999999px;
-        left:-99999999999999px;
-        opacity: 0;
-        z-index: -999999999999;
-      }
-    </style>
 </body>
 </html>

@@ -22,11 +22,10 @@
             <div class="about">
                 <h2>About Us</h2>
                 <div class="aboutList">
-                    <a href="./?page=news">News</a>
                     <a href="./?page=course">Course</a>
+                    <a href="./?page=news">News</a>
                     <a href="./?page=cooperate">Cooperate</a>
                     <a href="./?page=about">About</a>
-                    <a href="./?page=contact">Contact</a>
                     <!-- <a href="./?page=faq&innerpage=signup">常見問題</a>
                      <a href="javascript:;">加入會員</a> 
                     <a href="./?page=faq&innerpage=privacy">隱私政策</a>
