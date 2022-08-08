@@ -36,6 +36,7 @@
                     <h3>師培課程(Teacher training course)</h3>
                 </a>
             </div>
+            <a href="./?page=course" class="seemore">SEE MORE</a>
         </div>
     </div>
     <div class="newsColorBack">
@@ -106,7 +107,7 @@
             <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
             <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
         </div>
-        <a href="./?page=cooperate" class="allCooperate">All cooperate</a>
+        <a href="./?page=cooperate" class="seemore">All cooperate</a>
     </div>
 </div>
 

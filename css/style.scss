@@ -508,6 +508,25 @@ div#toTop{
                     }
                 }
             }
+            >a.seemore{
+                width:200px;
+                height: 50px;
+                font-family: raleway, sans-serif;
+                text-align: center;
+                line-height: 50px;
+                border:1px #111 solid;
+                color:#111;
+                margin-top: 30px;
+                font-size: 17px;
+                background-color: transparent;
+                text-transform: uppercase;
+                &:hover{
+                    background-color: #111;
+                    transition: .3s;
+                    color:#f1f1f1;
+                }
+                
+            }
         }
     }
     >.cooperate{
@@ -568,7 +587,7 @@ div#toTop{
                 }
             }
         }
-        >a.allCooperate{
+        >a.seemore{
             width:200px;
             height: 50px;
             font-family: raleway, sans-serif;

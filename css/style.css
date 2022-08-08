@@ -784,6 +784,27 @@ div#toTop > i {
   }
 }
 
+#index_content .courseColorBack > .course > a.seemore {
+  width: 200px;
+  height: 50px;
+  font-family: raleway, sans-serif;
+  text-align: center;
+  line-height: 50px;
+  border: 1px #111 solid;
+  color: #111;
+  margin-top: 30px;
+  font-size: 17px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+#index_content .courseColorBack > .course > a.seemore:hover {
+  background-color: #111;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #f1f1f1;
+}
+
 #index_content > .cooperate {
   background-color: #eee;
   width: 100%;
@@ -878,7 +899,7 @@ div#toTop > i {
      object-fit: contain;
 }
 
-#index_content > .cooperate > a.allCooperate {
+#index_content > .cooperate > a.seemore {
   width: 200px;
   height: 50px;
   font-family: raleway, sans-serif;
@@ -892,7 +913,7 @@ div#toTop > i {
   text-transform: uppercase;
 }
 
-#index_content > .cooperate > a.allCooperate:hover {
+#index_content > .cooperate > a.seemore:hover {
   background-color: #111;
   -webkit-transition: .3s;
   transition: .3s;
