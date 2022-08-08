@@ -2,7 +2,7 @@
 <div id="index_content">
     <div class="responsive">
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
-        <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
+        <div><a href="javascript:;"><img src="./images/banner2.png" alt=""></a></div>
     </div>
 
     <div class="course">
@@ -14,16 +14,26 @@
         <p class="small-title">Most Interesting Popular Courses & Upcoming Courses & Current Courses</p>
         <div class="courseList">
             <a href="javascript:;" class="courseItem">
-                <div class="imgBox"><img src="./images/c.jpg" alt=""></div>
-                <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
+                <div class="imgBox">
+                    <img src="./images/a.jpg" class="coverImg">
+                    <img src="./images/a.jpg" class="backImg">
+                </div>
+                <!-- <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3> -->
+                <h3>夏令營課程(Summer camp courses)</h3>
             </a>
             <a href="javascript:;" class="courseItem">
-            <div class="imgBox"><img src="./images/b.jpg" alt=""></div>
-                <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself<br>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
+            <div class="imgBox">
+                <img src="./images/b.jpg" class="coverImg">
+                <img src="./images/b.jpg" class="backImg">
+            </div>
+                <h3>冬令營課程(Winter camp courses)</h3>
             </a>
             <a href="javascript:;" class="courseItem">
-                <div class="imgBox"><img src="./images/a.jpg" alt=""></div>
-                <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
+                <div class="imgBox">
+                    <img src="./images/c.jpg" class="coverImg">
+                    <img src="./images/c.jpg" class="backImg">
+                </div>
+                <h3>一對一課程(One-to-one lessons)</h3>
             </a>
         </div>
     </div>
@@ -38,9 +48,12 @@
         <div class="newsList">
             <?php for($i=0;$i<=4;$i++){ ?>
             <div class="newsItem">
-                <img src="./images/b.jpg" alt="">
+                <div class="imgBox">
+                    <img src="./images/00<?php echo $i+1; ?>.png" class="backImg">
+                    <img src="./images/00<?php echo $i+1; ?>.png" class="coverImg">
+                </div>
                 <div class="text-content">
-                    <h3>Colorful Education wishes you a Happy Father's Day</h3>
+                    <h3>【#冰芬文教 #課程推薦 #小班制 #科技素養 #自己動手做】</h3>
                     <p>冰芬文教祝全天下偉大的媽媽們
                         母親節快樂 Happy Mother’s Day❤️❤️
                         小編腦中出現這首歌，世上只有媽媽好，有媽的孩子像個寶😍

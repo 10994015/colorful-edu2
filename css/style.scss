@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 :root{
 	--main-color:#E66756;
 }
@@ -5,7 +7,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: '微軟正黑體',sans-serif;
+    font-family: 'cwTeXYen',sans-serif;
 	scroll-behavior: smooth;
 }
 a{
@@ -108,6 +110,10 @@ div#menu{
     >i{
         font-size: 30px;
         color:#fff;
+        transition: .3s;
+        &.open{
+            transform:rotate(360deg);
+        }
     }
 }
 nav#mobile-nav{
@@ -196,11 +202,11 @@ div#toTop{
                 }
             }
             >h2{
-                font-family: sans-serif;
                 font-weight: 100;
                 font-size: 36px;
                 color:#333;
                 text-transform: uppercase;
+                font-family: raleway, helvetica, sans-serif;
                 @media screen and (max-width:720px){
                     font-size: 28px;
                 }
@@ -212,6 +218,7 @@ div#toTop{
             color:#345;
             font-style: italic;
             text-align: center;
+            font-weight: 100;
         }
         >div.courseList{
             display: flex;
@@ -232,6 +239,7 @@ div#toTop{
                     width:300px;
                     height: 300px;
                     overflow: hidden;
+                    position: relative;
                     @media screen and (max-width:1020px){
                         width:250px;
                         height: 250px;
@@ -239,11 +247,13 @@ div#toTop{
                     @media screen and (max-width:450px){
                         width:100%;
                     }
-                    >img{
+                    >img.coverImg{
+                        position: relative;
                         width:300px;
                         height: 300px;
-                        object-fit: cover;
+                        object-fit: contain;
                         display: block;
+                        z-index: 1;
                         &:hover{
                             transform: scale(1.2);
                             transition: .3s;
@@ -256,13 +266,25 @@ div#toTop{
                             width:100%;
                         }
                     }
+                    >img.backImg{
+                        position: absolute;
+                        top: 50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
+                        z-index: 0;
+                        width:200%;
+                        height: 100%;
+                        object-fit: cover;
+                        -webkit-filter:brightness(.25);
+                        opacity: 1;
+                    }
                 }
                 >h3{
                     margin-top: 10px;
-                    font-size: 20px;
+                    font-size: 22px;
                     color:#222;
-                    font-family: sans-serif;
                     font-weight: 100;
+                    font-family: 'cwTeXYen', sans-serif;
                     @media screen and (max-width:1020px){
                         font-size: 18px;
                     }
@@ -296,7 +318,7 @@ div#toTop{
                 }
             }
             >h2{
-                font-family: sans-serif;
+                font-family: raleway, helvetica, sans-serif;
                 font-weight: 100;
                 font-size: 36px;
                 color:#fff;
@@ -312,7 +334,7 @@ div#toTop{
             color:#ccc;
             font-style: italic;
             text-align: center;
-            
+            font-weight: 100;
         }
         >.newsList{
             display: flex;
@@ -332,11 +354,17 @@ div#toTop{
                 @media screen and (max-width:450px){
                     width:90%;
                 }
-                >img{
+                >.imgBox{
                     width:300px;
                     height: 260px;
-                    object-fit:cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     margin-right: 15px;
+                    // background: #222;
+                    background: transparent;
+                    overflow: hidden;
+                    position: relative;
                     @media screen and (max-width:720px){
                         margin:20px 0;
                         width:420px;
@@ -344,6 +372,30 @@ div#toTop{
                     }
                     @media screen and (max-width:450px){
                         width:100%;
+                    }
+                    >img.coverImg{
+                        width:300px;
+                        height: 260px;
+                        object-fit:contain;
+                        z-index: 9;
+                        @media screen and (max-width:720px){
+                            width:420px;
+                            height: 350px;
+                        }
+                        @media screen and (max-width:450px){
+                            width:100%;
+                        }
+                    }
+                    >img.backImg{
+                        position: absolute;
+                        top: 50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
+                        z-index: 0;
+                        width:200%;
+                        object-fit: cover;
+                        -webkit-filter:brightness(.25);
+                        opacity: .5;
                     }
                 }
                 >.text-content{
@@ -451,7 +503,7 @@ div#toTop{
                 }
             }
             >h2{
-                font-family: sans-serif;
+                font-family: raleway, helvetica, sans-serif;
                 font-weight: 100;
                 font-size: 36px;
                 color:#333;
@@ -467,6 +519,7 @@ div#toTop{
             color:#345;
             font-style: italic;
             text-align: center;
+            font-weight: 100;
         }
         >.cooperateList{
             display: flex;

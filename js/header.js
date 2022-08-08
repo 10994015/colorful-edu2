@@ -16,4 +16,5 @@ window.addEventListener("scroll",()=>{
 menu.addEventListener('click',()=>{
     mobileNav.classList.toggle('open');
     menuIcon.classList.toggle('fa-times');
+    menuIcon.classList.toggle('open');
 })
