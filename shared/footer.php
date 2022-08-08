@@ -14,9 +14,9 @@
                 <p>E-mail:<br>service@ice-finland.pro</p>
                 <p>Address:<br>300新竹市東區光復路一段271號3樓(原聯合補習班址、台新銀行樓上)</p>
                 <p>Cooperate:
-                    EA清華
                     憶旺智慧
                     伊索教育
+                    敦煌書局
                 </p>
             </div>
             <div class="about">
