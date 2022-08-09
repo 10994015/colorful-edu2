@@ -2,7 +2,7 @@
 $db_hostname = 'localhost';        //資料庫主機名稱
 $db_username = 'root';             //登入資料庫的管理者的帳號
 $db_password = '';        //登入密碼
-$db_name     = 'colorfulcms';            //使用的資料庫
+$db_name     = 'colorfuledu';            //使用的資料庫
 $db_charset  = 'utf8';             //設定字元編碼
  
 //建立PDO的指定工作
