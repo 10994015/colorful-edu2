@@ -13,33 +13,127 @@
             </div>
             <p class="small-title">Most Interesting Popular Courses & Upcoming Courses & Current Courses</p>
             <div class="courseList">
-                <a href="javascript:;" class="courseItem">
+                <div class="courseItem">
                     <div class="imgBox">
                         <img src="./images/a.jpg" class="coverImg">
                         <img src="./images/a.jpg" class="backImg">
+                        <div class="titleView">
+                            <h3>常態課程(Normal course)</h3>
+                            <a href="javascript:;">View</a>
+                        </div>
                     </div>
+
                     <!-- <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3> -->
                     <h3>常態課程(Normal course)</h3>
-                </a>
-                <a href="javascript:;" class="courseItem">
+                </div>
+                <div class="courseItem">
                 <div class="imgBox">
                     <img src="./images/b.jpg" class="coverImg">
                     <img src="./images/b.jpg" class="backImg">
+                    <div class="titleView">
+                        <h3>特色課程(Featured Programs)</h3>
+                        <a href="javascript:;">View</a>
+                    </div>
                 </div>
                     <h3>特色課程(Featured Programs)</h3>
-                </a>
-                <a href="javascript:;" class="courseItem">
+                </div>
+                <div class="courseItem">
                     <div class="imgBox">
                         <img src="./images/c.jpg" class="coverImg">
                         <img src="./images/c.jpg" class="backImg">
+                        <div class="titleView">
+                            <h3>師培課程(Teacher training course)</h3>
+                            <a href="javascript:;">View</a>
+                        </div>
                     </div>
                     <h3>師培課程(Teacher training course)</h3>
-                </a>
+                </div>
             </div>
             <a href="./?page=course" class="seemore">SEE MORE</a>
         </div>
     </div>
-    <div class="newsColorBack">
+    <div class="news">
+        <div class="title">
+            <span class="line"></span>
+            <h2>NEWS</h2>
+            <span class="line"></span>
+        </div>
+        <p class="small-title"></p>
+        <div class="newsContent">
+            <div class="fristDiv">
+                <div class="leftList">
+                    <?php for($i=1;$i<=10;$i++){ ?>
+                    <div class="leftItem">
+                        <span class="numberBox"><?php echo $i; ?></span>
+                        <div class="text-content">
+                            <div class="hashtags">
+                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
+                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                            </div>
+                            <a href="javascript:;" class="news-title">冰芬文教 祝您父親節快樂冰芬文教 祝您父親節快樂冰芬文教</a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php for($i=1;$i<=10;$i++){ ?>
+                    <div class="leftItem">
+                        <span class="numberBox"><?php echo $i; ?></span>
+                        <div class="text-content">
+                            <div class="hashtags">
+                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
+                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                            </div>
+                            <a href="javascript:;" class="news-title">冰芬文教 祝您父親節快樂冰芬文教 祝您父親節快樂冰芬文教</a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+                <div class="centerList">
+                    <a href="javascript:;" class="imgBox">
+                        <img src="./images/004.png" class="backImg">
+                        <img src="./images/004.png" class="coverImg">
+                    </a>
+                    <div class="text-content">
+                        <div class="hashtags">
+                            <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
+                            <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                        </div>
+                        <a href="javascript:;" class="news-title">機器人STEAM教室，全國機器人大賽等著你！機器人STEAM教室，全國機器人大賽等著你！</a>
+                        <div class="otherText">
+                            <p class="date"> <i class="far fa-clock"></i> 2022/08/08</p>
+                            <a href="javascript:;" class="reading"> <span class="back"></span> <p>CONTINUE READING<i class="fas fa-arrow-right"></i></p> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightList">
+                <div class="typeList">
+                    <p class="newsTypeBtn focus">最新</p>
+                    <p class="newsTypeBtn">課程</p>
+                    <p class="newsTypeBtn">日常</p>
+                    <p class="newsTypeBtn">培訓</p>
+                </div>
+                <div class="newsList">
+                    <?php for($i=1;$i<=4;$i++){ ?>
+                    <div class="newsItem">
+                        <a href="javascript:;" class="imgBox">
+                            <img src="./images/001.png" class="coverImg">
+                        </a>
+                        <div class="text-content">
+                            <div class="hashtags">
+                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
+                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                            </div>
+                            <a href="javascript:;" class="news-title">冰芬文教 科學實驗~自己動手做冰芬文教 科學實驗~自己動手做冰芬文教 科學實驗~自己動手做</a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <a href="./?page=news" class="seemore">SEE MORE</a>
+    </div>
+    
+    <!-- <div class="newsColorBack">
         <div class="news">
             <div class="title">
                 <span class="line"></span>
@@ -87,7 +181,8 @@
             </div>
             <a href="./?page=news" class="seemore">SEE MORE</a>
         </div>
-    </div>
+    </div> -->
+    
 
 
     
@@ -117,3 +212,4 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="./shared/slick-1.6.0/slick/slick.min.js"></script>
 <script src="./js/slick.js"></script>
+<script src="./js/script.js"></script>
