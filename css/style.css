@@ -1145,6 +1145,7 @@ div#toTop > i {
 @media screen and (max-width: 800px) {
   #index_content > .news > .newsContent > .fristDiv > .leftList {
     width: 100%;
+    margin-top: 30px;
   }
 }
 
