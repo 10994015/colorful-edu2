@@ -1,0 +1,648 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'cwTeXYen',sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F2EDF3;
+  height: 100%;
+  padding-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header#header {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header#header > .leftDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header#header > .leftDiv > a#logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FE8696;
+  font-weight: 600;
+  font-size: 24px;
+  width: 260px;
+  text-decoration: none;
+  height: 100%;
+  margin-right: 30px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header#header > .leftDiv > a#logo.close {
+  width: 70px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header#header > .leftDiv > a#logo > p#logotext {
+  overflow: hidden;
+  margin-left: 8px;
+}
+
+header#header > .leftDiv > a#logo > p#logotext.close {
+  width: 0;
+  margin-left: 0px;
+}
+
+header#header > .leftDiv > i#menuBtn {
+  color: #9C9FA6;
+  margin-right: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header#header > .leftDiv > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header#header > .leftDiv > label > i {
+  color: #9C9FA6;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+header#header > .leftDiv > label > input[type="text"] {
+  outline: none;
+  border: 1px #ccc solid;
+  border: none;
+  height: 30px;
+  width: 200px;
+}
+
+header#header > .leftDiv > label > input[type="text"]::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+header#header > .leftDiv > label > input[type="text"]:-ms-input-placeholder {
+  color: #aaa;
+}
+
+header#header > .leftDiv > label > input[type="text"]::-ms-input-placeholder {
+  color: #aaa;
+}
+
+header#header > .leftDiv > label > input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+header#header > .rightDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px;
+}
+
+header#header > .rightDiv > .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-right: 50px;
+}
+
+header#header > .rightDiv > .user > .imgBox {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+header#header > .rightDiv > .user > .imgBox > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header#header > .rightDiv > .user > .imgBox > span.onlineCircle {
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  background-color: #1BCFB4;
+  border: 1px #fff solid;
+}
+
+header#header > .rightDiv > .user > p {
+  color: #000;
+  font-size: 17px;
+  font-weight: 100;
+  font-family: raleway;
+}
+
+header#header > .rightDiv > .user > i {
+  font-size: 12px;
+  margin-left: 8px;
+  color: #FE8696;
+}
+
+header#header > .rightDiv > .user > .userUl {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px #999;
+          box-shadow: 0px 0px 5px #999;
+  top: 50px;
+  left: 0;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+header#header > .rightDiv > .user > .userUl.open {
+  opacity: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-animation: userUrl .3s linear;
+          animation: userUrl .3s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes userUrl {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes userUrl {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+header#header > .rightDiv > .user > .userUl > a {
+  width: 100%;
+  padding: 0 20px;
+  height: 50px;
+  display: block;
+  text-align: left;
+  line-height: 50px;
+  color: #333;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+header#header > .rightDiv > .user > .userUl > a > i {
+  margin-right: 5px;
+}
+
+header#header > .rightDiv > .user > .userUl > a.activity > i {
+  color: #1BCFB4;
+}
+
+header#header > .rightDiv > .user > .userUl > a.logout > i {
+  color: #FE8696;
+}
+
+header#header > .rightDiv > .user > .userUl > a:hover {
+  background-color: #f0f0f0;
+}
+
+header#header > .rightDiv > i#fullScreen {
+  color: #9C9FA6;
+  margin-right: 50px;
+  display: block;
+}
+
+header#header > .rightDiv > i#messages {
+  color: #9C9FA6;
+  margin-right: 50px;
+  display: block;
+  cursor: pointer;
+}
+
+header#header > .rightDiv > i#logoutBtn {
+  color: #9C9FA6;
+  margin-right: 50px;
+  display: block;
+  cursor: pointer;
+}
+
+nav#nav {
+  width: 260px;
+  height: 100%;
+  background-color: #fff;
+  min-height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 30px;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+nav#nav.close {
+  width: 70px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav#nav > .user#navUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+nav#nav > .user#navUser.close {
+  display: none;
+}
+
+nav#nav > .user#navUser > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
+nav#nav > .user#navUser > .userInfor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+}
+
+nav#nav > .user#navUser > .userInfor > h3 {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2px;
+  color: #111;
+  font-family: raleway,'cwTeXYen';
+}
+
+nav#nav > .user#navUser > .userInfor > p {
+  color: #aaa;
+  font-size: 13px;
+}
+
+nav#nav > .navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+nav#nav > .navList > a.newsItem {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+nav#nav > .navList > a.newsItem.close {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav#nav > .navList > a.newsItem.focus {
+  color: #FE8696;
+  font-weight: 600;
+}
+
+nav#nav > .navList > a.newsItem > p.newsListText {
+  text-transform: uppercase;
+}
+
+nav#nav > .navList > a.newsItem > p.newsListText.close {
+  display: none;
+}
+
+nav#nav > .navList > a.newsItem > i {
+  font-size: 15px;
+}
+
+#news {
+  width: 100%;
+  padding: 50px 35px;
+}
+
+#news > .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#news > .title > .icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFBB96), to(#FE8596));
+  background-image: linear-gradient(to right, #FFBB96, #FE8596);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+  -webkit-box-shadow: 0px 0px 5px #FE8696;
+          box-shadow: 0px 0px 5px #FE8696;
+}
+
+#news > .title > .icon > i {
+  color: #fff;
+}
+
+#news > .newsList {
+  margin-top: 30px;
+  width: 100%;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#news > .newsList > h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+}
+
+#news > .newsList > .newsItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  border-bottom: 2px #ddd solid;
+}
+
+#news > .newsList > .newsItem > p.title {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#news > .newsList > .newsItem > p.title > img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#news > .newsList > .newsItem > p.title > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 15px;
+}
+
+#news > .newsList > .newsItem > p.content {
+  width: 20%;
+}
+
+#news > .newsList > .newsItem > p.content > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 15px;
+}
+
+#news > .newsList > .newsItem > p.latest-update {
+  width: 15%;
+}
+
+#news > .newsList > .newsItem > p.user {
+  width: 13%;
+}
+
+#news > .newsList > .newsItem > p.focus {
+  width: 10%;
+}
+
+#news > .newsList > .newsItem > p.focus > input[type="radio"] {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  margin: 10px;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
+  background: linear-gradient(to right, #bbb, #999);
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+#news > .newsList > .newsItem > p.focus > input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#news > .newsList > .newsItem > p.focus > input[type="radio"]:checked {
+  background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
+  background: linear-gradient(to right, #FEB096, #FE7296);
+}
+
+#news > .newsList > .newsItem > p.focus > input[type="radio"]:checked::before {
+  left: 25px;
+}
+
+#news > .newsList > .newsItem > p.focus > input[type="radio"]::after {
+  content: '';
+}
+
+#news > .newsList > .newsItem > p.update {
+  width: 10%;
+}
+
+#news > .newsList > .newsItem > p.update > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#8DC8F8), to(#2D94E7));
+  background-image: linear-gradient(to right, #8DC8F8, #2D94E7);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#news > .newsList > .newsItem > p.delete {
+  width: 10%;
+}
+
+#news > .newsList > .newsItem > p.delete > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#D42C25), to(#A12C25));
+  background-image: linear-gradient(to right, #D42C25, #A12C25);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 14px;
+}
+/*# sourceMappingURL=cms.css.map */

@@ -3,7 +3,8 @@
 :root{
 	--main-color:#FFC934;
 }
-$mainColor:#1484c9;
+$mainColor:#EEC71C;
+// #FFBF3F
 *{
     margin:0;
     padding: 0;
@@ -540,7 +541,7 @@ div#toTop{
                                 font-weight: 600;
                                 &:hover{
                                     background-color: #fff;
-                                    color:#1484c4;
+                                    color:rgba(150, 9, 20,1);
                                 }
                             }
                         }
@@ -756,10 +757,11 @@ div#toTop{
                             min-width:30px;
                             height: 30px;
                             display: block;
-                            background-color: #FFBF3F;
+                            background-color: $mainColor;
                             text-align: center;
                             line-height: 32px;
                             margin-right: 15px;
+                            color:#111;
                         }
                         >.text-content{
                             display: flex;
@@ -960,12 +962,13 @@ div#toTop{
                         cursor: pointer;
                         color:#fff;
                         transition: .3s;
+                        
                         &.focus{
-                            background-color: #FFBF3F;
+                            background-color: $mainColor;
                             color:#111;
                         }
                         &:hover{
-                            background-color: #FFBF3F;
+                            background-color: $mainColor;
                             color:#111;
                         }
                     }
@@ -1063,31 +1066,117 @@ div#toTop{
     width:100%;
     padding: 50px 150px;
     background-color: #eee;
+    @media screen and (max-width:1090px){
+        padding: 50px 40px;
+    }
+    @media screen and (max-width:700px){
+        padding: 50px 15px;
+    }
+    >.searchBox{
+        display: none;
+        @media screen and (max-width:1090px){
+            display: block;
+            background-color: #fff;
+            width:100%;
+            padding: 35px 20px;
+            margin:15px 0;
+        }
+        >.keyword{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            >a{
+                font-weight: 600;
+                font-style: italic;
+                font-family: sans-serif,'微軟正黑體';
+                margin:0 3px;
+                &.course{
+                    color:#1484c4;
+                }
+                &.daily{
+                    color:#FF5722;
+                }
+                &.train{
+                    color:#FFC934;
+                }
+            }
+        }
+        > label{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            @media screen and (max-width:414px){
+                width:100%;
+            }
+            >input[type="text"]{
+                width:calc(100% - 45px);
+                min-width:200px;
+                height: 50px;
+                outline: none;
+                border:1px #ccc solid;
+                padding: 0 10px;
+                font-size: 18px;
+                @media screen and (max-width:414px){
+                    min-width:0;
+                }
+                &:hover{
+                    border:2px #111 solid;
+                }
+            }
+            >button{
+                width:50px;
+                height: 50px;
+                min-width:50px;
+                outline: none;
+                border:none;
+                background-color: $mainColor;
+                font-size: 20px;
+                cursor: pointer;
+                color:#111;
+            }
+        }
+    }
     >.newsType{
         width:100%;
         height: 60px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        @media screen and (max-width:600px){
+            flex-wrap: wrap;
+            height: auto;
+            margin:25px 0;
+            justify-content: space-around;
+        }
         >button{
             outline: none;
             border:none;
             cursor: pointer;
             width:150px;
-            height: 40px;
+            height: 50px;
             margin-right:30px;
-            font-size: 17px;
+            font-size: 19px;
             font-weight: 600;
             background-color: #ccc;
             color:#404040;
             transition: .5s;
+
+            @media screen and (max-width:600px){
+               margin-bottom: 15px;
+               margin-right:0px;
+            }
+            @media screen and (max-width:414px){
+                width:100%;
+                margin-right: 0;
+             }
             &.focus{
                 background-color: $mainColor;
-                color:#fff;
+                color:#111;
             }
             &:hover{
                 background-color: $mainColor;
-                color:#fff;
+                color:#111;
             }
         }
     }
@@ -1096,6 +1185,10 @@ div#toTop{
         display: flex;
         justify-content: center;
         margin:15px 0;
+
+        @media screen and (max-width:1090px){
+            flex-direction: column;
+        }
         >.newsList{
             width:800px;
             display: flex;
@@ -1104,6 +1197,9 @@ div#toTop{
             background-color: #FFF;
             padding: 25px 20px;
             margin-right: 30px;
+            @media screen and (max-width:1090px){
+                width:100%;
+            }
             >h3{
                 color:#333;
                 font-weight: 100;
@@ -1116,10 +1212,19 @@ div#toTop{
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 40px;
+                @media screen and (max-width:1090px){
+                    width:100%;
+                }
                 >.imgBox{
                     width:700px;
                     height: 500px;
                     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+                    @media screen and (max-width:1090px){
+                      width:100%;
+                    }
+                    @media screen and (max-width:500px){
+                        height: 350px;
+                      }
                     >img{
                         width:100%;
                         height: 100%;
@@ -1159,6 +1264,9 @@ div#toTop{
                         -webkit-line-clamp: 2;
                         overflow: hidden;
                         font-weight: 600;
+                        @media screen and (max-width:1250px){
+                            width:100%;
+                        }
                     }
                     >p.newsText{
                         overflow: hidden;
@@ -1170,6 +1278,10 @@ div#toTop{
                         color:#999;
                         font-size: 18px;
                         margin-bottom: 15px;
+                        @media screen and (max-width:600px){
+                            width:100%;
+                            -webkit-line-clamp: 2;
+                        }
                     }
                     >.otherText{
                         display: flex;
@@ -1241,10 +1353,23 @@ div#toTop{
                 &:nth-child(even) > .imgBox{
                     background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
                 }
+                @media screen and (max-width:1090px){
+                    width:100%;
+                }
+                @media screen and (max-width:600px){
+                    flex-direction: column;
+                }
                 >.imgBox{
                     width:350px;
                     height: 250px;
-                    
+                    min-width:250px;
+                    @media screen and (max-width:750px){
+                        min-width:150px;
+                    }
+                    @media screen and (max-width:600px){
+                        width:100%;
+                        height: 300px;
+                    }
                     >img{
                         width:100%;
                         height: 100%;
@@ -1284,6 +1409,9 @@ div#toTop{
                         -webkit-line-clamp: 2;
                         overflow: hidden;
                         font-weight: 600;
+                        @media screen and (max-width:600px){
+                            width:100%;
+                        }
                     }
                     >p.newsText{
                         overflow: hidden;
@@ -1295,6 +1423,9 @@ div#toTop{
                         color:#999;
                         font-size: 18px;
                         margin-bottom: 30px;
+                        @media screen and (max-width:600px){
+                            width:100%;
+                        }
                     }
                     >.otherText{
                         display: flex;
@@ -1304,12 +1435,20 @@ div#toTop{
                         @media screen and (max-width:1250px){
                             justify-content: space-between;
                         }
+                        @media screen and (max-width:350px){
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
                         >p.date{
                             color:#111;
                             display: flex;
                             align-items: center;
                             margin-right: 20px;
                             font-size: 16px;
+                            @media screen and (max-width:350px){
+                                margin-right: 0;
+                                margin-bottom: 10px;
+                            }
                             >i{
                                 margin-right: 5px;
                             }
@@ -1360,11 +1499,17 @@ div#toTop{
             width:calc(100% - 830px);
             display: flex;
             flex-direction: column;
-            
+            min-width:300px;
+            @media screen and (max-width:1090px){
+                width:100%;
+            }
             >.searchBox{
                 background-color: #fff;
                 width:100%;
                 padding: 35px 20px;
+                @media screen and (max-width:1090px){
+                    display: none;
+                }
                 >.keyword{
                     display: flex;
                     align-items: center;
@@ -1381,7 +1526,7 @@ div#toTop{
                             color:#FF5722;
                         }
                         &.train{
-                            color:#FFC934;
+                            color:#8DC220;
                         }
                     }
                 }
@@ -1411,7 +1556,7 @@ div#toTop{
                         background-color: $mainColor;
                         font-size: 20px;
                         cursor: pointer;
-                        color:#fff;
+                        color:#111;
                     }
                 }
             }
@@ -1425,6 +1570,12 @@ div#toTop{
                 background-color: #fff;
                 width:100%;
                 padding: 25px 20px;
+                @media screen and (max-width:1090px){
+                    padding: 25px 50px;
+                }
+                @media screen and (max-width:600px){
+                    padding: 25px 20px;
+                }
                 >h4{
                     font-size: 22px;
                     font-weight: 600;
@@ -1433,6 +1584,9 @@ div#toTop{
                     width:120px;
                     margin-bottom: 5px;
                     font-family: sans-serif,'微軟正黑體';
+                    @media screen and (max-width:414px){
+                        font-size: 24px;
+                    }
                 }
                 >.newsCarousel{
                     display: flex;
@@ -1444,10 +1598,17 @@ div#toTop{
                         justify-content: flex-start;
                         align-items: center;
                         margin:10px 0;
+                        @media screen and (max-width:414px){
+                            flex-direction: column;
+                        }
                         >.imgBox{
                             width:150px;
                             height: 150px;
                             margin-right: 10px;
+                            @media screen and (max-width:414px){
+                                width:100%;
+                                height: 250px;
+                            }
                             &.hot{
                                 background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
                             }
@@ -1464,6 +1625,10 @@ div#toTop{
                                 width:150px;
                                 height: 150px;
                                 object-fit: contain;
+                                @media screen and (max-width:414px){
+                                    width:100%;
+                                    height: 100%;
+                                }
                             }
                         }
                         .text-content{
@@ -1471,6 +1636,10 @@ div#toTop{
                             flex-direction: column;
                             width:calc(100% - 160px);
                             color:#111;
+                            @media screen and (max-width:414px){
+                                width:100%;
+                                margin-top: 8px;
+                            }
                             >h3.news-title{
                                 font-size: 18px;
                                 font-weight: 600;
@@ -1480,11 +1649,17 @@ div#toTop{
                                 -webkit-line-clamp: 5;
                                 -webkit-box-orient: vertical;
                                 font-family: '微軟正黑體',sans-serif;
+                                @media screen and (max-width:414px){
+                                    font-size: 22px;
+                                }
                             }
                             >span.date{
                                 font-size: 16px;
                                 font-weight: 100;
                                 margin-top: 6px;
+                                @media screen and (max-width:414px){
+                                    font-size: 18px;
+                                }
                             }
                         }
                     }
