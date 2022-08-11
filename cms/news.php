@@ -1,3 +1,4 @@
+<?php require_once('../config/conn.php'); ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -12,9 +13,10 @@
 </head>
 <body>
     <?php include_once('./header.php');  ?>
-    <div id="news">
+    <main id="news">
         <div class="title"><span class="icon"><i class="fa-solid fa-file-lines"></i></span>News</div>
         <div class="newsList">
+            <a href="./createArticle.php" id="createArticleBtn">新增文章 <i class="fa-solid fa-plus"></i></a>
             <h4>文章列表</h4>
             <div class="newsItem">
                 <p class="title">Title</p>  
@@ -46,6 +48,9 @@
                 <p class="delete"><a href="###">DELETE</a></p>
             </div>
         </div>
-    </div>
+       
+    </main>
+
+   
 </body>
 </html>

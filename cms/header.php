@@ -19,7 +19,7 @@
             </div>
         </div>
         <i class="fa-solid fa-expand" id="fullScreen"></i>
-        <i class="fa-solid fa-envelope" id="messages"></i>
+        <i class="fa-solid fa-bell" id="messages"></i>
         <i class="fa-solid fa-arrow-right-from-bracket" id="logoutBtn"></i>
     </div>
 </header>
@@ -38,5 +38,3 @@
 </nav>
     
 
-
-    <script src="../js/cms/header.js"></script>

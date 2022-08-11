@@ -4,7 +4,7 @@
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
     </div>
-    <div class="courseColorBack">
+    <!-- <div class="courseColorBack">
         <div class="course">
             <div class="title">
                 <span class="line"></span>
@@ -23,7 +23,7 @@
                         </div>
                     </div>
 
-                    <!-- <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3> -->
+                     <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
                     <h3>常態課程(Normal course)</h3>
                 </div>
                 <div class="courseItem">
@@ -50,6 +50,40 @@
                 </div>
             </div>
             <a href="./?page=course" class="seemore">SEE MORE</a>
+        </div>
+    </div> -->
+    <div class="course">
+        <div class="title">
+            <span class="line"></span>
+            <h2>COURSE</h2>
+            <span class="line"></span>
+        </div>
+        <p class="small-title">所有常態課程、日常課程、特色課程培訓課程都在冰芬文教！</p>
+        <div class="courseList">
+            <div class="courseItem courseItem1">
+                <h3>常態課程</h3>
+                <span>Normal course</span>
+                <p>
+                會考怎麼考？會考沒有看一眼就能答的題目，記憶題少，思考和理解才是答題關鍵。會考成績的影響？會考成績絕對是比序關鍵，總分比完，再比積點！
+                </p>
+                <a href="javascript:;" class="seemore seemore1">SEE MORE</a>
+            </div>
+            <div class="courseItem courseItem2">
+                <h3>特色課程</h3>
+                <span>Featured Programs</span>
+                <p>
+                會考怎麼考？會考沒有看一眼就能答的題目，記憶題少，思考和理解才是答題關鍵。會考成績的影響？會考成績絕對是比序關鍵，總分比完，再比積點！
+                </p>
+                <a href="javascript:;" class="seemore seemore2">SEE MORE</a>
+            </div>
+            <div class="courseItem courseItem3">
+                <h3>師培課程</h3>
+                <span>Teacher training course</span>
+                <p>
+                會考怎麼考？會考沒有看一眼就能答的題目，記憶題少，思考和理解才是答題關鍵。會考成績的影響？會考成績絕對是比序關鍵，總分比完，再比積點！會考怎麼考？會考沒有看一眼就能答的題目，記憶題少，思考和理解才是答題關鍵。會考成績的影響？會考成績絕對是比序關鍵，總分比完，再比積點！
+                </p>
+                <a href="javascript:;" class="seemore seemore3">SEE MORE</a>
+            </div>
         </div>
     </div>
     <div class="news">

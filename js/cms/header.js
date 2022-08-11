@@ -7,6 +7,7 @@ const nav = document.getElementById('nav');
 const navUser = document.getElementById('navUser');
 const newsListText = document.getElementsByClassName('newsListText');
 const newsItem = document.getElementsByClassName('newsItem');
+const createArticle = document.getElementById('createArticle');
 user.addEventListener('click',()=>{
     userUl.classList.toggle('open');
 })
@@ -16,6 +17,7 @@ menuBtn.addEventListener('click',()=>{
     logo.classList.toggle('close');
     nav.classList.toggle('close');
     navUser.classList.toggle('close');
+    createArticle.classList.toggle('close');
     for(let i=0;i<newsListText.length;i++){
         newsListText[i].classList.toggle('close');
     }
