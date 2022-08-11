@@ -10,24 +10,24 @@
                 <img src="../images/baby.jpg">
                 <span class="onlineCircle"></span>
             </div>
-            <p>Handsomeboy</p>
+            <p><?php echo $_SESSION['name']; ?></p>
             <i class="fa-solid fa-angle-down"></i>
             <div class="userUl" id="userUl">
                 <a href="javascript:;" class="activity"><i class="fa-solid fa-chart-line"></i>活動日誌</a>
                 <span class="line"></span>
-                <a href="javascript:;" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>登出</a>
+                <a href="./logout.php" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>登出</a>
             </div>
         </div>
         <i class="fa-solid fa-expand" id="fullScreen"></i>
         <i class="fa-solid fa-bell" id="messages"></i>
-        <i class="fa-solid fa-arrow-right-from-bracket" id="logoutBtn"></i>
+        <i class="fa-solid fa-arrow-right-from-bracket" id="logoutBtn" onclick="logoutFn()"></i>
     </div>
 </header>
 <nav id="nav">
     <a href="javascript:;" class="user" id="navUser">
         <img src="../images/baby.jpg" alt="">
         <div class="userInfor">
-            <h3>Handsomeboy</h3>
+            <h3><?php echo $_SESSION['name']; ?></h3>
             <p>Project Manager</p>
         </div>
     </a>
@@ -36,5 +36,13 @@
         <a href="./news.php" class="newsItem"><p class="newsListText">NEWS</p><i class="fa-solid fa-file-lines"></i></a>
     </div>
 </nav>
-    
+<script>
 
+function logoutFn(){
+    let chk = confirm('確定要登出嗎?');
+    if(chk){
+        window.location.href = "./logout.php";
+        return;
+    }
+}
+</script>

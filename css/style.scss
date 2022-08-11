@@ -1244,6 +1244,7 @@ div#toTop{
             >a{
                 font-weight: 600;
                 font-style: italic;
+                display: block;
                 font-family: sans-serif,'微軟正黑體';
                 margin:0 3px;
                 &.course{
@@ -1359,8 +1360,8 @@ div#toTop{
             >h3{
                 color:#333;
                 font-weight: 100;
-                font-size: 30px;
-                margin:15px 20px;
+                font-size: 28px;
+                margin:18px 20px;
                 margin-right: auto;
             }
             >.newsItem.focusNews{
@@ -1444,11 +1445,12 @@ div#toTop{
                         align-items: center;
                         font-size: 14px;
                         justify-content: space-between;
+                        padding: 3px;
                         @media screen and (max-width:1250px){
                             justify-content: space-between;
                         }
                         >p.date{
-                            color:#111;
+                            color:#666;
                             display: flex;
                             align-items: center;
                             margin-right: 20px;
@@ -1460,12 +1462,12 @@ div#toTop{
                         >a.reading{
                             width:180px;
                             height: 40px;
-                            border:1px #111 solid;
+                            border:1px #b9b9b9 solid;
                             text-align: center;
                             line-height: 40px;
                             background: transparent;
                             font-size: 15px;
-                            color:#111;
+                            color:#222;
                             position: relative;
                             overflow: hidden;
                             >p{
@@ -1482,7 +1484,7 @@ div#toTop{
                                 left:0;
                                 width:180px;
                                 height: 40px;
-                                background-color: #111;
+                                background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);;
                                 background-size:100% 100%;
                                 transform: translateX(-181px);
                                 transition: .5s;
@@ -1507,6 +1509,12 @@ div#toTop{
                     background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
                 }
                 &:nth-child(even) > .imgBox{
+                    background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+                }
+                &:nth-child(odd) .reading > .back{
+                    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+                }
+                &:nth-child(even)  .reading > .back{
                     background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
                 }
                 @media screen and (max-width:1090px){
@@ -1588,6 +1596,7 @@ div#toTop{
                         align-items: center;
                         font-size: 14px;
                         justify-content: space-between;
+                        padding: 3px;
                         @media screen and (max-width:1250px){
                             justify-content: space-between;
                         }
@@ -1596,7 +1605,7 @@ div#toTop{
                             align-items: flex-start;
                         }
                         >p.date{
-                            color:#111;
+                            color:#666;
                             display: flex;
                             align-items: center;
                             margin-right: 20px;
@@ -1612,12 +1621,12 @@ div#toTop{
                         >a.reading{
                             width:180px;
                             height: 40px;
-                            border:1px #111 solid;
+                            border:1px #b9b9b9 solid;
                             text-align: center;
                             line-height: 40px;
                             background: transparent;
                             font-size: 15px;
-                            color:#111;
+                            color:#222;
                             position: relative;
                             overflow: hidden;
                             >p{
@@ -1733,7 +1742,7 @@ div#toTop{
                     padding: 25px 20px;
                 }
                 >h4{
-                    font-size: 22px;
+                    font-size: 19px;
                     font-weight: 600;
                     border-bottom:$mainColor solid 4px;
                     padding: 5px 0;
@@ -1797,22 +1806,24 @@ div#toTop{
                                 margin-top: 8px;
                             }
                             >h3.news-title{
-                                font-size: 18px;
+                                font-size: 16px;
                                 font-weight: 600;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                                 display: -webkit-box;
                                 -webkit-line-clamp: 5;
                                 -webkit-box-orient: vertical;
+                                color:#333;
                                 font-family: '微軟正黑體',sans-serif;
                                 @media screen and (max-width:414px){
                                     font-size: 22px;
                                 }
                             }
                             >span.date{
-                                font-size: 16px;
+                                font-size: 14px;
                                 font-weight: 100;
                                 margin-top: 6px;
+                                color:#666;
                                 @media screen and (max-width:414px){
                                     font-size: 18px;
                                 }

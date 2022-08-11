@@ -29,6 +29,7 @@ header#header {
           justify-content: space-between;
   position: fixed;
   top: 0;
+  z-index: 999999;
   left: 0;
 }
 
@@ -190,7 +191,7 @@ header#header > .rightDiv > .user > .imgBox > span.onlineCircle {
 header#header > .rightDiv > .user > p {
   color: #000;
   font-size: 17px;
-  font-weight: 100;
+  font-weight: 500;
   font-family: raleway;
 }
 
@@ -295,6 +296,7 @@ header#header > .rightDiv > i#fullScreen {
   color: #9C9FA6;
   margin-right: 50px;
   display: block;
+  cursor: pointer;
 }
 
 header#header > .rightDiv > i#messages {
@@ -313,7 +315,7 @@ header#header > .rightDiv > i#logoutBtn {
 
 nav#nav {
   width: 260px;
-  height: 100%;
+  height: auto;
   background-color: #fff;
   min-height: calc(100vh - 70px);
   display: -webkit-box;
@@ -381,8 +383,8 @@ nav#nav > .user#navUser > .userInfor {
 }
 
 nav#nav > .user#navUser > .userInfor > h3 {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
   margin-bottom: 2px;
   color: #111;
   font-family: raleway,'cwTeXYen';
@@ -451,9 +453,17 @@ nav#nav > .navList > a.newsItem > i {
   font-size: 15px;
 }
 
-main#news {
+main {
   width: calc(100% - 260px);
   padding: 50px 35px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main.close {
+  width: calc(100% - 70px);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 main#news > .title {
@@ -543,7 +553,15 @@ main#news > .newsList > .newsItem {
   border-bottom: 2px #ddd solid;
 }
 
-main#news > .newsList > .newsItem > p.title {
+main#news > .newsList > .newsItem > strong {
+  font-weight: normal;
+}
+
+main#news > .newsList > .newsItem.newsItemTitle {
+  font-size: 18px;
+}
+
+main#news > .newsList > .newsItem > strong.title {
   width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -551,16 +569,17 @@ main#news > .newsList > .newsItem > p.title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 17px;
 }
 
-main#news > .newsList > .newsItem > p.title > img {
+main#news > .newsList > .newsItem > strong.title > img {
   width: 40px;
   height: 40px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-main#news > .newsList > .newsItem > p.title > span {
+main#news > .newsList > .newsItem > strong.title > span {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -569,11 +588,11 @@ main#news > .newsList > .newsItem > p.title > span {
   padding: 0 15px;
 }
 
-main#news > .newsList > .newsItem > p.content {
+main#news > .newsList > .newsItem > strong.content {
   width: 20%;
 }
 
-main#news > .newsList > .newsItem > p.content > span {
+main#news > .newsList > .newsItem > strong.content > span {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -582,23 +601,35 @@ main#news > .newsList > .newsItem > p.content > span {
   padding-right: 15px;
 }
 
-main#news > .newsList > .newsItem > p.latest-update {
-  width: 15%;
+main#news > .newsList > .newsItem > strong.content img {
+  display: none;
 }
 
-main#news > .newsList > .newsItem > p.user {
+main#news > .newsList > .newsItem > strong.latest-update {
+  width: 17%;
+}
+
+main#news > .newsList > .newsItem > strong.latest-update > span {
+  font-size: 15px;
+  color: #555;
+}
+
+main#news > .newsList > .newsItem > strong.user {
+  width: 10%;
+  font-size: 17px;
+  padding-right: 10px;
+}
+
+main#news > .newsList > .newsItem > strong.focus {
   width: 13%;
 }
 
-main#news > .newsList > .newsItem > p.focus {
-  width: 10%;
-}
-
-main#news > .newsList > .newsItem > p.focus > input[type="radio"] {
+main#news > .newsList > .newsItem > strong.focus > input[type="radio"] {
   position: relative;
   width: 50px;
   height: 25px;
   margin: 10px;
+  margin-left: 0;
   outline: none;
   background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
   background: linear-gradient(to right, #bbb, #999);
@@ -607,7 +638,7 @@ main#news > .newsList > .newsItem > p.focus > input[type="radio"] {
   border-radius: 20px;
 }
 
-main#news > .newsList > .newsItem > p.focus > input[type="radio"]::before {
+main#news > .newsList > .newsItem > strong.focus > input[type="radio"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -622,24 +653,24 @@ main#news > .newsList > .newsItem > p.focus > input[type="radio"]::before {
   transition: .5s;
 }
 
-main#news > .newsList > .newsItem > p.focus > input[type="radio"]:checked {
+main#news > .newsList > .newsItem > strong.focus > input[type="radio"]:checked {
   background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
   background: linear-gradient(to right, #FEB096, #FE7296);
 }
 
-main#news > .newsList > .newsItem > p.focus > input[type="radio"]:checked::before {
+main#news > .newsList > .newsItem > strong.focus > input[type="radio"]:checked::before {
   left: 25px;
 }
 
-main#news > .newsList > .newsItem > p.focus > input[type="radio"]::after {
+main#news > .newsList > .newsItem > strong.focus > input[type="radio"]::after {
   content: '';
 }
 
-main#news > .newsList > .newsItem > p.update {
+main#news > .newsList > .newsItem > strong.update {
   width: 10%;
 }
 
-main#news > .newsList > .newsItem > p.update > a {
+main#news > .newsList > .newsItem > strong.update > a {
   display: block;
   width: 80%;
   height: 35px;
@@ -649,15 +680,15 @@ main#news > .newsList > .newsItem > p.update > a {
   text-align: center;
   line-height: 35px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 3px;
 }
 
-main#news > .newsList > .newsItem > p.delete {
+main#news > .newsList > .newsItem > strong.delete {
   width: 10%;
 }
 
-main#news > .newsList > .newsItem > p.delete > a {
+main#news > .newsList > .newsItem > strong.delete > a {
   display: block;
   width: 80%;
   height: 35px;
@@ -668,18 +699,7 @@ main#news > .newsList > .newsItem > p.delete > a {
   text-align: center;
   line-height: 35px;
   text-decoration: none;
-  font-size: 14px;
-}
-
-main#createArticle {
-  width: calc(100% - 260px);
-  padding: 50px 35px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-main#createArticle.close {
-  width: calc(100% - 70px);
+  font-size: 16px;
 }
 
 main#createArticle > .title {
@@ -744,6 +764,7 @@ main#createArticle > form.createArticleForm > div.formContent h4 {
   width: 120px;
   font-size: 24px;
   padding: 5px 0;
+  color: #555;
 }
 
 main#createArticle > form.createArticleForm > div.formContent > .basic {
@@ -770,7 +791,7 @@ main#createArticle > form.createArticleForm > div.formContent > .basic > label {
 main#createArticle > form.createArticleForm > div.formContent > .basic > label > p {
   color: #333;
   font-size: 17px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 main#createArticle > form.createArticleForm > div.formContent > .basic > label > input[type="text"] {
@@ -838,6 +859,12 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > labe
   display: block;
 }
 
+main#createArticle > form.createArticleForm > div.formContent > .advanced > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
 main#createArticle > form.createArticleForm > div.formContent > .advanced > label > input[type="checkbox"], main#createArticle > form.createArticleForm > div.formContent > .advanced > label input[type="radio"] {
   position: relative;
   width: 50px;
@@ -895,9 +922,10 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > labe
 }
 
 main#createArticle > form.createArticleForm > div.formContent > .advanced > label > .articleType div.group > input[type="checkbox"]:checked ~ label::before {
-  background-color: #FE8596;
   -webkit-transition: .2s;
   transition: .2s;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB896), to(#FE8A96));
+  background-image: linear-gradient(to right, #FFB896, #FE8A96);
 }
 
 main#createArticle > form.createArticleForm > div.formContent > .advanced > label > .articleType div.group > input[type="checkbox"]:checked ~ label > i {
@@ -918,13 +946,14 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > labe
   margin-right: 20px;
   font-size: 19px;
   position: relative;
+  cursor: pointer;
 }
 
 main#createArticle > form.createArticleForm > div.formContent > .advanced > label > .articleType div.group > label > i {
   position: absolute;
   color: #fff;
-  top: 2px;
-  left: 2px;
+  top: 1px;
+  left: 1px;
   font-size: 18px;
   opacity: 0;
   -webkit-transform: scale(0);
@@ -938,17 +967,18 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > labe
   width: 17px;
   height: 17px;
   border-radius: 50%;
-  border: 1.5px #FE8596 solid;
-  background-color: #fff;
   -webkit-transition: .2s;
   transition: .2s;
+  margin-right: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#bbb), to(#A3A3A3));
+  background-image: linear-gradient(to right, #bbb, #A3A3A3);
 }
 
-main#createArticle > form.createArticleForm > #createArticleBtn {
-  margin-left: auto;
-  width: 200px;
+main#createArticle > form.createArticleForm > div.formContent > .advanced > #createArticleBtn {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
   height: 50px;
-  margin-top: 20px;
   outline: none;
   border: none;
   color: #fff;
@@ -958,14 +988,185 @@ main#createArticle > form.createArticleForm > #createArticleBtn {
   transition: .5s;
   font-size: 19px;
   font-weight: 600;
-  background: -webkit-gradient(linear, left top, right top, from(#FFB896), to(#FE8B96));
-  background: linear-gradient(to right, #FFB896, #FE8B96);
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
 }
 
-main#createArticle > form.createArticleForm > #createArticleBtn:hover {
+main#createArticle > form.createArticleForm > #createArticleBtn {
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
   -webkit-transition: .5s;
   transition: .5s;
-  background: -webkit-gradient(linear, left top, right top, from(#FEA596), to(#FE6096));
-  background: linear-gradient(to right, #FEA596, #FE6096);
+  font-size: 19px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
+#login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2EDF3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login > .loginForm {
+  width: 450px;
+  padding: 50px 50px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#login > .loginForm > h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FE8696;
+  font-weight: 600;
+  font-size: 24px;
+  text-decoration: none;
+  width: 100%;
+  margin-right: 30px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#login > .loginForm > h2.close {
+  width: 70px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#login > .loginForm > h2 > p#logotext {
+  overflow: hidden;
+  margin-left: 8px;
+}
+
+#login > .loginForm > h2 > p#logotext.close {
+  width: 0;
+  margin-left: 0px;
+}
+
+#login > .loginForm > p {
+  color: #666;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#login > .loginForm > input[type="text"], #login > .loginForm > input[type="password"] {
+  width: 100%;
+  height: 50px;
+  border: 1px #ccc solid;
+  outline: none;
+  padding: 0 30px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 10px 0;
+}
+
+#login > .loginForm > input[type="text"]::-webkit-input-placeholder, #login > .loginForm > input[type="password"]::-webkit-input-placeholder {
+  color: #a3a3a3;
+}
+
+#login > .loginForm > input[type="text"]:-ms-input-placeholder, #login > .loginForm > input[type="password"]:-ms-input-placeholder {
+  color: #a3a3a3;
+}
+
+#login > .loginForm > input[type="text"]::-ms-input-placeholder, #login > .loginForm > input[type="password"]::-ms-input-placeholder {
+  color: #a3a3a3;
+}
+
+#login > .loginForm > input[type="text"]::placeholder, #login > .loginForm > input[type="password"]::placeholder {
+  color: #a3a3a3;
+}
+
+#login > .loginForm > input[type="text"]:focus, #login > .loginForm > input[type="password"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+#login > .loginForm > input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: 17px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB896), to(#FE8B96));
+  background-image: linear-gradient(to right, #FFB896, #FE8B96);
+}
+
+#login > .loginForm > small {
+  color: #f00;
+  font-size: 18px;
+  text-align: center;
+}
+
+#noPermission {
+  width: 100%;
+  height: 100vh;
+  background-color: #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#noPermission > h2 {
+  color: #fff;
+  text-align: center;
+  margin: 5px 0;
+}
+
+#noPermission > p {
+  color: #f1f1f1;
+  text-align: center;
+  margin: 5px 0;
+}
+
+#noPermission > a {
+  color: #B8081C;
+  text-decoration: none;
+  margin: 5px 0;
 }
 /*# sourceMappingURL=cms.css.map */

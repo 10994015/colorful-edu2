@@ -1,4 +1,8 @@
-<?php require_once('../config/conn.php'); ?>
+<?php
+require_once('../config/conn.php');
+session_start();
+if(isset($_SESSION['username'])){
+ ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -13,6 +17,14 @@
 </head>
 <body>
     <?php include_once('./header.php');  ?>
-    
+    <main></main>
+
+
+<script src="../js/cms/header.js"></script>
+
 </body>
 </html>
+
+<?php }else{
+    header('Location:./noPermission.php');
+} ?>

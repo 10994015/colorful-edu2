@@ -1,4 +1,9 @@
-<?php require_once('../config/conn.php'); ?>
+<?php 
+require_once('../config/conn.php');
+session_start();
+
+if(isset($_SESSION['username'])){
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -15,8 +20,8 @@
     <?php include_once('./header.php');  ?>
     <main id="createArticle">
         <div class="title"><span class="icon"><i class="fa-solid fa-file-lines"></i></span>Create article</div>
-        <form action="./chk_createArticle.php" class="createArticleForm" method="POST">
-           <div class="formContent">
+        <form action="./chk_createArticle.php" class="createArticleForm" method="POST" enctype="multipart/form-data">
+        <div class="formContent">
             <div class="basic">
                     <h4>新增文章</h4>
                     <input type="file" name="imgsrc"  id="fileimgBtn">
@@ -45,11 +50,11 @@
                     </label>
                     <label for="">
                         <p>焦點文章</p>
-                        <input type="checkbox" name="isshow" >
+                        <input type="checkbox" name="focus">
                     </label>
                     <label for="">
                         <p>熱門文章</p>
-                        <input type="checkbox" name="isshow" checked>
+                        <input type="checkbox" name="hot" checked>
                     </label>
                     <label for="">
                         <p>選擇標籤</p>
@@ -59,32 +64,38 @@
                             <div class="group"><input type="checkbox" id="typeTrain" name="train"><label for="typeTrain"> <i class="fa-solid fa-check"></i>培訓</label></div>
                         </div>
                     </label>
+                    <input type="submit" value="發佈文章" id="createArticleBtn">
+                    
                 </div>
            </div>
-           <input type="submit" value="新增" id="createArticleBtn">
+           <input type="hidden" name="user" value="<?php echo $_SESSION['name'];  ?>">
         </form>
     </main>
 <script src="../shared/ckeditor4/ckeditor.js"></script>
 <script src="../js/cms/header.js"></script>
 
 <script>
-const fileimgBtn = document.getElementById('fileimgBtn');
-const fileText = document.getElementById('fileText');
-fileimgBtn.addEventListener('change',()=>{
-    if(fileimgBtn.value){
-        fileText.innerHTML = fileimgBtn.value;
-    }else{
-        fileText.innerHTML = "尚未選擇圖片";
-    }
-});
-
-CKEDITOR.replace('content',{
-        extraplugins:'filebrowser',
-        height:300,
-        width:'100%',
-        filebrowserUploadMethod:"form",
-        filebrowserUploadUrl:"./ckeditor_upload.php"
+    const fileimgBtn = document.getElementById('fileimgBtn');
+    const fileText = document.getElementById('fileText');
+    fileimgBtn.addEventListener('change',()=>{
+        if(fileimgBtn.value){
+            fileText.innerHTML = fileimgBtn.value;
+        }else{
+            fileText.innerHTML = "尚未選擇圖片";
+        }
     });
+
+    CKEDITOR.replace('content',{
+            extraplugins:'filebrowser',
+            height:300,
+            width:'100%',
+            filebrowserUploadMethod:"form",
+            filebrowserUploadUrl:"./ckeditor_upload.php"
+        });
 </script>
 </body>
 </html>
+
+<?php }else{
+    header('Location:./noPermission.php');
+} ?>

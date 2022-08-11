@@ -31,9 +31,9 @@ $last_row = $first_row + $max_rows - 1;
     <div class="newsConent">
         <div class="newsList">
             <h3>「幹您娘」的搜尋結果:共10筆</h3>
-            <div class="newsItem focusNews">
+            <div class="newsItem focusNews" >
                 <div class="imgBox">
-                    <img src="./images/004.png" alt="">
+                    <img src="./images/002.png" alt="">
                 </div>
                 <div class="text-content">
                         <div class="hashtags">
@@ -95,7 +95,7 @@ $last_row = $first_row + $max_rows - 1;
                             <img src="./images/003.png" alt="">
                         </div>
                         <div  class="text-content">
-                            <h3 class="news-title">機器人STEAM教室，全國機器人大賽等著你！</h3>
+                            <h3 class="news-title">機器人STEAM教室，全國機器人大賽等著你！機器人STEAM教室，全國機器人大賽等著你！機器人STEAM教室，全國機器人大賽等著你！</h3>
                             <span class="date"><i class="far fa-clock"></i> 2022/08/08</span>
                         </div>
                     </a>
