@@ -3,23 +3,7 @@ require_once('../config/conn.php');
 session_start();
 ini_set ( 'date.timezone' , 'Asia/Taipei' );  
 date_default_timezone_set('Asia/Taipei');
-// if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
 
-//     $isshow = (empty($_POST['isshow'])) ? '0' : '1';    
-//     $focus = (empty($_POST['focus'])) ? '0' : '1';    
-//     $hot = (empty($_POST['hot'])) ? '0' : '1';    
-//     $course = (empty($_POST['course'])) ? '0' : '1';    
-//     $daily = (empty($_POST['daily'])) ? '0' : '1';    
-//     $train = (empty($_POST['train'])) ? '0' : '1';    
-//     $dash = "--------------<br>";
-//     echo $isshow.$dash;
-//     echo $focus.$dash;
-//     echo $hot.$dash;
-//     echo $course.$dash;
-//     echo $daily.$dash;
-//     echo $train.$dash;
-  
-// }
 if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $rand = strval(rand(1000,1000000));
     

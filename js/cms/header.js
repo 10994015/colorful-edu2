@@ -6,11 +6,22 @@ const logotext  = document.getElementById('logotext');
 const nav = document.getElementById('nav');
 const navUser = document.getElementById('navUser');
 const newsListText = document.getElementsByClassName('newsListText');
-const newsItem = document.getElementsByClassName('newsItem');
 const mainDiv = document.querySelector('main');
 
 const fullScreen = document.getElementById('fullScreen');
 const docElm = document.documentElement;
+
+window.onload = ()=>{
+    const focusNav = document.getElementById('focusNav');
+    const newsItem = document.getElementById('headerNavList').getElementsByClassName('newsItem');
+    for(let i=0;i<newsItem.length;i++){
+        if(newsItem[i].innerText.trim() == focusNav.value){
+            newsItem[i].classList.add('focus');
+        }
+    }
+    
+}
+
 
 user.addEventListener('click',()=>{
     userUl.classList.toggle('open');

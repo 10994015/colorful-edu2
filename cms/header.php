@@ -31,8 +31,8 @@
             <p>Project Manager</p>
         </div>
     </a>
-    <div class="navList">
-        <a href="./" class="newsItem focus"><p class="newsListText">HOME</p><i class="fa-solid fa-house"></i></a>
+    <div class="navList" id="headerNavList">
+        <a href="./" class="newsItem"><p class="newsListText">HOME</p><i class="fa-solid fa-house"></i></a>
         <a href="./news.php" class="newsItem"><p class="newsListText">NEWS</p><i class="fa-solid fa-file-lines"></i></a>
     </div>
 </nav>

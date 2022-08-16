@@ -1,7 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-
+$focusNav = "NEWS";
 if(isset($_SESSION['username'])){
 ?>
 <!DOCTYPE html>
@@ -17,11 +17,12 @@ if(isset($_SESSION['username'])){
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 <body>
+<input type="hidden" value="<?php echo $focusNav; ?>" id="focusNav">
     <?php include_once('./header.php');  ?>
     <main id="createArticle">
         <div class="title"><span class="icon"><i class="fa-solid fa-file-lines"></i></span>Create article</div>
         <form action="./chk_createArticle.php" class="createArticleForm" method="POST" enctype="multipart/form-data">
-        <div class="formContent">
+            <div class="formContent">
             <div class="basic">
                     <h4>新增文章</h4>
                     <input type="file" name="imgsrc"  id="fileimgBtn">
@@ -32,7 +33,8 @@ if(isset($_SESSION['username'])){
                         </label>
                         <span id="fileText">尚未選擇圖片</span>
                     </label>
-                
+                    <!-- <img src="../images/004.png" class="previewImg"> -->
+                    <img src="" class="previewImg" id="previewImg">
                     <label for="">
                         <p>文章標題</p>
                         <input type="text" name="title" placeholder="文章標題...">
@@ -77,21 +79,31 @@ if(isset($_SESSION['username'])){
 <script>
     const fileimgBtn = document.getElementById('fileimgBtn');
     const fileText = document.getElementById('fileText');
+    const previewImg = document.getElementById('previewImg');
     fileimgBtn.addEventListener('change',()=>{
         if(fileimgBtn.value){
             fileText.innerHTML = fileimgBtn.value;
         }else{
             fileText.innerHTML = "尚未選擇圖片";
         }
+        const file = fileimgBtn.files[0];
+        const reader = new FileReader;
+        reader.onload = function(e) {
+            previewImg.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+
+
     });
 
     CKEDITOR.replace('content',{
-            extraplugins:'filebrowser',
-            height:300,
-            width:'100%',
-            filebrowserUploadMethod:"form",
-            filebrowserUploadUrl:"./ckeditor_upload.php"
-        });
+        extraplugins:'filebrowser',
+        height:300,
+        width:'100%',
+        filebrowserUploadMethod:"form",
+        filebrowserUploadUrl:"./ckeditor_upload.php"
+    });
+
 </script>
 </body>
 </html>

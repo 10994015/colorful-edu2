@@ -1,6 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
+$focusNav = "NEWS";
 try{
     $sql_str = "SELECT * FROM news ORDER BY id DESC";
     $RS_news = $conn -> query($sql_str);
@@ -24,6 +25,7 @@ if(isset($_SESSION['username'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 </head>
 <body>
+    <input type="hidden" value="<?php echo $focusNav; ?>" id="focusNav">
     <?php include_once('./header.php');  ?>
     <main id="news">
         <div class="title"><span class="icon"><i class="fa-solid fa-file-lines"></i></span>News</div>
@@ -46,7 +48,7 @@ if(isset($_SESSION['username'])){
                 <strong class="latest-update"><span><?php echo $item['lastdate']; ?></span></strong>
                 <strong class="user"><?php echo $item['user']; ?></strong>
                 <strong class="focus"><input type="hidden" class="focusId" value="<?php echo $item['id']; ?>"><input type="radio" name="focusBtn" class="focusBtn" <?php if($item['focus']=='1'){echo 'checked';} ?> /></strong>
-                <strong class="update"><a href="./update_news.php?id=<?php echo $item['id']; ?>">編輯</a></strong>
+                <strong class="update"><a href="./updateArticle.php?id=<?php echo $item['id']; ?>">編輯</a></strong>
                 <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)">刪除</a></strong>
             </div>
             <?php } ?>

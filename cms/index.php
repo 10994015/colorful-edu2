@@ -1,6 +1,7 @@
 <?php
 require_once('../config/conn.php');
 session_start();
+$focusNav = "HOME";
 if(isset($_SESSION['username'])){
  ?>
 <!DOCTYPE html>
@@ -16,6 +17,7 @@ if(isset($_SESSION['username'])){
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 <body>
+    <input type="hidden" value="<?php echo $focusNav; ?>" id="focusNav">
     <?php include_once('./header.php');  ?>
     <main></main>
 
