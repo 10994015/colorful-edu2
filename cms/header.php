@@ -15,12 +15,12 @@
             <div class="userUl" id="userUl">
                 <a href="javascript:;" class="activity"><i class="fa-solid fa-chart-line"></i>活動日誌</a>
                 <span class="line"></span>
-                <a href="./logout.php" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>登出</a>
+                <a href="javascript:;" class="logout" onclick="logoutFn()"><i class="fa-solid fa-arrow-right-from-bracket"></i>登出</a>
             </div>
         </div>
         <i class="fa-solid fa-expand" id="fullScreen"></i>
         <i class="fa-solid fa-bell" id="messages"></i>
-        <i class="fa-solid fa-arrow-right-from-bracket" id="logoutBtn" onclick="logoutFn()"></i>
+        <i class="fa-solid fa-arrow-right-from-bracket" id="logoutBtn" onclick="backFront()"></i>
     </div>
 </header>
 <nav id="nav">
@@ -37,7 +37,9 @@
     </div>
 </nav>
 <script>
-
+function backFront(){
+    window.location.href = "../";
+}
 function logoutFn(){
     let chk = confirm('確定要登出嗎?');
     if(chk){
