@@ -1,4 +1,31 @@
 
+<?php 
+try{
+    $sql_str = "SELECT * FROM news ORDER BY id DESC Limit 10";
+    $RS_news = $conn -> query($sql_str);
+    $RS_news2 = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM news WHERE focus =1 Limit 1";
+    $RS_focus_news = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM news ORDER BY id DESC Limit 4";
+    $RS_newList_last = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM news WHERE course=1 ORDER BY id DESC Limit 4";
+    $RS_newList_course = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM news WHERE daily=1 ORDER BY id DESC Limit 4";
+    $RS_newList_daily = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM news WHERE train=1 ORDER BY id DESC Limit 4";
+    $RS_newList_train = $conn -> query($sql_str);
+    // $total_RS_news = $RS_news -> rowCount();
+}catch(PDOException $e){
+    die('Error!:'.$e->getMessage());
+}
+
+?>
+
 <div id="index_content">
     <div class="responsive">
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
@@ -49,131 +76,133 @@
         <div class="newsContent">
             <div class="fristDiv">
                 <div class="leftList">
-                    <?php for($i=1;$i<=10;$i++){ ?>
-                    <div class="leftItem">
-                        <span class="numberBox"><?php echo $i; ?></span>
-                        <div class="text-content">
-                            <div class="hashtags">
-                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
-                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                    <?php foreach($RS_news as $i => $item){ ?>
+                        <div class="leftItem">
+                            <span class="numberBox"><?php echo $i+1; ?></span>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
-                            <a href="javascript:;" class="news-title">冰芬文教 祝您父親節快樂冰芬文教 祝您父親節快樂冰芬文教</a>
                         </div>
-                    </div>
                     <?php } ?>
-                    <?php for($i=1;$i<=10;$i++){ ?>
-                    <div class="leftItem">
-                        <span class="numberBox"><?php echo $i; ?></span>
-                        <div class="text-content">
-                            <div class="hashtags">
-                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
-                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                    <?php foreach($RS_news2 as $i => $item){ ?>
+                        <div class="leftItem">
+                            <span class="numberBox"><?php echo $i+1; ?></span>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
+                                    <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
-                            <a href="javascript:;" class="news-title">冰芬文教 祝您父親節快樂冰芬文教 祝您父親節快樂冰芬文教</a>
                         </div>
-                    </div>
                     <?php } ?>
+                    
                 </div>
-                <div class="centerList">
-                    <a href="javascript:;" class="imgBox">
-                        <img src="./images/004.png" class="backImg">
-                        <img src="./images/004.png" class="coverImg">
-                    </a>
-                    <div class="text-content">
-                        <div class="hashtags">
-                            <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
-                            <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
-                        </div>
-                        <a href="javascript:;" class="news-title">機器人STEAM教室，全國機器人大賽等著你！機器人STEAM教室，全國機器人大賽等著你！</a>
-                        <div class="otherText">
-                            <p class="date"> <i class="far fa-clock"></i> 2022/08/08</p>
-                            <a href="javascript:;" class="reading"> <span class="back"></span> <p>CONTINUE READING<i class="fas fa-arrow-right"></i></p> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="rightList">
-                <div class="typeList">
-                    <p class="newsTypeBtn focus">最新</p>
-                    <p class="newsTypeBtn">課程</p>
-                    <p class="newsTypeBtn">日常</p>
-                    <p class="newsTypeBtn">培訓</p>
-                </div>
-                <div class="newsList">
-                    <?php for($i=1;$i<=4;$i++){ ?>
-                    <div class="newsItem">
+                <?php foreach($RS_focus_news as $item){ ?>
+                    <div class="centerList">
                         <a href="javascript:;" class="imgBox">
-                            <img src="./images/001.png" class="coverImg">
+                            <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="backImg">
+                            <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                         </a>
                         <div class="text-content">
                             <div class="hashtags">
-                                <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
-                                <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                                <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                             </div>
-                            <a href="javascript:;" class="news-title">冰芬文教 科學實驗~自己動手做冰芬文教 科學實驗~自己動手做冰芬文教 科學實驗~自己動手做</a>
+                            <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            <div class="otherText">
+                                <p class="date"> <i class="far fa-clock"></i> <span class="tailoffDate"><?php echo $item['lastdate']; ?></span></p>
+                                <a href="?page=post&id=<?php echo $item['id']; ?>" class="reading"> <span class="back"></span> <p>CONTINUE READING<i class="fas fa-arrow-right"></i></p> </a>
+                            </div>
                         </div>
                     </div>
+                <?php } ?>
+            </div>
+            <div class="rightList">
+                <div class="typeList">
+                    <p class="newsTypeBtn focus" id="newTypeBtnLast">最新</p>
+                    <p class="newsTypeBtn" id="newTypeBtnCourse">課程</p>
+                    <p class="newsTypeBtn" id="newTypeBtnDaily">日常</p>
+                    <p class="newsTypeBtn" id="newTypeBtnTrain">培訓</p>
+                </div>
+                <div class="newsList" id="newsListLast">
+                    <?php foreach($RS_newList_last as $item){ ?>
+                        <div class="newsItem">
+                            <a href="javascript:;" class="imgBox">
+                                <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
+                            </a>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="newsList" id="newsListCourse" style="display:none">
+                    <?php foreach($RS_newList_course as $item){ ?>
+                        <div class="newsItem">
+                            <a href="javascript:;" class="imgBox">
+                                <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
+                            </a>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="newsList" id="newsListDaily" style="display:none">
+                    <?php foreach($RS_newList_daily as $item){ ?>
+                        <div class="newsItem">
+                            <a href="javascript:;" class="imgBox">
+                                <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
+                            </a>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="newsList" id="newsListTrain" style="display:none">
+                    <?php foreach($RS_newList_train as $item){ ?>
+                        <div class="newsItem">
+                            <a href="javascript:;" class="imgBox">
+                                <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
+                            </a>
+                            <div class="text-content">
+                                <div class="hashtags">
+                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                </div>
+                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            </div>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
         </div>
         <a href="./?page=news" class="seemore">SEE MORE</a>
     </div>
-    
-    <!-- <div class="newsColorBack">
-        <div class="news">
-            <div class="title">
-                <span class="line"></span>
-                <h2>NEWS</h2>
-                <span class="line"></span>
-            </div>
-            <p class="small-title"></p>
-            <div class="newsList">
-                <?php for($i=0;$i<=2;$i++){ ?>
-                <div class="newsItem">
-                    <div class="imgBox">
-                        <img src="./images/00<?php echo $i+1; ?>.png" class="backImg">
-                        <img src="./images/00<?php echo $i+1; ?>.png" class="coverImg">
-                    </div>
-                    <div class="text-content">
-                        <h3>現在的同學們都有這麼強的創意思考力嗎現在的同學們都有這麼強的創意思考力嗎現在的同學們都有這麼強的創意思考力嗎</h3>
-                        <p>冰芬文教祝全天下偉大的媽媽們
-                            母親節快樂 Happy Mother’s Day❤️❤️
-                            小編腦中出現這首歌，世上只有媽媽好，有媽的孩子像個寶😍
-
-                            另外昨日第一次進行分流的說明會圓滿落幕了
-                            冰芬也特別準備了康乃馨給媽咪們🥰
-                            希望都有收到我們的小小祝福💖
-
-                            康乃馨 Carnation 神聖之花
-                            花語：聖潔或慈愛之意，被視為對母親心存敬意！
-
-                            ‼️最後一場‼️課程體驗說明會
-                            5/21星期六 下午1:30
-                            歡迎大家來共襄盛舉🤩還可以參加抽獎喔🎁
-                            諮詢電話：03-567-0018
-                            ↓說明會報名連結↓
-                            https://forms.gle/9dpN9VtP3pRL4KdWA
-
-                            ================================
-
-                            📩歡迎臉書粉絲團私訊詢問
-                            📩電子信箱：service@ice-finland.pro
-                            📩官方line：@516ttumg
-                            📩冰芬官網：https://www.ice-finland.club</p>
-                        <a href="javascript:;"><div class="back"></div>Check it out Here »</a>
-                    </div>
-                </div>
-                <?php } ?>
-            </div>
-            <a href="./?page=news" class="seemore">SEE MORE</a>
-        </div>
-    </div> -->
-    
-
-
-    
-
     
 
     <div class="cooperate">
@@ -199,4 +228,3 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="./shared/slick-1.6.0/slick/slick.min.js"></script>
 <script src="./js/slick.js"></script>
-<script src="./js/script.js"></script>

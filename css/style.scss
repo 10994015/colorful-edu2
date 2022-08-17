@@ -753,6 +753,10 @@ div#toTop{
                         padding: 0 20px;
                         margin-bottom:10px;
                         transform: translateY(0);
+                        &:hover{
+                            background-color: rgba(0,0,0,.75);
+                            transition: .5s;
+                        }
                         >.numberBox{
                             min-width:30px;
                             height: 30px;
@@ -982,6 +986,9 @@ div#toTop{
                         height: 112px;
                         margin-top: 10px;
                         display: flex;
+                        &:hover>.text-content{
+                            background-color: #222;
+                        }
                         @media screen and (max-width:1250px){
                             width:100%;
                         }
@@ -1228,6 +1235,35 @@ div#toTop{
     @media screen and (max-width:700px){
         padding: 50px 15px;
     }
+    >#loading{
+        width:100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .75);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left:0;
+        z-index: 999999999999999999999999999999999;
+        &.open{
+            display: flex;
+        }
+        >i{
+            color:#fff;
+            font-size: 40px;
+            color:#fff;
+            animation: loading 1.5s linear infinite;
+            @keyframes loading {
+                0%{
+                    transform: rotate(0);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
     >.searchBox{
         display: none;
         @media screen and (max-width:1090px){
@@ -1306,7 +1342,7 @@ div#toTop{
             margin:25px 0;
             justify-content: space-around;
         }
-        >button{
+        >a{
             outline: none;
             border:none;
             cursor: pointer;
@@ -1318,6 +1354,8 @@ div#toTop{
             background-color: #ccc;
             color:#404040;
             transition: .5s;
+            text-align: center;
+            line-height: 50px;
 
             @media screen and (max-width:600px){
                margin-bottom: 15px;
@@ -1425,7 +1463,7 @@ div#toTop{
                             width:100%;
                         }
                     }
-                    >p.newsText{
+                    >div.newsText{
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
@@ -1577,7 +1615,7 @@ div#toTop{
                             width:100%;
                         }
                     }
-                    >p.newsText{
+                    >div.newsText{
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
@@ -1657,6 +1695,46 @@ div#toTop{
                             }
                         }
                     }
+                }
+            }
+            > #pager{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width:100%;
+                margin: 50px auto;
+                padding: 0 15px ;
+                >.center{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    list-style: none;
+                    >a{
+                        cursor: pointer;
+                        color:#111;
+                        width:35px;
+                        height: 35px;
+                        text-align: center;
+                        line-height: 35px;
+                       
+                        &.focus{
+                            font-size: 18px;
+                            font-weight: 600;
+                            color:#1685C5;
+                        }
+                        &:hover{
+                            background-color: rgba(22, 133, 197,.75);
+                            color:#fff;
+                        }
+                        >i{
+                            cursor: pointer;
+                        }
+                        >li{
+                            cursor: pointer;
+                           
+                        }
+                    }
+                   
                 }
             }
         }
@@ -1758,11 +1836,12 @@ div#toTop{
                     flex-direction: column;
                     overflow: hidden;
                     width:100%;
+                    padding: 5px 0;
                     >.newsItem{
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
-                        margin:10px 0;
+                        margin:15px 0;
                         @media screen and (max-width:414px){
                             flex-direction: column;
                         }
@@ -1824,8 +1903,16 @@ div#toTop{
                                 font-weight: 100;
                                 margin-top: 6px;
                                 color:#666;
+                                display: flex;
+                                align-items: center;
                                 @media screen and (max-width:414px){
                                     font-size: 18px;
+                                }
+                                >i{
+                                    margin-right: 4px;
+                                }
+                                >small{
+                                    font-size: 14px;
                                 }
                             }
                         }
@@ -1835,46 +1922,7 @@ div#toTop{
             
         }
     }
-    > .page{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width:60%;
-        margin: 50px auto;
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        >.center{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-            >a{
-                cursor: pointer;
-                color:#111;
-                width:35px;
-                height: 35px;
-                text-align: center;
-                line-height: 35px;
-               
-                &.focus{
-                    font-size: 18px;
-                    font-weight: 600;
-                    color:#1484c4;
-                }
-                &:hover{
-                    background-color: #666;
-                    color:#fff;
-                }
-                >i{
-                    cursor: pointer;
-                }
-                >li{
-                    cursor: pointer;
-                   
-                }
-            }
-           
-        }
-    }
+    
 }
 footer#footer{
     background-color: #001632;
