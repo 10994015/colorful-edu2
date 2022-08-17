@@ -4,54 +4,7 @@
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
     </div>
-    <!-- <div class="courseColorBack">
-        <div class="course">
-            <div class="title">
-                <span class="line"></span>
-                <h2>COURSE</h2>
-                <span class="line"></span>
-            </div>
-            <p class="small-title">Most Interesting Popular Courses & Upcoming Courses & Current Courses</p>
-            <div class="courseList">
-                <div class="courseItem">
-                    <div class="imgBox">
-                        <img src="./images/a.jpg" class="coverImg">
-                        <img src="./images/a.jpg" class="backImg">
-                        <div class="titleView">
-                            <h3>常態課程(Normal course)</h3>
-                            <a href="javascript:;">View</a>
-                        </div>
-                    </div>
-
-                     <h3>Bingfen Culture and Education Science Experiment ~ Do it yourself</h3>
-                    <h3>常態課程(Normal course)</h3>
-                </div>
-                <div class="courseItem">
-                <div class="imgBox">
-                    <img src="./images/b.jpg" class="coverImg">
-                    <img src="./images/b.jpg" class="backImg">
-                    <div class="titleView">
-                        <h3>特色課程(Featured Programs)</h3>
-                        <a href="javascript:;">View</a>
-                    </div>
-                </div>
-                    <h3>特色課程(Featured Programs)</h3>
-                </div>
-                <div class="courseItem">
-                    <div class="imgBox">
-                        <img src="./images/c.jpg" class="coverImg">
-                        <img src="./images/c.jpg" class="backImg">
-                        <div class="titleView">
-                            <h3>師培課程(Teacher training course)</h3>
-                            <a href="javascript:;">View</a>
-                        </div>
-                    </div>
-                    <h3>師培課程(Teacher training course)</h3>
-                </div>
-            </div>
-            <a href="./?page=course" class="seemore">SEE MORE</a>
-        </div>
-    </div> -->
+  
     <div class="course">
         <div class="title">
             <span class="line"></span>
