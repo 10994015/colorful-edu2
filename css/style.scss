@@ -1703,12 +1703,18 @@ div#toTop{
                 align-items: center;
                 width:100%;
                 margin: 50px auto;
-                padding: 0 15px ;
+                padding: 0 5px ;
+                @media screen and (max-width:476px){
+                    flex-direction: column;
+                }
                 >.center{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     list-style: none;
+                    @media screen and (max-width:476px){
+                        margin:20px 0;
+                    }
                     >a{
                         cursor: pointer;
                         color:#111;
@@ -1716,7 +1722,6 @@ div#toTop{
                         height: 35px;
                         text-align: center;
                         line-height: 35px;
-                       
                         &.focus{
                             font-size: 18px;
                             font-weight: 600;
@@ -1923,6 +1928,160 @@ div#toTop{
         }
     }
     
+}
+#post{
+    width:100%;
+    padding: 0 150px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (max-width:1400px){
+        padding: 0 60px;
+    }
+    @media screen and (max-width:1090px){
+        padding: 0 20px;
+    }
+    @media screen and (max-width:700px){
+        padding: 0 0;
+    }
+    >.postContent{
+        width:100%;
+        max-width:1100px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 50px 50px;
+        @media screen and (max-width:1090px){
+            width:100%;
+        }
+        >h3{
+            font-size: 32px;
+        }
+        >.date{
+            color:#666;
+            margin:15px 0;
+            display: flex;
+            align-items: center;
+            >i{
+                margin-right:6px;
+            }
+        }
+        >img{
+            width:100%;
+            display: block;
+            margin:0 auto;
+        }
+        >div.content{
+            margin:20px 0;
+            font-size: 1.2em;
+        }
+        >a.comeback{
+            display: block;
+            width:60px;
+            height: 50px;
+            text-align: center;
+            line-height: 52px;
+            font-size: 18px;
+            color:#111;
+            margin:0 auto;
+            background-color: rgb(255, 208, 0);
+            &:hover{
+                transition:.5s;
+                background-color: #EEC71C;
+            }
+            >i{
+                margin-right: 3px;
+            }
+        }
+    }
+    >.sidebar{
+        width:100%;
+        max-width: 1100px;
+        background-color: transparent;
+        padding: 50px 0;
+        >h4.title{
+            font-size: 28px;
+            font-weight: 300;
+            position: relative;
+            &::before{
+                content:"";
+                position: absolute;
+                bottom: -10px;
+                left:0;
+                width:100px;
+                height: 3px;
+                border-radius:8px;
+                background-color: #FFD000;
+            }
+        }
+        >.newsList{
+            display: grid;
+            width:100%;
+            grid-template-columns: repeat(4 ,calc(25% - 6px));
+            grid-column-gap: 3px;
+            justify-content: space-between;
+            margin-top: 30px;
+            @media screen and (max-width:950px){
+                grid-row-gap: 25px;
+                padding: 0 10px;
+                grid-template-columns: repeat(2 ,calc(50% - 6px));
+            }
+            @media screen and (max-width:450px){
+                grid-template-columns: repeat(1 ,calc(100% - 6px));
+            }
+            >.newsItem{
+                display: flex;
+                flex-direction: column;
+                width:100%;
+                background-color: #fff;
+                padding-bottom: 20px;
+                text-decoration: none;
+                >img{
+                    width:100%;
+                    height: 180px;
+                    object-fit: cover;
+                }
+                >.hashtags{
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px;
+                    >a{
+                        font-size: 17px;
+                        margin:5px 3px 5px 0;
+                    }
+                }
+                >h5{
+                    font-size: 19px;
+                    font-weight: 600;
+                    padding: 0 10px;
+                }
+                .date{
+                    margin:10px 0;
+                    font-size: 14px;
+                    color:#666;
+                    padding: 0 10px;
+                }
+                >a.seemore{
+                    display: block;
+                    margin:15px auto 0; 
+                    width:200px;
+                    height: 42px;
+                    text-align: center;
+                    line-height: 42px;
+                    color:#001632;
+                    background-color: transparent;
+                    border:1px #001632 solid;
+                    margin-top: auto;
+                    &:hover{
+                        background-color: #001632;
+                        transition:.5s;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
 }
 footer#footer{
     background-color: #001632;
