@@ -81,11 +81,11 @@ try{
                             <span class="numberBox"><?php echo $i+1; ?></span>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -94,10 +94,11 @@ try{
                             <span class="numberBox"><?php echo $i+1; ?></span>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a>
-                                    <a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -105,17 +106,17 @@ try{
                 </div>
                 <?php foreach($RS_focus_news as $item){ ?>
                     <div class="centerList">
-                        <a href="javascript:;" class="imgBox">
+                        <a href="./?page=post&id=<?php echo $item['id']; ?>" class="imgBox">
                             <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="backImg">
                             <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                         </a>
                         <div class="text-content">
                             <div class="hashtags">
-                                <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                <?php if($item['course']==1){ ?><a href="./?page=news&tag=course"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                             </div>
-                            <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                            <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             <div class="otherText">
                                 <p class="date"> <i class="far fa-clock"></i> <span class="tailoffDate"><?php echo $item['lastdate']; ?></span></p>
                                 <a href="?page=post&id=<?php echo $item['id']; ?>" class="reading"> <span class="back"></span> <p>CONTINUE READING<i class="fas fa-arrow-right"></i></p> </a>
@@ -134,16 +135,16 @@ try{
                 <div class="newsList" id="newsListLast">
                     <?php foreach($RS_newList_last as $item){ ?>
                         <div class="newsItem">
-                            <a href="javascript:;" class="imgBox">
+                            <a href="./?page=post&id=<?php echo $item['id']; ?>" class="imgBox">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                             </a>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -151,16 +152,16 @@ try{
                 <div class="newsList" id="newsListCourse" style="display:none">
                     <?php foreach($RS_newList_course as $item){ ?>
                         <div class="newsItem">
-                            <a href="javascript:;" class="imgBox">
+                            <a href="./?page=post&id=<?php echo $item['id']; ?>" class="imgBox">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                             </a>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -168,16 +169,16 @@ try{
                 <div class="newsList" id="newsListDaily" style="display:none">
                     <?php foreach($RS_newList_daily as $item){ ?>
                         <div class="newsItem">
-                            <a href="javascript:;" class="imgBox">
+                            <a href="./?page=post&id=<?php echo $item['id']; ?>" class="imgBox">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                             </a>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -185,16 +186,16 @@ try{
                 <div class="newsList" id="newsListTrain" style="display:none">
                     <?php foreach($RS_newList_train as $item){ ?>
                         <div class="newsItem">
-                            <a href="javascript:;" class="imgBox">
+                            <a href="./?page=post&id=<?php echo $item['id']; ?>" class="imgBox">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" class="coverImg">
                             </a>
                             <div class="text-content">
                                 <div class="hashtags">
-                                    <?php if($item['course']==1){ ?><a href="javascript:;"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
-                                    <?php if($item['daily']==1){ ?><a href="javascript:;"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
-                                    <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
+                                    <?php if($item['course']==1){ ?><a href="./?page=news&tag=course ?>"><i class="tag" style="color:#1484c4">#課程</i></a> <?php }?>
+                                    <?php if($item['daily']==1){ ?><a href="./?page=news&tag=daily"><i class="tag" style="color:#FF5722">#日常</i></a><?php }?>
+                                    <?php if($item['train']==1){ ?><a href="./?page=news&tag=train"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                 </div>
-                                <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
+                                <a href="./?page=post&id=<?php echo $item['id']; ?>" class="news-title"><?php echo $item['title']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
