@@ -37,14 +37,14 @@
     <div class="contact">
         <form action="./ref/send.php" method="post">
             <h2>有什麼話想說?</h2>
-            <span>你的全名</span>
-            <input type="text" required name="name">
-            <span>你的電子郵件</span>
-            <input type="email" required name="email">
+            <span>姓名</span>
+            <input type="text" required name="name" placeholder="姓名">
+            <span>電子郵件</span>
+            <input type="email" required name="email" placeholder="email">
             <span>主旨</span>
-            <input type="text" required name="title">
-            <span>你的訊息(選填)</span>
-            <textarea name="content" id="" cols="30" rows="10" placeholder="報名課程、場地租借、進行培育..."></textarea>
+            <input type="text" required name="title" placeholder="主旨">
+            <span>內容</span>
+            <textarea name="content" id="" cols="30" rows="10" placeholder="想詢問的內容..."."></textarea>
             <button type="submit">送出</button>
         </form>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.386173646672!2d121.01740541483659!3d24.78222678409088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468363ae7276ba5%3A0x4e22c2db67d6fe92!2zMzAw5paw56u55biC5p2x5Y2A5YWJ5b6p6Lev5LiA5q61Mjcx6JmfM-aokw!5e0!3m2!1szh-TW!2stw!4v1645111991019!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

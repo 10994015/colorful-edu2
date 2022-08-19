@@ -2719,6 +2719,8 @@ div#toTop > i {
 #about > .box .item > h2 {
   font-size: 20px;
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 #about > .box .item > p {
@@ -2730,12 +2732,13 @@ div#toTop > i {
 #about > .box .item > span {
   width: 130px;
   height: 40px;
-  background-color: #1B4F7D;
-  color: #fff;
+  border: 1px #333 solid;
+  background-color: transparent;
+  color: #1B4F7D;
+  color: #333;
   text-align: center;
   line-height: 40px;
   font-weight: 600;
-  font-family: "微軟正黑體";
   font-size: 16px;
 }
 
@@ -2794,11 +2797,13 @@ div#toTop > i {
   text-align: center;
   color: #333;
   font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 #about > .contact > form > span {
   font-weight: 600;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   font-size: 18px;
 }
 
@@ -2809,8 +2814,8 @@ div#toTop > i {
   height: 40px;
   border-radius: 8px;
   margin-bottom: 20px;
-  padding: 0 10px;
-  font-size: 18px;
+  padding: 0 15px;
+  font-size: 16px;
   font-family: "微軟正黑體";
   -webkit-box-shadow: 0 5px 25px #f4f4f4;
           box-shadow: 0 5px 25px #f4f4f4;
@@ -2912,6 +2917,8 @@ footer#footer .contact .contactus {
 footer#footer .contact .contactus p {
   margin: 3px 0;
   color: #e7f2f4;
+  width: 100%;
+  max-width: 300px;
 }
 
 footer#footer .contact .about {
