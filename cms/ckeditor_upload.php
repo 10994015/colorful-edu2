@@ -12,7 +12,7 @@ if(isset($_FILES['upload']['name']))
  echo $file;
  if(in_array($extension, $allowed_extension))
  {
-  move_uploaded_file($file, './upload/' . $new_image_name);
+  move_uploaded_file($file, '../ckeditor_upload/' . $new_image_name);
   copy('./upload/' . $new_image_name, '../upload/'. $new_image_name);
   $function_number = $_GET['CKEditorFuncNum'];
   $url = './upload/' . $new_image_name;
