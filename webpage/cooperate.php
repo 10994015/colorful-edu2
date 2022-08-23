@@ -1,11 +1,11 @@
 <?php 
- $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC Limit 10";
+ $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
  $cooperate_img = $conn -> query($sql_str);
 
- $sql_str = "SELECT * FROM store_img ORDER BY id DESC Limit 10";
+ $sql_str = "SELECT * FROM store_img ORDER BY id DESC";
  $store_img = $conn -> query($sql_str);
 
- $sql_str = "SELECT * FROM store_text ORDER BY id DESC Limit 10";
+ $sql_str = "SELECT * FROM store_text ORDER BY id DESC";
  $store_text = $conn -> query($sql_str);
 
 ?>
@@ -25,7 +25,7 @@
         <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
         <div class="cooperateList">
             <?php foreach($cooperate_img as $item){ ?>
-                <a href="javascript:;"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>" alt=""></a>
+                <a href="<?php echo $item['url']; ?>"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>" alt=""></a>
             <?php }?>
         </div>
     </div>

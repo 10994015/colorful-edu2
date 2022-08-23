@@ -21,8 +21,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
   $imgsrc = $rand.$file_name;
 
  
-  $sql_str = "INSERT INTO news (imgsrc,user,lastdate,url) VALUES
-                               (:imgsrc,:user,:lastdate,:url)";
+  $sql_str = "INSERT INTO cooperate_img (imgsrc,user,lastdate,url) VALUES (:imgsrc,:user,:lastdate,:url)";
   $stmt = $conn -> prepare($sql_str);
   
   $stmt -> bindParam(':lastdate' ,$lastdate);

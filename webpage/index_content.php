@@ -219,7 +219,7 @@ try{
         <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
         <div class="cooperateList">
             <?php foreach($RS_cooperate as $item){ ?>
-                <a href="javascript:;"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>"></a>
+                <a href="<?php echo $item['url']; ?>"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>"></a>
             <?php } ?>
             <!-- <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
             <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
