@@ -160,9 +160,9 @@ $RS_train = $conn -> query($sql_str);
         <div class="sidebar">
             <div class="searchBox">
                 <div class="keyword">
-                    <a href="javascript:;" class="searchText course">#課程</a>
-                    <a href="javascript:;" class="searchText daily">#日常</a>
-                    <a href="javascript:;" class="searchText train">#培訓</a>
+                    <a href="./?page=news&tag=couese" class="searchText course">#課程</a>
+                    <a href="./?page=news&tag=daily" class="searchText daily">#日常</a>
+                    <a href="./?page=news&tag=train" class="searchText train">#培訓</a>
                 </div>
                 <label for="">
                     <input type="text" id="searchBar" placeholder="Search...">
@@ -174,7 +174,7 @@ $RS_train = $conn -> query($sql_str);
                 <h4>熱門訊息</h4>
                 <div class="newsCarousel">
                     <?php foreach($RS_hot as $item){ ?>
-                        <a href="javascript:;" class="newsItem">
+                        <a href="./?page=post&id=<?php echo $item['id']; ?>" class="newsItem">
                             <div class="imgBox hot">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>">
                             </div>
@@ -190,7 +190,7 @@ $RS_train = $conn -> query($sql_str);
                 <h4>課程</h4>
                 <div class="newsCarousel">
                     <?php foreach($RS_course as $item){ ?>
-                    <a href="javascript:;" class="newsItem">
+                    <a href="./?page=post&id=<?php echo $item['id']; ?>" class="newsItem">
                         <div class="imgBox course">
                             <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" alt="">
                         </div>
@@ -206,7 +206,7 @@ $RS_train = $conn -> query($sql_str);
                 <h4>日常</h4>
                 <div class="newsCarousel">
                     <?php foreach($RS_daily as $item){ ?>
-                        <a href="javascript:;" class="newsItem">
+                        <a href="./?page=post&id=<?php echo $item['id']; ?>" class="newsItem">
                             <div class="imgBox daily">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" alt="">
                             </div>
@@ -222,7 +222,7 @@ $RS_train = $conn -> query($sql_str);
                 <h4>培訓</h4>
                 <div class="newsCarousel">
                     <?php foreach($RS_train as $item){ ?>
-                        <a href="javascript:;" class="newsItem">
+                        <a href="./?page=post&id=<?php echo $item['id']; ?>" class="newsItem">
                             <div class="imgBox train">
                                 <img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" alt="">
                             </div>
