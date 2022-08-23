@@ -228,11 +228,15 @@ div#toTop{
             align-items: center;
             flex-wrap: wrap;
             margin:20px 0;
+            width:100%;
+            max-width: 1000px;
             >a{
                 width:180px;
+                height: 180px;
                 margin:15px 30px;
                 >img{
                     width:100%;
+                    height: 100%;
                     object-fit: contain;
                 }
             }
@@ -1180,6 +1184,9 @@ div#toTop{
                 >.text-content{
                     width:350px;
                     padding: 0 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
                     @media screen and (max-width:1250px){
                         width:100%;
                     }
@@ -1218,12 +1225,11 @@ div#toTop{
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
-                        -webkit-line-clamp: 2;
+                        -webkit-line-clamp: 3;
                         -webkit-box-orient: vertical;
                         width:350px;
                         color:#999;
                         font-size: 18px;
-                        margin-bottom: 30px;
                         @media screen and (max-width:600px){
                             width:100%;
                         }
@@ -1232,8 +1238,9 @@ div#toTop{
                         display: flex;
                         align-items: center;
                         font-size: 14px;
-                        justify-content: space-between;
                         padding: 3px;
+                        margin-top: auto;
+                        margin-bottom:25px;
                         @media screen and (max-width:1250px){
                             justify-content: space-between;
                         }
@@ -1940,9 +1947,10 @@ div#toTop{
     }
     >.cooperateContent{
         width:100%;
-        margin:100px auto;
-        max-width: 1000px;
-        border-bottom: 1px #ccc solid;
+        padding: 60px 0;
+        &.storeContent{
+            background-color: #f9f9f9;
+        }
         >.title{
             display: flex;
             justify-content: center;
@@ -1986,11 +1994,16 @@ div#toTop{
             align-items: center;
             flex-wrap: wrap;
             margin:20px 0;
+            width:100%;
+            max-width: 1000px;
+            margin:20px auto;
             >a{
                 width:180px;
+                height: 180px;
                 margin:15px 30px;
                 >img{
                     width:100%;
+                    height: 100%;
                     object-fit: contain;
                 }
             }
@@ -2000,7 +2013,6 @@ div#toTop{
         width:100%;
         max-width: 800px;
         margin:0 auto;
-        padding:10px 0;
         margin-top: 50px;
         @media screen and (max-width:800px){
             width:95%;
@@ -2033,7 +2045,7 @@ div#toTop{
         width:100%;
         max-width: 800px;
         height: 360px;
-        margin:10px auto 50px;
+        margin:15px auto 100px;
         border:1px #ccc solid;
         overflow-y:scroll ;
         &::-webkit-scrollbar {

@@ -5,57 +5,77 @@ session_start();
 ini_set ( 'date.timezone' , 'Asia/Taipei' );  
 date_default_timezone_set('Asia/Taipei');
 //1.判斷接收到上傳檔案 => 通過 $_FILES 檔案上傳變數接收上傳檔案信息 ======================
-if (isset($_FILES['upload_file'])) {
-    $files = $_FILES['upload_file'];
-    $user = $_SESSION['name'];
-    $lastdate = date("Y-m-d H:i:s");
+if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
+  $rand = strval(rand(1000,1000000));
+  
+  $url = $_POST['url'];
+  $user = $_SESSION['name'];  
+  $lastdate = date("Y-m-d H:i:s");
+  
+  $file      = $_FILES['imgsrc'];       //上傳檔案信息
+  $file_name = $file['name'];                //上傳檔案的原來檔案名稱
+  $file_type = $file['type'];                //上傳檔案的類型(副檔名)
+  $tmp_name  = $file['tmp_name'];            //上傳到暫存空間的路徑/檔名
+  $file_size = $file['size'];                //上傳檔案的檔案大小(容量)
+  $error     = $file['error'];   
+  $imgsrc = $rand.$file_name;
 
-      foreach( $files as $file ){
-          $i = 0;  //新陣列的索引編號
-          foreach( $file as $key => $val ){
-              $new_array[$i]['name']     = $files['name'][$key];
-              $new_array[$i]['type']     = $files['type'][$key];
-              $new_array[$i]['tmp_name'] = $files['tmp_name'][$key];
-              $new_array[$i]['error']    = $files['error'][$key];
-              $new_array[$i]['size']     = $files['size'][$key];
-              $i++;
-              } //foreach 第2層 end
-          } //foreach 第1層 end
-        //   print_r( $new_array );
-        //   echo '<hr><br><br><br>';
-          //檔案限制條件
-      $max_size  = 4096*4096;                     //設定允許上傳檔案容量的最大值(1M)
-      $allow_ext = array('jpeg', 'jpg', 'png','JPG','JPEG','PNG','GIF');   //設定允許上傳檔案的類型
-      $path      = '../images/cooperate/';
-      if (!file_exists($path)) { mkdir($path); }
-      include('./fn_upload_chk.php');
-      include('./fn_thumbnail.php');
-      $msg_result = '';  //負責接收所有檔案檢測後的回傳訊息
-      
-      //依新陣列的檔案資訊逐項進行限制檢查
-      foreach( $new_array as $key => $file ){
-      $randNum = rand(1000,10000000);
-      $file_name = $randNum.$file['name'];
-      $msg = upload_chk( $file,$path, $max_size, $allow_ext,  $file_name );
-      if($msg==1){ 
-          $msg = '檔案傳送成功！';
-          $sql_str = "INSERT INTO cooperate_img (imgsrc,user,lastdate) VALUES (:imgname,:user,:lastdate)";
-          $stmt = $conn -> prepare($sql_str);
-          $stmt -> bindParam(':imgname' ,$file_name);
-          $stmt -> bindParam(':user' ,$user);
-          $stmt -> bindParam(':lastdate' ,$lastdate);
-          $stmt ->execute();
-       }
-      $msg_result .= '第' . ($key+1) . '個上傳檔案的結果：' . $msg . '<br/>';
-      $src_name = $path.$file['name'];
-      if( file_exists($src_name) ){
-          $extname  = pathinfo($src_name, PATHINFO_EXTENSION);  //副檔名部份
-          $basename = basename($src_name, '.'.$extname);        //主檔名部份
-      }
-      }
-      
-    //   echo $msg_result;
-      echo "<script>alert('上傳成功!');window.location.href = 'cooperateImg.php?upload=ok' </script>";
-      }
+ 
+  $sql_str = "INSERT INTO news (imgsrc,user,lastdate,url) VALUES
+                               (:imgsrc,:user,:lastdate,:url)";
+  $stmt = $conn -> prepare($sql_str);
+  
+  $stmt -> bindParam(':lastdate' ,$lastdate);
+  $stmt -> bindParam(':imgsrc' ,$imgsrc);
+  $stmt -> bindParam(':url' ,$url);
+  $stmt -> bindParam(':user' ,$user);
+  $stmt ->execute();
+
+
+  $allow_ext = array('jpeg', 'jpg', 'png', 'gif','JPG','JPEG','PNG','GIF');
+  //設定上傳位置
+  $path = '../images/cooperate/';
+  if (!file_exists($path)) { mkdir($path); }
+  // $path2 = '../images/img_upload2/';
+  // if (!file_exists($path2)) { mkdir($path2); }
+ 
+  //2.判斷上傳沒有錯誤時 => 檢查限制的條件 =============================================
+  if ($error == 0) {
+  $ext = pathinfo($file_name, PATHINFO_EXTENSION);
+  //in_array($ext, $allow_ext) 判斷 $ext變數的值 是否在 $allow_ext 這個陣列變數中
+  if (!in_array($ext, $allow_ext)) {
+      exit('檔案類型不符合，請選擇 jpeg, jpg, png, gif 檔案');
+  }
+    //搬移檔案
+    $result = move_uploaded_file($tmp_name, $path.$file_name);
+    // echo '<br>---------檔案傳送' . $result;
+  
+    if (file_exists($path.$file_name)) {
+      //拷貝檔案
+      $result = copy($path.$file_name, $path.$rand.$file_name);
+      // echo '<br>---------檔案拷貝' . $result;
+      //刪除檔案
+      $result = unlink($path.$file_name);
+      // echo '<br>---------檔案刪除' . $result;
+    }
+    // header('Location:newsCreate.php');
+    echo "<script>alert('上傳成功!');window.location.href = ./cooperateImg.php' </script>";
+ 
+  } else {
+    //這裡表示上傳有錯誤, 匹配錯誤編號顯示對應的訊息
+    switch ($error) {
+      case 1:  echo '上傳檔案超過 upload_max_filesize 容量最大值';  break;
+      case 2:  echo '上傳檔案超過 post_max_size 總容量最大值';  break;
+      case 3:  echo '檔案只有部份被上傳';  break;
+      case 4:  echo '沒有檔案被上傳';  break;
+      case 6:  echo '找不到主機端暫存檔案的目錄位置';  break;
+      case 7:  echo '檔案寫入失敗';  break;
+      case 8:  echo '上傳檔案被PHP程式中斷，表示主機端系統錯誤';  break;
+    }
+  }
+  
+  echo "<script>alert('新增成功!');window.location.href = './cooperateImg.php' </script>";
+}
+
 
 ?>

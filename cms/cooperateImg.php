@@ -36,9 +36,11 @@ if(isset($_SESSION['username'])){
                 <?php foreach($RS_img as $item){ ?>
                 <div class="cooperateItem">
                     <img src="../images/cooperate/<?php echo $item['imgsrc']; ?>">
+                    <p>連結:<br><span><?php echo $item['url']; ?></span></p>
                     <p>編輯者:<?php echo $item['user']; ?></p>
-                    <p>上傳時間:<br><span><?php echo $item['lastdate']; ?></span></p>
+                    <p>上次修改時間:<br><span><?php echo $item['lastdate']; ?></span></p>
                     <div class="btnBox">
+                        <a href="javascript:;" class="update" onclick="updateFn(<?php echo $item['id']; ?>, '<?php echo $item['url']; ?>')" >修改連結</a>
                         <a href="javascript:;" class="delete" onclick="deleteFn(<?php echo $item['id']; ?>)" >刪除</a>
                     </div>
                 </div>
@@ -52,13 +54,27 @@ if(isset($_SESSION['username'])){
             <div class="module">
                 <div class="header">
                     <p>新增圖片</p>
-                    <i class="fas fa-times" id="closeModule"></i>
+                    <i class="fas fa-times" id="closeCreateModule"></i>
                 </div>
                 <form name="uploadForm" enctype="multipart/form-data" method="POST" action="chk_cooperateImg.php">
-                    <input type="file" name="upload_file[]" multiple hidden="hidden" id="fileimgBtn">
+                    <input type="file" name="imgsrc"  hidden="hidden" id="fileimgBtn">
                     <label for="fileimgBtn" class="chooseFile"><i class="fa-solid fa-image"></i>選擇封面照</label>
                     <span id="fileText">尚未選擇圖片</span>
+                    <input type="text" placeholder="連結..." name="url" class="url">
                     <input type="submit" value="確定上傳">
+                </form>
+            </div>
+        </div>
+        <div id="updateModule">
+            <div class="module">
+                <div class="header">
+                    <p>編輯</p>
+                    <i class="fas fa-times" id="closeUpdateModule"></i>
+                </div>
+                <form name="uploadForm" method="POST" action="update_cooperateImg.php">
+                    <input type="text" placeholder="連結..." name="url" class="url" id="updateUrl">
+                    <input type="hidden" name="id" value="" id="updateId">
+                    <input type="submit" value="編輯">
                 </form>
             </div>
         </div>
@@ -70,7 +86,12 @@ if(isset($_SESSION['username'])){
         const fileText = document.getElementById('fileText');
         const createCooperateBtn = document.getElementById('createCooperateBtn');
         const createModule = document.getElementById('createModule');
-        const closeModule = document.getElementById('closeModule');
+        const closeCreateModule = document.getElementById('closeCreateModule');
+        const updateUrl = document.getElementById('updateUrl');
+        const updateId = document.getElementById('updateId');
+        const closeUpdateModule = document.getElementById('closeUpdateModule');
+        const updateModule = document.getElementById('updateModule');
+        
         fileimgBtn.addEventListener('change',()=>{
             if(fileimgBtn.value){
                 fileText.innerHTML = fileimgBtn.value;
@@ -81,7 +102,7 @@ if(isset($_SESSION['username'])){
         createCooperateBtn.addEventListener('click',()=>{
             createModule.style.display = "flex";
         });
-        closeModule.addEventListener('click',()=>{
+        closeCreateModule.addEventListener('click',()=>{
             createModule.style.display = "none";
         });
         function deleteFn(id){
@@ -90,6 +111,16 @@ if(isset($_SESSION['username'])){
                 window.location.href = `./delete_cooperateImg.php?id=${id}`;
                 return;
             }
+        }
+        closeUpdateModule.addEventListener('click',()=>{
+            updateModule.style.display = "none";
+            updateUrl.value = "";
+            updateId.value = "";
+        })
+        function updateFn(id, url){
+            updateModule.style.display = "flex";
+            updateUrl.value = url;
+            updateId.value = id;
         }
     </script>
 </body>

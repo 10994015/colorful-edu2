@@ -36,14 +36,17 @@ if(isset($_SESSION['username'])){
                 <strong class="name">廠商名稱</strong>
                 <strong class="user">上傳者</strong>
                 <strong class="date">上傳時間</strong>
-                <strong class="delete">刪除</strong>
+                <strong class="delete">編輯或刪除</strong>
             </div>
             <?php foreach($RS_text as $item){ ?>
             <div class="storeItem">
                 <strong class="name"><span><?php echo $item['name']; ?></span></strong>
                 <strong class="user"><span><?php echo $item['user']; ?></span></strong>
                 <strong class="date"><span><?php echo $item['lastdate']; ?></span></strong>
-                <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['name']; ?>)" class="delete">刪除</a></strong>
+                <strong class="delete">
+                    <a href="javascript:;" onclick="updateFn(<?php echo $item['id']; ?>,'<?php echo $item['name']; ?>')" class="update">編輯</a>
+                    <a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)" class="delete">刪除</a>
+                </strong>
             </div>
             <?php } ?>
         </div>

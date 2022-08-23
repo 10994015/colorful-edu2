@@ -1,3 +1,15 @@
+<?php 
+ $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC Limit 10";
+ $cooperate_img = $conn -> query($sql_str);
+
+ $sql_str = "SELECT * FROM store_img ORDER BY id DESC Limit 10";
+ $store_img = $conn -> query($sql_str);
+
+ $sql_str = "SELECT * FROM store_text ORDER BY id DESC Limit 10";
+ $store_text = $conn -> query($sql_str);
+
+?>
+
 <div id="cooperate">
     <div class="coverBox">
         <img src="./images/0002.jpg" class="coverImg">
@@ -12,32 +24,23 @@
         </div>
         <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
         <div class="cooperateList">
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
-            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
+            <?php foreach($cooperate_img as $item){ ?>
+                <a href="javascript:;"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>" alt=""></a>
+            <?php }?>
         </div>
     </div>
-    <div class="cooperateContent">
+    <div class="cooperateContent storeContent">
         <div class="title">
             <span class="line"></span>
-            <h2>企業特約</h2>
+            <h2>特約廠商</h2>
             <span class="line"></span>
             <div class="cooperate"></div>
         </div>
-        <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
+        <p class="small-title">Cooperating with Colorful Culture and Education</p>
         <div class="cooperateList">
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
-            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
-            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
-            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
-            <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
+        <?php foreach($store_img as $item){ ?>
+            <a href="javascript:;"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>" alt=""></a>
+        <?php }?>
         </div>
     </div>
     <div class="searchDiv">
@@ -49,17 +52,9 @@
         <div class="textHeader">
             企業名稱
         </div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">嘿嘿</div>
-        <div class="textList">哈哈</div>
+        <?php foreach($store_text as $item){ ?>
+            <div class="textList"><?php echo $item['name']; ?></div>
+        <?php }?>
         <!-- <?php foreach($RS_store_text as $item){ ?>
             <div class="textList"><?php echo  $item['name']; ?></div>
         <?php } ?> -->

@@ -20,6 +20,9 @@ try{
     $sql_str = "SELECT * FROM news WHERE train=1 ORDER BY id DESC Limit 4";
     $RS_newList_train = $conn -> query($sql_str);
     // $total_RS_news = $RS_news -> rowCount();
+
+    $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
+    $RS_cooperate = $conn -> query($sql_str);
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }
@@ -215,9 +218,12 @@ try{
         </div>
         <p class="small-title">Enterprises that cooperate with Colorful Culture and Education</p>
         <div class="cooperateList">
-            <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
+            <?php foreach($RS_cooperate as $item){ ?>
+                <a href="javascript:;"><img src="./images/cooperate/<?php echo $item['imgsrc']; ?>"></a>
+            <?php } ?>
+            <!-- <a href="https://www.evoneic.com/"><img src="./images/evone.png" alt=""></a>
             <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
-            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a>
+            <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a> -->
         </div>
         <a href="./?page=cooperate" class="seemore">All cooperate</a>
     </div>
