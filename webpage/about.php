@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="contact">
-        <form action="./ref/send.php" method="post">
+        <form action="./shared/send.php" method="post">
             <h2>有什麼話想說?</h2>
             <span>姓名</span>
             <input type="text" required name="name" placeholder="姓名">
