@@ -59,29 +59,29 @@ if(isset($_SESSION['username'])){
 <script src="../js/cms/header.js"></script>
    
 <script>
-const focusBtn = document.getElementsByClassName('focusBtn');
+    const focusBtn = document.getElementsByClassName('focusBtn');
 
-for(let i=0;i<focusBtn.length;i++){
-    focusBtn[i].addEventListener('change',focusFn);
-}
-function deleteFn(id){
-    let chk = confirm('確定要刪除嗎?');
-    if(chk){
-        window.location.href = `./delete_news.php?id=${id}`;
-        return;
+    for(let i=0;i<focusBtn.length;i++){
+        focusBtn[i].addEventListener('change',focusFn);
     }
-}
-function focusFn(e){
-    console.log(123);
-    
-    let params = new URLSearchParams()
-    let focusId = e.target.parentNode.getElementsByClassName('focusId')[0].value;
-    params.append('focusId',focusId );
-    axios.post('./update_newsFocus.php',params).then(res=>{
-        alert('更新成功!');
-        window.location.reload();
-    })
-}
+    function deleteFn(id){
+        let chk = confirm('確定要刪除嗎?');
+        if(chk){
+            window.location.href = `./delete_news.php?id=${id}`;
+            return;
+        }
+    }
+    function focusFn(e){
+        console.log(123);
+        
+        let params = new URLSearchParams()
+        let focusId = e.target.parentNode.getElementsByClassName('focusId')[0].value;
+        params.append('focusId',focusId );
+        axios.post('./update_newsFocus.php',params).then(res=>{
+            alert('更新成功!');
+            window.location.reload();
+        })
+    }
 </script>
 </body>
 </html>
