@@ -358,8 +358,8 @@ div#toTop > i {
 
 #index_content > .cooperate > .cooperateList > a {
   width: 180px;
-  height: 180px;
-  margin: 15px 30px;
+  height: 150px;
+  margin: 10px 30px;
 }
 
 #index_content > .cooperate > .cooperateList > a > img {
@@ -2985,8 +2985,8 @@ div#toTop > i {
 
 #cooperate > .cooperateContent > .cooperateList > a {
   width: 180px;
-  height: 180px;
-  margin: 15px 30px;
+  height: 150px;
+  margin: 10px 30px;
 }
 
 #cooperate > .cooperateContent > .cooperateList > a > img {
@@ -3016,6 +3016,7 @@ div#toTop > i {
   border: 1px #aaa solid;
   font-size: 16px;
   outline: none;
+  margin: 3px 0;
 }
 
 #cooperate > .searchDiv > button {
@@ -3028,6 +3029,7 @@ div#toTop > i {
   font-weight: 600;
   border: none;
   outline: none;
+  margin: 3px 0;
 }
 
 #cooperate > .searchDiv > button:hover {
@@ -3082,8 +3084,7 @@ div#toTop > i {
 }
 
 #cooperate > .textBox > .textList {
-  padding: 0 15px;
-  height: 40px;
+  padding: 3px 15px;
   line-height: 40px;
   border-bottom: 1px #ccc solid;
 }

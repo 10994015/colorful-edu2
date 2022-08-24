@@ -3,6 +3,7 @@ require_once('./config/conn.php');
 $page = '';
 if( isset($_GET['page']) && $_GET['page']!='' ){
   $page =$_GET['page'];
+  $path = './webpage/'.$page.".php";
 }
 ?>
 <!DOCTYPE html>
@@ -27,7 +28,15 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
         if($page==''){
           include('./webpage/index_content.php');
         }else{
-          include('./webpage/'.$page.'.php');
+          if(file_exists($path)){
+            include('./webpage/'.$page.'.php');
+          }else{
+            include('./webpage/notfound.php');
+            // header("Location:./webpage/notfound.php");
+          }
+          
+            
+        
         }
       ?>
     </main>

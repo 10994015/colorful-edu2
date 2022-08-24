@@ -14,7 +14,7 @@
 <nav id="mobile-nav">
     <a href="./">home</a>
     <a href="./?page=news">news</a>
-    <a href="javascript:;">course</a>
-    <a href="javascript:;">Cooperation</a>
-    <a href="javascript:;">about</a>
+    <a href="./?page=course">course</a>
+    <a href="./?page=cooperate">Cooperation</a>
+    <a href="./?page=about">about</a>
 </nav>
