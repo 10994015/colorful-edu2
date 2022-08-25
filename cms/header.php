@@ -7,7 +7,7 @@
     <div class="rightDiv">
         <div class="user" id="user">
             <div class="imgBox">
-                <img src="../images/baby.jpg">
+                <img src="../images/cms/<?php echo $_SESSION['imgsrc']; ?>">
                 <span class="onlineCircle"></span>
             </div>
             <p><?php echo $_SESSION['name']; ?></p>
@@ -25,7 +25,7 @@
 </header>
 <nav id="nav">
     <a href="javascript:;" class="user" id="navUser">
-        <img src="../images/baby.jpg" alt="">
+        <img src="../images/cms/<?php echo $_SESSION['imgsrc']; ?>" alt="">
         <div class="userInfor">
             <h3><?php echo $_SESSION['name']; ?></h3>
             <p>Project Manager</p>

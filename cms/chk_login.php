@@ -28,6 +28,7 @@ if(isset($_POST['member'])){
           $row_RS = $RS -> fetch(PDO::FETCH_ASSOC);
           $_SESSION['username']  = $row_RS['username'];   //將會員名稱記錄到SESSION系統變數
           $_SESSION['name']  = $row_RS['name'];   //將會員名稱記錄到SESSION系統變數
+          $_SESSION['imgsrc']  = $row_RS['imgsrc'];   //將會員名稱記錄到SESSION系統變數
           $url = './';  //登入成功要前往的位址
           $id = $row_RS['id'];
           $sql_str = "UPDATE user SET lastdate = :lastdate WHERE id  = :id";
