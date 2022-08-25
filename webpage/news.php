@@ -160,7 +160,7 @@ $RS_train = $conn -> query($sql_str);
         <div class="sidebar">
             <div class="searchBox">
                 <div class="keyword">
-                    <a href="./?page=news&tag=couese" class="searchText course">#課程</a>
+                    <a href="./?page=news&tag=course" class="searchText course">#課程</a>
                     <a href="./?page=news&tag=daily" class="searchText daily">#日常</a>
                     <a href="./?page=news&tag=train" class="searchText train">#培訓</a>
                 </div>
