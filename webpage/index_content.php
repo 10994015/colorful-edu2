@@ -32,7 +32,7 @@ try{
 <div id="index_content">
     <div class="responsive">
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
-        <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
+        <div><a href="javascript:;"><img src="./images/banner2.png" alt=""></a></div>
     </div>
   
     <div class="course">
