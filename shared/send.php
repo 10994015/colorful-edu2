@@ -60,11 +60,11 @@ function sendMail($name,$email,$title,$content){
                 
 
     // $header = "From: service@ice-finland.pro\r\n";
-    $header = "From: a0938599191@gmail.com\r\n";
+    $header = "From: service@ice-finland.pro\r\n";
     $header .= "Content-type: text/html; charset=utf8";
 
     //mail(收件者,信件主旨,信件內容,信件檔頭資訊)
-    $result = mail('a0938599191@gmail.com', $subject, $text, $header);
+    $result = mail('service@ice-finland.pro', $subject, $text, $header);
     echo $result;
     return $result;
 }

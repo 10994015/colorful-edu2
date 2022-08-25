@@ -65,16 +65,16 @@ if(!isset($_GET['curr_page']) || $_GET['curr_page']==0 ){
 }
 
 
-$sql_str = "SELECT * FROM news WHERE hot=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE hot=1 AND isshow=1 ORDER BY id DESC Limit 3";
 $RS_hot = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE course=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY id DESC Limit 3";
 $RS_course = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE daily=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY id DESC Limit 3";
 $RS_daily = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE train=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY id DESC Limit 3";
 $RS_train = $conn -> query($sql_str);
 
 ?>

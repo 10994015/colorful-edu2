@@ -1223,15 +1223,22 @@ div#toTop{
                     }
                     >div.newsText{
                         overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 3;
-                        -webkit-box-orient: vertical;
                         width:350px;
                         color:#999;
                         font-size: 18px;
                         @media screen and (max-width:600px){
                             width:100%;
+                        }
+                        >p{
+                            display: none;
+                            &:nth-child(1){
+                                display: block;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
                         }
                     }
                     >.otherText{
