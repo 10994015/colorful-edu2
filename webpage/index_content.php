@@ -1,23 +1,23 @@
 
 <?php 
 try{
-    $sql_str = "SELECT * FROM news ORDER BY id DESC Limit 10";
+    $sql_str = "SELECT * FROM news WHERE isshow=1 ORDER BY id DESC Limit 10";
     $RS_news = $conn -> query($sql_str);
     $RS_news2 = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM news WHERE focus =1 Limit 1";
+    $sql_str = "SELECT * FROM news WHERE focus =1 AND isshow=1 Limit 1";
     $RS_focus_news = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM news ORDER BY id DESC Limit 4";
+    $sql_str = "SELECT * FROM news WHERE isshow=1 ORDER BY id DESC Limit 4";
     $RS_newList_last = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM news WHERE course=1 ORDER BY id DESC Limit 4";
+    $sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY id DESC Limit 4";
     $RS_newList_course = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM news WHERE daily=1 ORDER BY id DESC Limit 4";
+    $sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY id DESC Limit 4";
     $RS_newList_daily = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM news WHERE train=1 ORDER BY id DESC Limit 4";
+    $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY id DESC Limit 4";
     $RS_newList_train = $conn -> query($sql_str);
     // $total_RS_news = $RS_news -> rowCount();
 

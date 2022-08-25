@@ -171,7 +171,7 @@ $RS_train = $conn -> query($sql_str);
             </div>
             
             <div class="sidebarNews">
-                <h4>熱門訊息</h4>
+                <h4>熱門文章</h4>
                 <div class="newsCarousel">
                     <?php foreach($RS_hot as $item){ ?>
                         <a href="./?page=post&id=<?php echo $item['id']; ?>" class="newsItem">
