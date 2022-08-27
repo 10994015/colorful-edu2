@@ -10,13 +10,13 @@ if(isset($_GET['id']) && $_GET['id']!=""){
         $row_post = $stmt -> fetch(PDO::FETCH_ASSOC);
         $tag = "";
         if($row_post['course']==1){
-            $sql_str_tag = "SELECT * FROM news WHERE course=1  ORDER BY id DESC Limit 4";
+            $sql_str_tag = "SELECT * FROM news WHERE course=1 and isshow=1  ORDER BY id DESC Limit 4";
         }elseif($row_post['daily']==1){
-            $sql_str_tag = "SELECT * FROM news WHERE daily=1  ORDER BY id DESC Limit 4";
+            $sql_str_tag = "SELECT * FROM news WHERE daily=1 and isshow=1  ORDER BY id DESC Limit 4";
         }elseif($row_post['train']==1){
-            $sql_str_tag = "SELECT * FROM news WHERE train=1  ORDER BY id DESC Limit 4";
+            $sql_str_tag = "SELECT * FROM news WHERE train=1 and isshow=1  ORDER BY id DESC Limit 4";
         }else{
-            $sql_str_tag = "SELECT * FROM news ORDER BY id DESC Limit 4";
+            $sql_str_tag = "SELECT * FROM news WHERE isshow=1 ORDER BY id DESC Limit 4";
         }
         
         $RS_tag = $conn -> query($sql_str_tag);
