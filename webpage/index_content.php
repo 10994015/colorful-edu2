@@ -34,7 +34,69 @@ try{
         <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
         <div><a href="javascript:;"><img src="./images/banner2.png" alt=""></a></div>
     </div>
-  
+    <div class="about">
+        <div class="title">
+            <span class="line"></span>
+            <h2>Welcome</h2>
+            <span class="line"></span>
+        </div>
+        <p class="small-title"></p>
+        <div class="aboutContent">
+            <div class="left">
+                <h3>我們提供了什麼?</h3>
+                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                <div class="serviceList">
+                    <div class="item">
+                        <div class="iconBox blue"><i class="fa-solid fa-user-shield"></i></div>
+                        <div class="text">
+                            <h4 class="blue">安全第一</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="iconBox blue"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="text">
+                            <h4 class="blue">常態課程</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="iconBox yellow"><i class="fa-solid fa-shuttle-space"></i></div>
+                        <div class="text">
+                            <h4 class="yellow">特色課程</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="iconBox yellow"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <div class="text">
+                            <h4 class="yellow">師培課程</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="iconBox green"><i class="fa-solid fa-stamp"></i></div>
+                        <div class="text">
+                            <h4 class="green">認證教師</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="iconBox green"><i class="fa-solid fa-ethernet"></i></div>
+                        <div class="text">
+                            <h4 class="green">完善的設備</h4>
+                            <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <img src="./images/xx.webp">
+                <a href="./?page=about">了解更多</a>
+            </div>
+        </div>
+
+    </div>
     <div class="course">
         <div class="title">
             <span class="line"></span>
@@ -68,7 +130,29 @@ try{
                 <a href="javascript:;" class="seemore seemore3">SEE MORE</a>
             </div>
         </div>
+        <div class="comingSoon">
+        <div class="comingSoonBox">
+            <span>2022 / 09 / 15</span>
+            <h3>ESL國際班 即將開班</h3>
+            <p>
+            <i class="fa-solid fa-check"></i>Speaking<br>
+            <i class="fa-solid fa-check"></i>Writing<br>
+            <i class="fa-solid fa-check"></i>Listening<br>
+            <i class="fa-solid fa-check"></i>Reading<br>
+            <i class="fa-solid fa-check"></i>Vocabular<br>
+            <i class="fa-solid fa-check"></i>Grammar
+            </p>
+            <a href="">View courses</a>
+            <div class="launch-time">
+                <div><p id="days">00</p><span>Days</span></div>
+                <div><p id="hours">00</p><span>Houes</span></div>
+                <div><p id="minutes">00</p><span>Minutes</span></div>
+                <div><p id="seconds">00</p><span>Seconds</span></div>
+            </div>
+        </div>
     </div>
+    </div>
+   
     <div class="news">
         <div class="title">
             <span class="line"></span>
@@ -235,3 +319,4 @@ try{
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="./shared/slick-1.6.0/slick/slick.min.js"></script>
 <script src="./js/slick.js"></script>
+<script src="./js/launch-time.js"></script>
