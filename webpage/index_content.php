@@ -28,11 +28,14 @@ try{
 }
 
 ?>
-
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>
 <div id="index_content">
+    <h1 class="hidden">新竹市 補習班 推薦 冰芬文教</h1>
     <div class="responsive">
-        <div><a href="javascript:;"><img src="./images/banner.png" alt=""></a></div>
-        <div><a href="javascript:;"><img src="./images/banner2.png" alt=""></a></div>
+        <div><a href="javascript:;"><img src="./images/banner.png" alt="新竹市冰芬文教補習班，選擇冰芬使你的未來繽紛。"></a></div>
+        <div><a href="javascript:;"><img src="./images/banner2.png" alt="冰芬文教x伊索教育"></a></div>
     </div>
     <div class="about">
         <div class="title">
@@ -44,7 +47,7 @@ try{
         <div class="aboutContent">
             <div class="left">
                 <h3>我們提供了什麼?</h3>
-                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                <p>透過多元跨領域教學,及加強互動性與參與感,創造沈浸式教學環境,提升孩子對於學習的興趣!</p>
                 <div class="serviceList">
                     <div class="item">
                         <div class="iconBox blue"><i class="fa-solid fa-user-shield"></i></div>

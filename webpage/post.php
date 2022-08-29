@@ -27,6 +27,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 
 
 ?>
+
 <div id="post">
     <div class="postContent">
         <h3 class="title"><?php echo $row_post['title']; ?></h3>
@@ -55,3 +56,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     </div>
 
 </div>
+
+<head>
+    <title><?php echo $row_post['title']; ?></title>
+</head>

@@ -2,13 +2,14 @@
 
 <head>
 <meta name="robots" content="noindex">
+<title>找不到此頁面</title>
 <link rel="stylesheet" href="./css/notfound.css">
 </head>
 <?php include_once('./shared/header.php'); ?>
 <div id="notfoundPage">
     <div id="background"></div>
     <div class="top">
-    <h1 style="">404</h1>
+    <h1>404</h1>
     <h3 style="font-size:36px">找不到此頁面...</h3>
     </div>
     <div class="container">

@@ -9,7 +9,9 @@
  $store_text = $conn -> query($sql_str);
 
 ?>
-
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>
 <div id="cooperate">
     <div class="coverBox">
         <img src="./images/0002.jpg" class="coverImg">

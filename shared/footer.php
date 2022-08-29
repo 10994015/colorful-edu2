@@ -1,7 +1,7 @@
 <footer id="footer">
         <div class="contact">
             <div class="footerLogo">
-                <img src="./images/logo.png" alt="">
+                <img src="./images/logo.png" alt="新竹市東區補習班冰芬文教LOGO">
                 <p>
                     色彩一直是療育人心的良藥
                     繽紛=冰芬 意旨戒掉呆板數學及爛英文的學習方式

@@ -271,6 +271,13 @@ div#toTop > i {
   width: 100%;
 }
 
+#index_content h1.hidden {
+  opacity: 0;
+  position: absolute;
+  top: -9999999px;
+  left: -9999999px;
+}
+
 #index_content > .about {
   background-color: #fff;
   border-radius: 20px;
@@ -397,8 +404,9 @@ div#toTop > i {
 }
 
 #index_content > .about > .aboutContent > .left > p {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 #index_content > .about > .aboutContent > .left .serviceList {
@@ -406,7 +414,7 @@ div#toTop > i {
   display: grid;
   -ms-grid-columns: (50%)[2];
       grid-template-columns: repeat(2, 50%);
-  grid-column-gap: 5px;
+  grid-column-gap: 20px;
   grid-row-gap: 3em;
 }
 
@@ -3117,6 +3125,7 @@ div#toTop > i {
 #about > .aboutContent > .aboutText > p {
   line-height: 1.5;
   letter-spacing: 2px;
+  font-size: 18px;
   color: #666;
 }
 
@@ -3148,8 +3157,9 @@ div#toTop > i {
 }
 
 #about > .service > p {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 #about > .service .serviceList {

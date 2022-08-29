@@ -78,7 +78,9 @@ $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY id DESC Limit
 $RS_train = $conn -> query($sql_str);
 
 ?>
-
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>
 <div id="newsPage">
     <div id="loading"><i class="fa-solid fa-spinner"></i></div>
     <div class="newsType">
