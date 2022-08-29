@@ -32,7 +32,7 @@ try{
     <title>冰芬文教｜新竹市補習班</title>
 </head>
 <div id="index_content">
-    <h1 class="hidden">新竹市 補習班 推薦 冰芬文教</h1>
+    <h1 style="opacity: 0;position: absolute;top: -9999999px;">新竹市 補習班 推薦 冰芬文教</h1>
     <div class="responsive">
         <div><a href="javascript:;"><img src="./images/banner.png" alt="新竹市冰芬文教補習班，選擇冰芬使你的未來繽紛。"></a></div>
         <div><a href="javascript:;"><img src="./images/banner2.png" alt="冰芬文教x伊索教育"></a></div>
