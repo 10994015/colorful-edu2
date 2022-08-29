@@ -124,9 +124,9 @@ $RS_train = $conn -> query($sql_str);
                                         <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                                     </div>
                                     <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
-                                    <p class="newsText">
-                                        <?php echo $item['title']; ?>
-                                    </p>
+                                    <article class="newsText">
+                                        <?php echo $item['content']; ?>
+                                    </article>
                                     <div class="otherText">
                                         <p class="date"> <i class="far fa-clock"></i><span class="tailoffDate"><?php echo $item['lastdate']; ?></span></p>
                                         <a href="?page=post&id=<?php echo $item['id']; ?>" class="reading"> <span class="back"></span> <p>READ MORE<i class="fas fa-arrow-right"></i></p> </a>
@@ -146,9 +146,9 @@ $RS_train = $conn -> query($sql_str);
                             <?php if($item['train']==1){ ?><a href="javascript:;"><i class="tag" style="color:#8DC220">#培訓</i></a><?php }?>
                         </div>
                         <a href="javascript:;" class="news-title"><?php echo $item['title']; ?></a>
-                        <div class="newsText">
+                        <article class="newsText">
                             <?php echo $item['content']; ?>
-                        </div>
+                        </article>
                         <div class="otherText">
                             <p class="date"> <i class="far fa-clock"></i> <span class="tailoffDate"><?php echo $item['lastdate']; ?></span></p>
                             <a href="?page=post&id=<?php echo $item['id']; ?>" class="reading"> <span class="back"></span> <p>READ MORE<i class="fas fa-arrow-right"></i></p> </a>

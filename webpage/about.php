@@ -19,7 +19,7 @@
     </div>
     <div class="service"">
         <h3>我們提供了什麼?</h3>
-        <p>透過多元跨領域教學,及加強互動性與參與感,創造沈浸式教學環境,提升孩子對於學習的興趣!</p>
+        <p>我們提供了安全的環境、還有常態課程幫助孩子升學、另開特色課程挖掘孩子們的興趣、此外還有師培課程，培訓每個想要成為專業教師的人才。且冰芬文教的教師皆是受過專業受訓認證的，還有完善的設備提供給大家，能讓學習更加專心舒適。</p>
         <div class="serviceList">
             <div class="item">
                 <div class="iconBox blue"><i class="fa-solid fa-user-shield"></i></div>
@@ -32,35 +32,35 @@
                 <div class="iconBox blue"><i class="fa-solid fa-user-tie"></i></div>
                 <div class="text">
                     <h4 class="blue">常態課程</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>我們冰芬文教提供了國、英、數等課程，幫助孩子奠定好基礎，並在未來升學方面更加順利。</p>
                 </div>
             </div>
             <div class="item">
                 <div class="iconBox yellow"><i class="fa-solid fa-shuttle-space"></i></div>
                 <div class="text">
                     <h4 class="yellow">特色課程</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>透過多元跨領域教學,及加強互動性與參與感,創造沈浸式教學環境,提升孩子對於學習的興趣!</p>
                 </div>
             </div>
             <div class="item">
                 <div class="iconBox yellow"><i class="fa-solid fa-chalkboard-user"></i></div>
                 <div class="text">
                     <h4 class="yellow">師培課程</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>與美國教師協會TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。</p>
                 </div>
             </div>
             <div class="item">
                 <div class="iconBox green"><i class="fa-solid fa-stamp"></i></div>
                 <div class="text">
                     <h4 class="green">認證教師</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>所有的教師皆有合格的教師證照及其他專業證照，讓所有孩子能在專業中學習知識。</p>
                 </div>
             </div>
             <div class="item">
                 <div class="iconBox green"><i class="fa-solid fa-ethernet"></i></div>
                 <div class="text">
                     <h4 class="green">完善的設備</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>具有完善的教材、教師、以及科學設備，並提供舒適乾淨的環境提供孩子及老師上課。</p>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
         <form action="./shared/send.php" method="post">
             <h2>有什麼話想說?</h2>
             <span>姓名</span>

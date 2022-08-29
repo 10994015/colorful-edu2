@@ -33,7 +33,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
         <h3 class="title"><?php echo $row_post['title']; ?></h3>
         <div class="date"> <i class="far fa-clock"></i> <span class="tailoffDate"><?php echo $row_post['lastdate']; ?></span></div>
         <img src="./images/img_upload/<?php echo $row_post['imgsrc']; ?>" alt="">
-        <div class="content"><?php echo $row_post['content']; ?></div>
+        <article class="content"><?php echo $row_post['content']; ?></article>
         <a href="./?page=news" class="comeback"><i class="fa-solid fa-arrow-left-long"></i></a>
     </div>
     <div class="sidebar">
