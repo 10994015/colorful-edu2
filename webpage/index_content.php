@@ -94,7 +94,7 @@ try{
                 </div>
             </div>
             <div class="right">
-                <img src="./images/xx.webp">
+                <img src="./images/xx.png">
                 <a href="./?page=about">了解更多</a>
             </div>
         </div>

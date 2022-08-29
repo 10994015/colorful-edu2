@@ -8,7 +8,7 @@
         <h3>ABOUT US</h3>
     </div>
     <div class="aboutContent">
-        <img src="./images/xx.webp">
+        <img src="./images/xx.png">
         <div class="aboutText">
             <h4>歡迎來到冰芬文教</h4>
             <p>
