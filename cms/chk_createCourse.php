@@ -18,6 +18,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $course_type = $_POST['course_type'];
     $week = $_POST['week'];
     $week_text = $_POST['week_text'];
+    $focus_text = $_POST['focus_text'];
     $deadline = (empty($_POST['deadline'])) ? '0' : '1';
     $isshow = (empty($_POST['isshow'])) ? '0' : '1';
     $focus = (empty($_POST['focus'])) ? '0' : '1';
@@ -39,8 +40,8 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $imgsrc = $rand.$file_name;
 
    
-    $sql_str = "INSERT INTO course (title,content,lastdate,imgsrc,start_day,week,week_text,start_time,end_time,start_age,end_age,course_type,deadline,isshow,focus,user) VALUES
-                                 (:title,:content,:lastdate,:imgsrc,:start_day,:week,:week_text,:start_time,:end_time,:start_age,:end_age,:course_type,:deadline,:isshow,:focus,:user)";
+    $sql_str = "INSERT INTO course (title,content,lastdate,imgsrc,start_day,week,week_text,start_time,end_time,start_age,end_age,course_type,deadline,isshow,focus,focus_text,user) VALUES
+                                 (:title,:content,:lastdate,:imgsrc,:start_day,:week,:week_text,:start_time,:end_time,:start_age,:end_age,:course_type,:deadline,:isshow,:focus,:focus_text,:user)";
     $stmt = $conn -> prepare($sql_str);
     
     $stmt -> bindParam(':title' ,$title);
@@ -58,6 +59,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $stmt -> bindParam(':deadline' ,$deadline);
     $stmt -> bindParam(':isshow' ,$isshow);
     $stmt -> bindParam(':focus' ,$focus);
+    $stmt -> bindParam(':focus_text' ,$focus_text);
     $stmt -> bindParam(':user' ,$user);
     $stmt ->execute();
 

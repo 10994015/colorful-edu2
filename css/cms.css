@@ -1570,6 +1570,37 @@ main#createCourse form.createCourseForm > .formContent > .advanced > label > .nu
   -webkit-appearance: none;
 }
 
+main#createCourse form.createCourseForm > .formContent > .advanced > label#focusLabel {
+  overflow: hidden;
+  height: 0px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label#focusLabel > textarea.focusText {
+  border: 1px #aaa solid;
+  outline: none;
+  width: 90%;
+  height: 180px;
+  border-radius: 8px;
+  resize: vertical;
+  padding: 10px;
+  color: #444;
+  font-size: 16px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label#focusLabel.open {
+  height: auto;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label#focusLabel.close {
+  height: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
 main#createCourse form.createCourseForm > .formContent > .advanced > #createCourseBtn {
   margin: 0 auto;
   margin-top: 50px;
@@ -2250,6 +2281,26 @@ main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .nu
 main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-outer-spin-button, main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label#focusLabel > textarea.focusText {
+  border: 1px #aaa solid;
+  outline: none;
+  width: 90%;
+  height: 180px;
+  border-radius: 8px;
+  resize: vertical;
+  padding: 10px;
+  color: #444;
+  font-size: 16px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label#focusLabel.open {
+  display: block;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label#focusLabel.close {
+  display: none;
 }
 
 main#updateCourse form.updateCourseForm > .formContent > .advanced > #createCourseBtn {

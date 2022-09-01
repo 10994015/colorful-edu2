@@ -1165,6 +1165,31 @@ main#createCourse{
                             }
                         }
                     }
+                    &#focusLabel{
+                        overflow: hidden;
+                        height: 0px;
+                        transition: all .3s ease;
+                        >textarea.focusText{
+                            border:1px #aaa solid;
+                            outline: none;
+                            width:90%;
+                            height: 180px;
+                            border-radius: 8px;
+                            resize: vertical;
+                            padding: 10px;
+                            color:#444;
+                            font-size: 16px;
+                        }
+                        &.open{
+                            height:auto;
+                            transition: all .3s ease;
+                        }
+                        &.close{
+                            height:0;
+                            transition: all .3s ease;
+                        }
+                    }
+                    
                    
                 }
                 >#createCourseBtn{
@@ -1695,6 +1720,25 @@ main#updateCourse{
                                     -webkit-appearance: none;
                                 }
                             }
+                        }
+                    }
+                    &#focusLabel{
+                        >textarea.focusText{
+                            border:1px #aaa solid;
+                            outline: none;
+                            width:90%;
+                            height: 180px;
+                            border-radius: 8px;
+                            resize: vertical;
+                            padding: 10px;
+                            color:#444;
+                            font-size: 16px;
+                        }
+                        &.open{
+                           display: block;
+                        }
+                        &.close{
+                            display:none;
                         }
                     }
                    

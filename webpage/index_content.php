@@ -23,6 +23,9 @@ try{
 
     $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
     $RS_cooperate = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM course WHERE isshow=1 AND focus=1 Limit 1";
+    $RS_course = $conn -> query($sql_str);
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }
@@ -132,18 +135,14 @@ try{
             </div>
         </div>
         <div class="comingSoon">
+        <?php foreach($RS_course as $item){ ?>
         <div class="comingSoonBox">
-            <span id="comngSoonDay">2022/09/15</span>
-            <h3>ESL國際班 即將開班</h3>
-            <p>
-            <i class="fa-solid fa-check"></i>Speaking<br>
-            <i class="fa-solid fa-check"></i>Writing<br>
-            <i class="fa-solid fa-check"></i>Listening<br>
-            <i class="fa-solid fa-check"></i>Reading<br>
-            <i class="fa-solid fa-check"></i>Vocabular<br>
-            <i class="fa-solid fa-check"></i>Grammar
-            </p>
-            <a href="">View courses</a>
+            <span id="comngSoonDay"><?php echo $item['start_day']; ?></span>
+            <h3><?php echo $item['title']; ?><br>即將開班</h3>
+            <article>
+                <?php echo nl2br($item['focus_text']); ?>
+            </article>
+            <a href="./?page=courseItem&id=<?php echo $item['id']; ?>">View courses</a>
             <div class="launch-time">
                 <div><p id="days">00</p><span>Days</span></div>
                 <div><p id="hours">00</p><span>Houes</span></div>
@@ -151,6 +150,7 @@ try{
                 <div><p id="seconds">00</p><span>Seconds</span></div>
             </div>
         </div>
+        <?php } ?>
     </div>
     </div>
    

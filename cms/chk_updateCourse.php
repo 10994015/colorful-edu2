@@ -15,7 +15,7 @@ if($_FILES['imgsrc']['name']!=""){
     if(isset($_POST['id'])){
         try{
             $rand = strval(rand(1000,1000000));
-            $sql_str = "UPDATE course SET title=:title,content=:content,imgsrc=:imgsrc,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,user=:user WHERE id  = :id";
+            $sql_str = "UPDATE course SET title=:title,content=:content,imgsrc=:imgsrc,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,focus_text=:focus_text,user=:user WHERE id  = :id";
             //執行$conn物件中的prepare()預處理器
             $stmt = $conn->prepare($sql_str);
         
@@ -33,6 +33,7 @@ if($_FILES['imgsrc']['name']!=""){
             $course_type = $_POST['course_type'];
             $week = $_POST['week'];
             $week_text = $_POST['week_text'];
+            $focus_text = $_POST['focus_text'];
             $deadline = (empty($_POST['deadline'])) ? '0' : '1';
             $isshow = (empty($_POST['isshow'])) ? '0' : '1';
             $focus = (empty($_POST['focus'])) ? '0' : '1';
@@ -64,6 +65,7 @@ if($_FILES['imgsrc']['name']!=""){
             $stmt -> bindParam(':deadline' ,$deadline);
             $stmt -> bindParam(':isshow' ,$isshow);
             $stmt -> bindParam(':focus' ,$focus);
+            $stmt -> bindParam(':focus_text' ,$focus_text);
             $stmt -> bindParam(':user' ,$user);
         
             //執行準備好的$stmt物件工作
@@ -119,7 +121,7 @@ if($_FILES['imgsrc']['name']!=""){
     if(isset($_POST['id'])){
         try{
             
-            $sql_str = "UPDATE course SET title=:title,content=:content,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,user=:user WHERE id  = :id";
+            $sql_str = "UPDATE course SET title=:title,content=:content,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,focus_text=:focus_text,user=:user WHERE id  = :id";
 
             //執行$conn物件中的prepare()預處理器
             $stmt = $conn->prepare($sql_str);
@@ -138,6 +140,7 @@ if($_FILES['imgsrc']['name']!=""){
             $course_type = $_POST['course_type'];
             $week = $_POST['week'];
             $week_text = $_POST['week_text'];
+            $focus_text = $_POST['focus_text'];
             $deadline = (empty($_POST['deadline'])) ? '0' : '1';
             $isshow = (empty($_POST['isshow'])) ? '0' : '1';
             $focus = (empty($_POST['focus'])) ? '0' : '1';
@@ -161,6 +164,7 @@ if($_FILES['imgsrc']['name']!=""){
             $stmt -> bindParam(':deadline' ,$deadline);
             $stmt -> bindParam(':isshow' ,$isshow);
             $stmt -> bindParam(':focus' ,$focus);
+            $stmt -> bindParam(':focus_text' ,$focus_text);
             $stmt -> bindParam(':user' ,$user);
         
             //執行準備好的$stmt物件工作

@@ -1,4 +1,5 @@
-const comngSoonDay = document.getElementById('comngSoonDay').innerText;
+const comngSoonDay = document.getElementById('comngSoonDay').innerText.replace(/-/g,'/');
+document.getElementById('comngSoonDay').innerHTML = comngSoonDay;
 var countDownDate = new Date(`${comngSoonDay} 00:00:00`).getTime();
 var x = setInterval(()=>{
     var now = new Date().getTime();

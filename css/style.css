@@ -1596,16 +1596,17 @@ div#toTop > i {
   font-size: 36px;
   margin-bottom: 15px;
   text-align: center;
+  line-height: 1.4;
 }
 
-#index_content > .course > .comingSoon > .comingSoonBox > p {
+#index_content > .course > .comingSoon > .comingSoonBox > article {
   color: #423f8d;
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: 1.6px;
 }
 
-#index_content > .course > .comingSoon > .comingSoonBox > p > i {
+#index_content > .course > .comingSoon > .comingSoonBox > article > i {
   margin-right: 8px;
 }
 

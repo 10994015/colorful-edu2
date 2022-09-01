@@ -23,6 +23,18 @@ const weekLabel = document.getElementsByClassName('weekLabel');
 const weekInput = document.getElementsByClassName('weekInput');
 let weekArr = [];
 
+const focus = document.getElementById('focus');
+const focusLabel = document.getElementById('focusLabel');
+focus.addEventListener('change',()=>{
+    if(focus.checked){
+        focusLabel.classList.add('open');
+        focusLabel.classList.remove('close');
+    }else{
+        focusLabel.classList.remove('open');
+        focusLabel.classList.add('close');
+    }
+})
+
 for(let i=0;i<weekInput.length;i++){
     weekInput[i].addEventListener('change',()=>{
         weekArr = [];

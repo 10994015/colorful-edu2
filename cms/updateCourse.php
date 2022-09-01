@@ -140,7 +140,11 @@ if(isset($_SESSION['username'])){
                     </label>
                     <label for="">
                         <p>焦點課程(顯示在首頁)</p>
-                        <input type="checkbox" name="focus" <?php if($row_RS_course['focus']=="1"){echo "checked"; } ?>>
+                        <input type="checkbox" name="focus" id="focus" <?php if($row_RS_course['focus']=="1"){echo "checked"; } ?>>
+                    </label>
+                    <label for="" id="focusLabel" class="<?php if($row_RS_course['focus']=="1"){echo "open"; }else{echo "close";} ?>">
+                        <p>焦點課程文字(顯示在首頁)</p>
+                        <textarea name="focus_text" class="focusText"><?php echo $row_RS_course['focus_text']; ?></textarea>
                     </label>
                     <input type="hidden" id="week" name="week" value="<?php echo $row_RS_course['week']; ?>">
                     <input type="submit" value="新增課程" id="createCourseBtn">
@@ -157,6 +161,9 @@ if(isset($_SESSION['username'])){
     const fileimgBtn = document.getElementById('fileimgBtn');
     const fileText = document.getElementById('fileText');
     const previewImg = document.getElementById('previewImg');
+    const focus = document.getElementById('focus');
+    const focusLabel = document.getElementById('focusLabel');
+    
     fileimgBtn.addEventListener('change',()=>{
         if(fileimgBtn.value){
             fileText.innerHTML = fileimgBtn.value;
@@ -170,7 +177,15 @@ if(isset($_SESSION['username'])){
         };
         reader.readAsDataURL(file);
     });
-
+    focus.addEventListener('change',()=>{
+        if(focus.checked){
+            focusLabel.classList.add('open');
+            focusLabel.classList.remove('close');
+        }else{
+            focusLabel.classList.remove('open');
+            focusLabel.classList.add('close');
+        }
+    })
     CKEDITOR.replace('content',{
         extraplugins:'filebrowser',
         height:300,

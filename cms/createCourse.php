@@ -101,7 +101,11 @@ if(isset($_SESSION['username'])){
                     </label>
                     <label for="">
                         <p>焦點課程(顯示在首頁)</p>
-                        <input type="checkbox" name="focus">
+                        <input type="checkbox" name="focus" id="focus">
+                    </label>
+                    <label for="" id="focusLabel" class="close">
+                        <p>焦點課程文字(顯示在首頁)</p>
+                        <textarea name="focus_text" class="focusText"></textarea>
                     </label>
                     <input type="hidden" id="week" name="week">
                     <input type="submit" value="新增課程" id="createCourseBtn">
