@@ -117,13 +117,13 @@ try{
                 <p>
                 我們冰芬文教提供了國、英、數等課程，幫助孩子奠定好基礎，並在未來升學方面更加順利。
                 </p>
-                <a href="javascript:;" class="seemore seemore1">SEE MORE</a>
+                <a href="./?page=course&type=normal" class="seemore seemore1">SEE MORE</a>
             </div>
             <div class="courseItem courseItem2">
                 <h3>特色課程</h3>
                 <span>Featured Programs</span>
                 <p>透過多元跨領域教學,及加強互動性與參與感,創造沈浸式教學環境,提升孩子對於學習的興趣!</p>
-                <a href="javascript:;" class="seemore seemore2">SEE MORE</a>
+                <a href="./?page=course&type=special" class="seemore seemore2">SEE MORE</a>
             </div>
             <div class="courseItem courseItem3">
                 <h3>師培課程</h3>
@@ -131,7 +131,7 @@ try{
                 <p>
                 與美國教師協會TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。
                 </p>
-                <a href="javascript:;" class="seemore seemore3">SEE MORE</a>
+                <a href="./?page=course&type=teacher" class="seemore seemore3">SEE MORE</a>
             </div>
         </div>
         <div class="comingSoon">
