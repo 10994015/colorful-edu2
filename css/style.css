@@ -1587,6 +1587,7 @@ div#toTop > i {
   font-size: 20px;
   font-family: 'cwTeXYen',sans-serif;
   margin-bottom: 20px;
+  letter-spacing: 1.6px;
 }
 
 #index_content > .course > .comingSoon > .comingSoonBox > h3 {
@@ -3719,8 +3720,6 @@ div#toTop > i {
   display: block;
   width: 200px;
   height: 50px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FBCE0F), color-stop(#FDA638), to(#FBCE0F));
-  background-image: linear-gradient(to bottom, #FBCE0F, #FDA638, #FBCE0F);
   border-radius: 30px;
   line-height: 50px;
   text-align: center;
@@ -3742,6 +3741,11 @@ div#toTop > i {
   }
 }
 
+#course > nav.nav > a.color0 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FBCE0F), color-stop(#FDA638), to(#FBCE0F));
+  background-image: linear-gradient(to bottom, #FBCE0F, #FDA638, #FBCE0F);
+}
+
 #course > nav.nav > a.color1 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#D789FF), color-stop(#9B56FF), to(#D789FF));
   background-image: linear-gradient(to bottom, #D789FF, #9B56FF, #D789FF);
@@ -3755,6 +3759,11 @@ div#toTop > i {
 #course > nav.nav > a.color3 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#83D9D2), color-stop(#00D1B8), to(#83D9D2));
   background-image: linear-gradient(to bottom, #83D9D2, #00D1B8, #83D9D2);
+}
+
+#course > nav.nav > a.disabled {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), color-stop(#aaa), to(#ccc));
+  background-image: linear-gradient(to bottom, #ccc, #aaa, #ccc);
 }
 
 #course > p.small-title {
@@ -3860,9 +3869,11 @@ div#toTop > i {
   font-family: 'cwTeXYen','Raleway';
   width: 100%;
   font-weight: 900;
+  padding-bottom: 15px;
+  border-bottom: 1px #ddd solid;
 }
 
-#course > .courseList > .courseItem > .content > p.intro {
+#course > .courseList > .courseItem > .content > article.intro {
   line-height: 1.6;
   color: #777;
   font-size: 14px;
@@ -3871,11 +3882,16 @@ div#toTop > i {
   margin-bottom: 15px;
 }
 
+#course > .courseList > .courseItem > .content > article.intro a {
+  color: #777;
+}
+
 #course > .courseList > .courseItem > .content > .remark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  margin-top: 15px;
 }
 
 #course > .courseList > .courseItem > .content > .remark > div {
@@ -4059,6 +4075,7 @@ div#toTop > i {
   color: #ED078B;
   font-size: 28px;
   margin: 0px 20px;
+  letter-spacing: 1.8px;
 }
 
 #courseItem > .comingSoon > .launch-time {

@@ -15,7 +15,7 @@
 <div id="cooperate">
     <div class="coverBox">
         <img src="./images/0002.jpg" class="coverImg">
-        <h3>COOPERATE</h3>
+        <h3>COOPERATION</h3>
     </div>
     <div class="cooperateContent">
         <div class="title">

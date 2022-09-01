@@ -2,21 +2,22 @@
 require_once('../config/conn.php');
 session_start();
 $focusNav = "NEWS";
-if(isset($_GET['id']) && $_GET['id']!=""){
-    try{
-        $id = $_GET['id'];
-        $sql_str = "SELECT * FROM news WHERE id = :id";
-        $stmt = $conn->prepare($sql_str);
-        $stmt->bindParam(':id',$id);
-        $stmt->execute();
-        $row_RS_mb = $stmt->fetch(PDO::FETCH_ASSOC);
+if(isset($_SESSION['username'])){
+    if(isset($_GET['id']) && $_GET['id']!=""){
+        try{
+            $id = $_GET['id'];
+            $sql_str = "SELECT * FROM news WHERE id = :id";
+            $stmt = $conn->prepare($sql_str);
+            $stmt->bindParam(':id',$id);
+            $stmt->execute();
+            $row_RS_mb = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    }catch (PDOException $e ){
-        die("ERROR!!!: ". $e->getMessage());
-      }
+        }catch (PDOException $e ){
+            die("ERROR!!!: ". $e->getMessage());
+        }
 
-   
-}
+    
+    }
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -118,3 +119,8 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 </script>
 </body>
 </html>
+
+
+<?php }else{
+    header('Location:./noPermission.php');
+} ?>

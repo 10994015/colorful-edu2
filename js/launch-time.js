@@ -1,4 +1,5 @@
-var countDownDate = new Date("Sep 15,2022 00:00:00").getTime();
+const comngSoonDay = document.getElementById('comngSoonDay').innerText;
+var countDownDate = new Date(`${comngSoonDay} 00:00:00`).getTime();
 var x = setInterval(()=>{
     var now = new Date().getTime();
     var distance = countDownDate - now;

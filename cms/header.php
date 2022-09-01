@@ -34,7 +34,8 @@
     <div class="navList" id="headerNavList">
         <a href="./" class="newsItem"><p class="newsListText">HOME</p><i class="fa-solid fa-house"></i></a>
         <a href="./news.php" class="newsItem"><p class="newsListText">NEWS</p><i class="fa-solid fa-file-lines"></i></a>
-        <a href="./cooperate.php" class="newsItem"><p class="newsListText">COOPERATE</p><i class="fa-solid fa-people-group"></i></a>
+        <a href="./cooperate.php" class="newsItem"><p class="newsListText">COOPERATION</p><i class="fa-solid fa-people-group"></i></a>
+        <a href="./course.php" class="newsItem"><p class="newsListText">COURSE</p><i class="fa-solid fa-landmark"></i></a>
     </div>
 </nav>
 <script>

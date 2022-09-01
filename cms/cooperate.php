@@ -1,14 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-$focusNav = "COOPERATE";
-try{
-    $sql_str = "SELECT * FROM news ORDER BY id DESC";
-    $RS_news = $conn -> query($sql_str);
-    $total_RS_news = $RS_news -> rowCount();
-}catch(PDOException $e){
-    die('Error!:'.$e->getMessage());
-}
+$focusNav = "COOPERATION";
 if(isset($_SESSION['username'])){
 ?>
 <!DOCTYPE html>

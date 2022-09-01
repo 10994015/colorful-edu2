@@ -1,26 +1,51 @@
+<?php 
+if(isset($_GET['id']) && $_GET['id']!=""){
+    $sql_str = "SELECT * FROM course WHERE id=:id";
+    $id = $_GET['id'];
+    $stmt = $conn -> prepare($sql_str);
+    $stmt -> bindParam(':id', $id);
+    $stmt -> execute();
+    $row_course = $stmt -> fetch(PDO::FETCH_ASSOC);
+    if($row_course['week']!="8"){
+        $weekViewArr = array();
+        $week = explode(',' , $row_course['week']);
+        $weekArr = ['一','二','三','四','五','六','日'];
+        for($i=1;$i<=7;$i++){
+            if(in_array($i, $week)){
+                array_push($weekViewArr, $weekArr[$i-1]);
+            }
+        }
+        if(count($weekViewArr)>=7){
+            $weekViewArr = ['一至周日'];
+        }
+        
+    }
+    $start_day = str_replace("-", "/",  $row_course['start_day']);
+}
+?>
 <head>
-    <title>冰芬文教｜新竹市補習班</title>
+    <title><?php echo $row_course['title']; ?></title>
 </head>
 
 <div id="courseItem">
-    <img src="./images/course1.png" alt="">
-    <h1>ESL國際班</h1>
+    <img src="./images/img_upload/<?php echo $row_course['imgsrc']; ?>" alt="<?php echo $row_course['title']; ?>">
+    <h1><?php echo $row_course['title']; ?></h1>
     <div class="remark">
         <div class="age">
-            <span>8-30</span>
+            <span><?php echo $row_course['start_age']; ?>-<?php echo $row_course['end_age']; ?></span>
             <p>適合年齡</p>
         </div>
         <div class="time">
-            <span>pm4:00-pm6:00</span>
+            <span><?php echo $row_course['start_time']; ?>-<?php echo $row_course['end_time']; ?></span>
             <p>上課時段</p>
         </div>
         <div class="week">
-            <span>每周一、三、五</span>
+            <span><?php if($row_course['week']!="8"){ echo "每周"; foreach($weekViewArr as $key => $item){ if($key == array_key_last($weekViewArr)){echo $item;}else{ echo $item."、";} } }else{ echo $row_course['week_text']; }?></span>
             <p>上課日</p>
         </div>
     </div>
     <div class="comingSoon">
-        <div><h6>2022 / 09 / 15</h6></div>
+        <div><h6 id="comngSoonDay"><?php echo $start_day; ?></h6></div>
         <div class="launch-time">
             <div><p id="days">00</p><span>Days</span></div>
             <div><p id="hours">00</p><span>Houes</span></div>
@@ -29,21 +54,7 @@
         </div>
     </div>
     <article class="content">
-        Do you want to study abroad?<br>
-        Want the time to be ualuable?<br>
-        Don't let your dreams just be dreams !<br>
-        Speaking<br>
-        Writing<br>
-        Listening<br>
-        Reading<br>
-        Vocabular<br>
-        Grammar<br>
-        獨家特色:<br>
-        精緻小班制教學,營造出讓孩子都能勇於開口的輕鬆學習環境<br>
-        使用英國三大品牌教材 PearsonOxforcambridge<br>
-        專為準備投考國際英文水平考試而設立的預備課程<br>
-        想讀名校不再只是遙不可及<br>
-        <img src="./images/esl.png" alt="ESL國際班" >
+      <?php echo $row_course['content']; ?>
     </article>
     <a href="./?page=about#contact" class="apply">立即報名</a>
 </div>

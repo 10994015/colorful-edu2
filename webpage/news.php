@@ -20,7 +20,7 @@ if(isset($_GET['curr_page'])){
 $first_row = $curr_page * $max_rows;
 $last_row = $first_row + $max_rows - 1;
 
-$sql_str = "SELECT * FROM news WHERE isshow=1 ORDER BY id DESC";
+$sql_str = "SELECT * FROM news WHERE isshow=1 ORDER BY lastdate DESC";
 $RS_news_all = $conn -> query($sql_str);
 
 
@@ -43,19 +43,19 @@ if(isset($_GET['search']) && $_GET['search']!=""){
     $tagWork = "";
     if($tagText == "course"){
         $tagWork = "課程";
-        $sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY id DESC LIMIT $first_row,$max_rows" ;
+        $sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY lastdate DESC LIMIT $first_row,$max_rows" ;
     }elseif($tagText == "daily"){
         $tagWork = "日常";
-        $sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY id DESC LIMIT $first_row,$max_rows" ;
+        $sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY lastdate DESC LIMIT $first_row,$max_rows" ;
     }elseif($tagText == "train"){
         $tagWork = "培訓";
-        $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY id DESC LIMIT $first_row,$max_rows" ;
+        $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY lastdate DESC LIMIT $first_row,$max_rows" ;
     }
     $RS_news = $conn -> query($sql_str);
     $total_rows = $RS_news -> rowCount();
     $total_pages = ceil($total_rows / $max_rows);
 }else{
-    $sql_str = "SELECT * FROM news WHERE focus=0 AND isshow=1 ORDER BY id DESC LIMIT $first_row,$max_rows";
+    $sql_str = "SELECT * FROM news WHERE focus=0 AND isshow=1 ORDER BY lastdate DESC LIMIT $first_row,$max_rows";
     $RS_news = $conn -> query($sql_str);
 }
 if(!isset($_GET['curr_page']) || $_GET['curr_page']==0 ){
@@ -65,16 +65,16 @@ if(!isset($_GET['curr_page']) || $_GET['curr_page']==0 ){
 }
 
 
-$sql_str = "SELECT * FROM news WHERE hot=1 AND isshow=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE hot=1 AND isshow=1 ORDER BY lastdate DESC Limit 3";
 $RS_hot = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE course=1 AND isshow=1 ORDER BY lastdate DESC Limit 3";
 $RS_course = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE daily=1 AND isshow=1 ORDER BY lastdate DESC Limit 3";
 $RS_daily = $conn -> query($sql_str);
 
-$sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY id DESC Limit 3";
+$sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY lastdate DESC Limit 3";
 $RS_train = $conn -> query($sql_str);
 
 ?>

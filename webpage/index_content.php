@@ -133,7 +133,7 @@ try{
         </div>
         <div class="comingSoon">
         <div class="comingSoonBox">
-            <span>2022 / 09 / 15</span>
+            <span id="comngSoonDay">2022/09/15</span>
             <h3>ESL國際班 即將開班</h3>
             <p>
             <i class="fa-solid fa-check"></i>Speaking<br>

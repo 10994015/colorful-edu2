@@ -703,6 +703,209 @@ main#news > .newsList > .newsItem > strong.delete > a {
   font-size: 16px;
 }
 
+main#course > .courseList {
+  margin-top: 30px;
+  width: 100%;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+}
+
+main#course > .courseList > a#createCourseBtn {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
+main#course > .courseList > a#createCourseBtn > i {
+  font-size: 14px;
+}
+
+main#course > .courseList > h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+}
+
+main#course > .courseList > .courseItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  border-bottom: 2px #ddd solid;
+}
+
+main#course > .courseList > .courseItem > strong {
+  font-weight: normal;
+}
+
+main#course > .courseList > .courseItem.courseItemTitle {
+  font-size: 18px;
+}
+
+main#course > .courseList > .courseItem > strong.title {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 17px;
+}
+
+main#course > .courseList > .courseItem > strong.title > img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main#course > .courseList > .courseItem > strong.title > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 15px;
+}
+
+main#course > .courseList > .courseItem > strong.content {
+  width: 20%;
+}
+
+main#course > .courseList > .courseItem > strong.content > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 15px;
+}
+
+main#course > .courseList > .courseItem > strong.content img {
+  display: none;
+}
+
+main#course > .courseList > .courseItem > strong.latest-update {
+  width: 17%;
+}
+
+main#course > .courseList > .courseItem > strong.latest-update > span {
+  font-size: 15px;
+  color: #555;
+}
+
+main#course > .courseList > .courseItem > strong.user {
+  width: 10%;
+  font-size: 17px;
+  padding-right: 10px;
+}
+
+main#course > .courseList > .courseItem > strong.focus {
+  width: 13%;
+}
+
+main#course > .courseList > .courseItem > strong.focus > input[type="radio"] {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  margin: 10px;
+  margin-left: 0;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
+  background: linear-gradient(to right, #bbb, #999);
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+main#course > .courseList > .courseItem > strong.focus > input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main#course > .courseList > .courseItem > strong.focus > input[type="radio"]:checked {
+  background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
+  background: linear-gradient(to right, #FEB096, #FE7296);
+}
+
+main#course > .courseList > .courseItem > strong.focus > input[type="radio"]:checked::before {
+  left: 25px;
+}
+
+main#course > .courseList > .courseItem > strong.focus > input[type="radio"]::after {
+  content: '';
+}
+
+main#course > .courseList > .courseItem > strong.update {
+  width: 10%;
+}
+
+main#course > .courseList > .courseItem > strong.update > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#8DC8F8), to(#2D94E7));
+  background-image: linear-gradient(to right, #8DC8F8, #2D94E7);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+main#course > .courseList > .courseItem > strong.delete {
+  width: 10%;
+}
+
+main#course > .courseList > .courseItem > strong.delete > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#D42C25), to(#A12C25));
+  background-image: linear-gradient(to right, #D42C25, #A12C25);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
 main#createArticle > form.createArticleForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -983,6 +1186,408 @@ main#createArticle > form.createArticleForm > #createArticleBtn {
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
 }
 
+main#createCourse form.createCourseForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+main#createCourse form.createCourseForm > .formContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+main#createCourse form.createCourseForm > .formContent h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+  color: #555;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic {
+  width: 800px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > img.previewImg {
+  width: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > input[type="file"] {
+  display: none;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label > input[type="text"] {
+  width: 100%;
+  height: 50px;
+  border: 1px #ccc solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label > input[type="text"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label > label.chooseFile {
+  width: 180px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB996), to(#FE8996));
+  background-image: linear-gradient(to right, #FFB996, #FE8996);
+  padding: 0;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 17px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .basic > label > #fileText {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced {
+  width: calc(100% - 800px);
+  min-width: 380px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-top: 30px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="text"].other {
+  border: 1px #aaa solid;
+  border-radius: 15px;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  margin-top: 8px;
+  padding: 0 10px;
+  display: none;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="checkbox"], main#createCourse form.createCourseForm > .formContent > .advanced > label input[type="radio"] {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
+  background: linear-gradient(to right, #bbb, #999);
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="checkbox"]::before, main#createCourse form.createCourseForm > .formContent > .advanced > label input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="checkbox"]:checked, main#createCourse form.createCourseForm > .formContent > .advanced > label input[type="radio"]:checked {
+  background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
+  background: linear-gradient(to right, #FEB096, #FE7296);
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="checkbox"]:checked::before, main#createCourse form.createCourseForm > .formContent > .advanced > label input[type="radio"]:checked::before {
+  left: 25px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="checkbox"]::after, main#createCourse form.createCourseForm > .formContent > .advanced > label input[type="radio"]::after {
+  content: '';
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="date"] {
+  width: 150px;
+  height: 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: #FFA196 url("../images/cms/date.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 97%;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 999;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="date"]:focus {
+  border: 2px #FCC618 solid;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="time"] {
+  width: 110px;
+  height: 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: #FFA196 url("../images/cms/clock.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 97%;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 999;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="time"]:focus {
+  border: 2px #FCC618 solid;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group {
+  margin: 3px 0;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"], main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"] {
+  opacity: 0;
+  display: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"]:checked ~ label::before, main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"]:checked ~ label::before {
+  -webkit-transition: .2s;
+  transition: .2s;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB896), to(#FE8A96));
+  background-image: linear-gradient(to right, #FFB896, #FE8A96);
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"]:checked ~ label > i, main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"]:checked ~ label > i {
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+  font-size: 19px;
+  position: relative;
+  cursor: pointer;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > label > i {
+  position: absolute;
+  color: #fff;
+  top: 1px;
+  left: 1px;
+  font-size: 18px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > label::before {
+  content: '';
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  margin-right: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#bbb), to(#A3A3A3));
+  background-image: linear-gradient(to right, #bbb, #A3A3A3);
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > label.disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .selectWeek div.group > label.disabled::before {
+  content: "";
+  background: #ccc;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > p {
+  margin: 0 4px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 45px;
+  width: 110px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #FE7296;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 999;
+  cursor: pointer;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a.decrement {
+  padding: 0px 0px 3px 1px;
+  border-radius: 45px 0 0 45px;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a.increment {
+  padding: 1px 5px 3px 1px;
+  border-radius: 0 45px 45px 0;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"] {
+  height: 30px;
+  border: none;
+  border-top: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  outline: none;
+  width: 50px;
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  font-weight: 600;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-outer-spin-button, main#createCourse form.createCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > #createCourseBtn {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 19px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
 main#updateArticle > form.updateArticleForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1249,6 +1854,408 @@ main#updateArticle > form.updateArticleForm > div.formContent > .advanced > #upd
 main#updateArticle > form.updateArticleForm > #updateArticleBtn {
   margin-right: auto;
   width: 200px;
+  height: 50px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 19px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
+main#updateCourse form.updateCourseForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+main#updateCourse form.updateCourseForm > .formContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+main#updateCourse form.updateCourseForm > .formContent h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+  color: #555;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic {
+  width: 800px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > img.previewImg {
+  width: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > input[type="file"] {
+  display: none;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label > input[type="text"] {
+  width: 100%;
+  height: 50px;
+  border: 1px #ccc solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label > input[type="text"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label > label.chooseFile {
+  width: 180px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB996), to(#FE8996));
+  background-image: linear-gradient(to right, #FFB996, #FE8996);
+  padding: 0;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 17px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .basic > label > #fileText {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced {
+  width: calc(100% - 800px);
+  min-width: 380px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-top: 30px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="text"].other {
+  border: 1px #aaa solid;
+  border-radius: 15px;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  margin-top: 8px;
+  padding: 0 10px;
+  display: none;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="checkbox"], main#updateCourse form.updateCourseForm > .formContent > .advanced > label input[type="radio"] {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
+  background: linear-gradient(to right, #bbb, #999);
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="checkbox"]::before, main#updateCourse form.updateCourseForm > .formContent > .advanced > label input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="checkbox"]:checked, main#updateCourse form.updateCourseForm > .formContent > .advanced > label input[type="radio"]:checked {
+  background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
+  background: linear-gradient(to right, #FEB096, #FE7296);
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="checkbox"]:checked::before, main#updateCourse form.updateCourseForm > .formContent > .advanced > label input[type="radio"]:checked::before {
+  left: 25px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="checkbox"]::after, main#updateCourse form.updateCourseForm > .formContent > .advanced > label input[type="radio"]::after {
+  content: '';
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="date"] {
+  width: 150px;
+  height: 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: #FFA196 url("../images/cms/date.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 97%;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 999;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="date"]:focus {
+  border: 2px #FCC618 solid;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="time"] {
+  width: 110px;
+  height: 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: #FFA196 url("../images/cms/clock.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 97%;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 999;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="time"]:focus {
+  border: 2px #FCC618 solid;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group {
+  margin: 3px 0;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"], main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"] {
+  opacity: 0;
+  display: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"]:checked ~ label::before, main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"]:checked ~ label::before {
+  -webkit-transition: .2s;
+  transition: .2s;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB896), to(#FE8A96));
+  background-image: linear-gradient(to right, #FFB896, #FE8A96);
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > input[type="checkbox"]:checked ~ label > i, main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group input[type="radio"]:checked ~ label > i {
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+  font-size: 19px;
+  position: relative;
+  cursor: pointer;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > label > i {
+  position: absolute;
+  color: #fff;
+  top: 1px;
+  left: 1px;
+  font-size: 18px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > label::before {
+  content: '';
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  margin-right: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#bbb), to(#A3A3A3));
+  background-image: linear-gradient(to right, #bbb, #A3A3A3);
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > label.disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .selectWeek div.group > label.disabled::before {
+  content: "";
+  background: #ccc;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > p {
+  margin: 0 4px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 45px;
+  width: 110px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #FE7296;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 999;
+  cursor: pointer;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a.decrement {
+  padding: 0px 0px 3px 1px;
+  border-radius: 45px 0 0 45px;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > a.increment {
+  padding: 1px 5px 3px 1px;
+  border-radius: 0 45px 45px 0;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"] {
+  height: 30px;
+  border: none;
+  border-top: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  outline: none;
+  width: 50px;
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  font-weight: 600;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-outer-spin-button, main#updateCourse form.updateCourseForm > .formContent > .advanced > label > .numberBoxList > .numberBox > input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > #createCourseBtn {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
   height: 50px;
   outline: none;
   border: none;

@@ -23,7 +23,7 @@ if(isset($_SESSION['username'])){
         <div class="title"><span class="icon"><i class="fa-solid fa-file-lines"></i></span>Create article</div>
         <form action="./chk_createArticle.php" class="createArticleForm" method="POST" enctype="multipart/form-data">
             <div class="formContent">
-            <div class="basic">
+                <div class="basic">
                     <h4>新增文章</h4>
                     <input type="file" name="imgsrc"  id="fileimgBtn">
                     
