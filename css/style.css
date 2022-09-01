@@ -3961,6 +3961,8 @@ div#toTop > i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
 }
 
@@ -3972,6 +3974,7 @@ div#toTop > i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 5px 0;
 }
 
 #courseItem > .remark > div > span {
@@ -4009,25 +4012,31 @@ div#toTop > i {
   color: #1F97D4;
 }
 
-#courseItem article.content {
+#courseItem > article.content {
   color: #444;
   font-size: 21px;
   line-height: 1.6;
   margin: 30px 0 50px;
+  width: 100%;
 }
 
-#courseItem article.content > img {
+#courseItem > article.content > p {
+  width: 100%;
+}
+
+#courseItem > article.content > p img {
   width: 60%;
 }
 
 @media screen and (max-width: 550px) {
-  #courseItem article.content > img {
+  #courseItem > article.content > p img {
     width: 80%;
+    width: 300px;
   }
 }
 
 @media screen and (max-width: 350px) {
-  #courseItem article.content > img {
+  #courseItem > article.content > p img {
     width: 90%;
   }
 }

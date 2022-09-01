@@ -2683,10 +2683,12 @@ div#toTop{
     }
     >.remark{
         display: flex;
+        flex-wrap: wrap;
         width:100%;
         >div{
             display: flex;
             flex-direction: column;
+            margin:5px 0;
             >span{
                 font-weight: 700;
                 font-size: 20px;
@@ -2720,20 +2722,26 @@ div#toTop{
 
         }
     }
-    article.content{
+    >article.content{
         color:#444;
         font-size: 21px;
         line-height: 1.6;
         margin:30px 0 50px;
-        >img{
-            width:60%;
-            @media screen and (max-width:550px){
-                width:80%;
-            }
-            @media screen and (max-width:350px){
-                width:90%;
+        width:100%;
+        >p{
+            width:100%;
+            img{
+                width:60%;
+                @media screen and (max-width:550px){
+                    width:80%;
+                    width:300px;
+                }
+                @media screen and (max-width:350px){
+                    width:90%;
+                }
             }
         }
+       
     }
     >a.apply{
         display: block;
