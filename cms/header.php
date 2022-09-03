@@ -13,7 +13,7 @@
             <p><?php echo $_SESSION['name']; ?></p>
             <i class="fa-solid fa-angle-down"></i>
             <div class="userUl" id="userUl">
-                <a href="javascript:;" class="activity"><i class="fa-solid fa-chart-line"></i>活動日誌</a>
+                <a href="./activtiy.php" class="activity"><i class="fa-solid fa-chart-line"></i>活動日誌</a>
                 <span class="line"></span>
                 <a href="javascript:;" class="logout" onclick="logoutFn()"><i class="fa-solid fa-arrow-right-from-bracket"></i>登出</a>
             </div>

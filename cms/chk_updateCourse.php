@@ -14,6 +14,19 @@ if($focus == 1){
 if($_FILES['imgsrc']['name']!=""){
     if(isset($_POST['id'])){
         try{
+            $record_lastdate = date("Y-m-d H:i:s");
+            $record_user = $_SESSION['username'];
+            $record_type_name = "課程";
+            $record_action = "編輯";
+            $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
+            
+            $stmt_record = $conn -> prepare($sql_record);
+            $stmt_record -> bindParam(':record_user' ,$record_user);
+            $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
+            $stmt_record -> bindParam(':record_lastdate' ,$record_lastdate);
+            $stmt_record -> bindParam(':record_action' ,$record_action);
+            $stmt_record -> execute();
+
             $rand = strval(rand(1000,1000000));
             $sql_str = "UPDATE course SET title=:title,content=:content,imgsrc=:imgsrc,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,focus_text=:focus_text,user=:user WHERE id  = :id";
             //執行$conn物件中的prepare()預處理器
@@ -120,6 +133,18 @@ if($_FILES['imgsrc']['name']!=""){
 }else{
     if(isset($_POST['id'])){
         try{
+            $record_lastdate = date("Y-m-d H:i:s");
+            $record_user = $_SESSION['username'];
+            $record_type_name = "課程";
+            $record_action = "編輯";
+            $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
+            
+            $stmt_record = $conn -> prepare($sql_record);
+            $stmt_record -> bindParam(':record_user' ,$record_user);
+            $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
+            $stmt_record -> bindParam(':record_lastdate' ,$record_lastdate);
+            $stmt_record -> bindParam(':record_action' ,$record_action);
+            $stmt_record -> execute();
             
             $sql_str = "UPDATE course SET title=:title,content=:content,lastdate=:lastdate,start_day=:start_day,week=:week,week_text=:week_text,start_time=:start_time,end_time=:end_time,start_age=:start_age,end_age=:end_age,course_type=:course_type,deadline=:deadline,isshow=:isshow,focus=:focus,focus_text=:focus_text,user=:user WHERE id  = :id";
 

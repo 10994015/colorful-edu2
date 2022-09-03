@@ -5,6 +5,20 @@ ini_set ( 'date.timezone' , 'Asia/Taipei' );
 date_default_timezone_set('Asia/Taipei');
 
 if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
+
+    $record_lastdate = date("Y-m-d H:i:s");
+    $record_user = $_SESSION['username'];
+    $record_type_name = "最新消息";
+    $record_action = "新增";
+    $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
+    
+    $stmt_record = $conn -> prepare($sql_record);
+    $stmt_record -> bindParam(':record_user' ,$record_user);
+    $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
+    $stmt_record -> bindParam(':record_lastdate' ,$record_lastdate);
+    $stmt_record -> bindParam(':record_action' ,$record_action);
+    $stmt_record -> execute();
+
     $rand = strval(rand(1000,1000000));
     
     $title = $_POST['title'];
@@ -53,6 +67,8 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $stmt -> bindParam(':user' ,$user);
     $stmt ->execute();
 
+
+    
 
     $allow_ext = array('jpeg', 'jpg', 'png', 'gif','JPG','JPEG','PNG','GIF');
     //設定上傳位置

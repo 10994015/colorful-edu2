@@ -7,7 +7,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     try{
         $record_lastdate = date("Y-m-d H:i:s");
         $record_user = $_SESSION['username'];
-        $record_type_name = "最新消息";
+        $record_type_name = "活動日誌";
         $record_action = "刪除";
         $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
         
@@ -19,7 +19,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
         $stmt_record -> execute();
 
         $id = $_GET['id'];
-        $sql_str = "DELETE FROM news WHERE id = :id";
+        $sql_str = "DELETE FROM record WHERE id = :id";
         $stmt = $conn -> prepare($sql_str);
         $stmt -> bindParam(':id', $id);
         $stmt -> execute();
@@ -28,7 +28,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
         <script>
             alertFn();
             function alertFn(){
-                alert('刪除成功!'); window.location.href='./news.php';
+                alert('刪除成功!'); window.location.href='./activity.php';
             }
         </script>
         <?php

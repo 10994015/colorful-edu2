@@ -1,7 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-$focusNav = "COOPERATE";
+$focusNav = "COOPERATION";
 try{
     $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
     $RS_img = $conn -> query($sql_str);

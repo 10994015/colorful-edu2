@@ -14,6 +14,21 @@ if($focus == 1){
 if($_FILES['imgsrc']['name']!=""){
     if(isset($_POST['id'])){
         try{
+
+
+            $record_lastdate = date("Y-m-d H:i:s");
+            $record_user = $_SESSION['username'];
+            $record_type_name = "最新消息";
+            $record_action = "編輯";
+            $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
+            
+            $stmt_record = $conn -> prepare($sql_record);
+            $stmt_record -> bindParam(':record_user' ,$record_user);
+            $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
+            $stmt_record -> bindParam(':record_lastdate' ,$record_lastdate);
+            $stmt_record -> bindParam(':record_action' ,$record_action);
+            $stmt_record -> execute();
+
             $rand = strval(rand(1000,1000000));
             $sql_str = "UPDATE news SET title=:title,content=:content,imgsrc=:imgsrc,isshow=:isshow,course=:course,daily=:daily,train=:train,focus=:focus,hot=:hot,user=:user,lastdate=:lastdate WHERE id  = :id";
             //執行$conn物件中的prepare()預處理器
@@ -108,6 +123,18 @@ if($_FILES['imgsrc']['name']!=""){
 }else{
     if(isset($_POST['id'])){
         try{
+            $record_lastdate = date("Y-m-d H:i:s");
+            $record_user = $_SESSION['username'];
+            $record_type_name = "最新消息";
+            $record_action = "編輯";
+            $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
+            
+            $stmt_record = $conn -> prepare($sql_record);
+            $stmt_record -> bindParam(':record_user' ,$record_user);
+            $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
+            $stmt_record -> bindParam(':record_lastdate' ,$record_lastdate);
+            $stmt_record -> bindParam(':record_action' ,$record_action);
+            $stmt_record -> execute();
             
             $sql_str = "UPDATE news SET title=:title,content=:content,isshow=:isshow,course=:course,daily=:daily,train=:train,focus=:focus,hot=:hot,user=:user,lastdate=:lastdate WHERE id  = :id";
 

@@ -1,7 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-$focusNav = "COOPERATE";
+$focusNav = "COOPERATION";
 try{
     $sql_str = "SELECT * FROM store_img ORDER BY id DESC";
     $RS_img = $conn -> query($sql_str);
@@ -54,7 +54,7 @@ if(isset($_SESSION['username'])){
                 </div>
                 <form name="uploadForm" enctype="multipart/form-data" method="POST" action="chk_storeImg.php">
                     <input type="file" name="upload_file[]" multiple hidden="hidden" id="fileimgBtn">
-                    <label for="fileimgBtn" class="chooseFile"><i class="fa-solid fa-image"></i>選擇封面照</label>
+                    <label for="fileimgBtn" class="chooseFile"><i class="fa-solid fa-image"></i>選擇圖片</label>
                     <span id="fileText">尚未選擇圖片</span>
                     <input type="submit" value="確定上傳">
                 </form>

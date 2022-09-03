@@ -1,7 +1,7 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-$focusNav = "COOPERATE";
+$focusNav = "COOPERATION";
 try{
     $sql_str = "SELECT * FROM store_text ORDER BY id DESC";
     $RS_text = $conn -> query($sql_str);
