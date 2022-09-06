@@ -12,7 +12,7 @@ if(isset($_GET['type'])){
         $sql_str = "SELECT * FROM course WHERE isshow=1 AND course_type=2 ORDER BY id DESC";
         $RS_course = $conn -> query($sql_str);
     }elseif($_GET['type']=="teacher"){
-        $intro_text = "與美國教師協會TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。";
+        $intro_text = "與TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。";
         $sql_str = "SELECT * FROM course WHERE isshow=1 AND course_type=3 ORDER BY id DESC";
         $RS_course = $conn -> query($sql_str);
     }else{

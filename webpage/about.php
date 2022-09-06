@@ -25,14 +25,14 @@
                 <div class="iconBox blue"><i class="fa-solid fa-user-shield"></i></div>
                 <div class="text">
                     <h4 class="blue">安全第一</h4>
-                    <p>位於新竹科學園區附近，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。治安非常棒。</p>
+                    <p>位於新竹科學園區出入口處，新竹市中心，位在繁華的市中心，上課期間皆有警衛看管。</p>
                 </div>
             </div>
             <div class="item">
                 <div class="iconBox blue"><i class="fa-solid fa-user-tie"></i></div>
                 <div class="text">
                     <h4 class="blue">常態課程</h4>
-                    <p>我們冰芬文教提供了國、英、數等課程，幫助孩子奠定好基礎，並在未來升學方面更加順利。</p>
+                    <p>我們冰芬文教提供了英文、數學、自然等課程，幫助孩子奠定好基礎，並在未來升學方面更加順利。</p>
                 </div>
             </div>
             <div class="item">
@@ -46,7 +46,7 @@
                 <div class="iconBox yellow"><i class="fa-solid fa-chalkboard-user"></i></div>
                 <div class="text">
                     <h4 class="yellow">師培課程</h4>
-                    <p>與美國教師協會TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。</p>
+                    <p>與TESOL合作，致力於培養專業的教師，以教學、教室訓練、管理課程為宗旨，針對實體課程進行實務受訓。</p>
                 </div>
             </div>
             <div class="item">
