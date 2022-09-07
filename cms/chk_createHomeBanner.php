@@ -3,15 +3,13 @@ require_once('../config/conn.php');
 session_start();
 ini_set ( 'date.timezone' , 'Asia/Taipei' );  
 date_default_timezone_set('Asia/Taipei');
-
 if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
-
+    
     $record_lastdate = date("Y-m-d H:i:s");
     $record_user = $_SESSION['username'];
-    $record_type_name = "最新消息";
+    $record_type_name = "首頁輪播圖";
     $record_action = "新增";
     $sql_record = "INSERT INTO record (user,lastdate,type_name,action) VALUES (:record_user,:record_lastdate,:record_type_name,:record_action)";
-    
     $stmt_record = $conn -> prepare($sql_record);
     $stmt_record -> bindParam(':record_user' ,$record_user);
     $stmt_record -> bindParam(':record_type_name' ,$record_type_name);
@@ -19,28 +17,25 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $stmt_record -> bindParam(':record_action' ,$record_action);
     $stmt_record -> execute();
     // ---------------------------------------------------------
+    $sql_sort = "SELECT max(sort) FROM home_banner";
+    $stmt_sort = $conn->prepare($sql_sort);
+    $stmt_sort->execute();
+    $RS_sort = $stmt_sort->fetch();
+
+    echo $RS_sort[0];
+
     $rand = strval(rand(1000,1000000));
-    
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    $link = $_POST['link'];
     
     $lastdate = date("Y-m-d H:i:s");
 
-    $course = (empty($_POST['course'])) ? '0' : '1';    
-    $daily = (empty($_POST['daily'])) ? '0' : '1';    
-    $train = (empty($_POST['train'])) ? '0' : '1';  
     $isshow = (empty($_POST['isshow'])) ? '0' : '1';    
-    $focus = (empty($_POST['focus'])) ? '0' : '1';    
-    $hot = (empty($_POST['hot'])) ? '0' : '1';    
+    $seo = (empty($_POST['seo'])) ? '新竹市冰芬文教' : $_POST['seo'];    
+    $link = (empty($_POST['link'])) ? 'javascript:;' : $_POST['seo'];    
+    $sort = $RS_sort[0] + 1;
+    $user = $_SESSION['username'];
 
-    $user = $_POST['user'];
-  
-    if($focus == 1){
-        $init_focus = "UPDATE news SET focus = '0'";
-        $stmt0 = $conn->prepare($init_focus);
-        $stmt0->execute();
-    }
-    
+
     $file      = $_FILES['imgsrc'];       //上傳檔案信息
     $file_name = $file['name'];                //上傳檔案的原來檔案名稱
     $file_type = $file['type'];                //上傳檔案的類型(副檔名)
@@ -50,25 +45,19 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $imgsrc = $rand.$file_name;
 
    
-    $sql_str = "INSERT INTO news (title,content,lastdate,imgsrc,course,daily,train,isshow,focus,hot,user) VALUES
-                                 (:title,:content,:lastdate,:imgsrc,:course,:daily,:train,:isshow,:focus,:hot,:user)";
+    $sql_str = "INSERT INTO home_banner (link,lastdate,imgsrc,isshow,seo,user,sort) VALUES
+                                 (:link,:lastdate,:imgsrc,:isshow,:seo,:user,:sort)";
     $stmt = $conn -> prepare($sql_str);
     
-    $stmt -> bindParam(':title' ,$title);
-    $stmt -> bindParam(':content' ,$content);
+    $stmt -> bindParam(':link' ,$link);
     $stmt -> bindParam(':lastdate' ,$lastdate);
     $stmt -> bindParam(':imgsrc' ,$imgsrc);
-    $stmt -> bindParam(':course' ,$course);
-    $stmt -> bindParam(':daily' ,$daily);
-    $stmt -> bindParam(':train' ,$train);
     $stmt -> bindParam(':isshow' ,$isshow);
-    $stmt -> bindParam(':focus' ,$focus);
-    $stmt -> bindParam(':hot' ,$hot);
+    $stmt -> bindParam(':seo' ,$seo);
     $stmt -> bindParam(':user' ,$user);
+    $stmt -> bindParam(':sort' ,$sort);
     $stmt ->execute();
 
-
-    
 
     $allow_ext = array('jpeg', 'jpg', 'png', 'gif','JPG','JPEG','PNG','GIF');
     //設定上傳位置
@@ -97,7 +86,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
         // echo '<br>---------檔案刪除' . $result;
       }
       // header('Location:newsCreate.php');
-      echo "<script>alert('上傳成功!');window.location.href = ./news.php' </script>";
+      echo "<script>alert('上傳成功!');window.location.href = ./home_banner.php' </script>";
    
     } else {
       //這裡表示上傳有錯誤, 匹配錯誤編號顯示對應的訊息
@@ -112,5 +101,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
       }
     }
     
-    echo "<script>alert('新增成功!');window.location.href = './news.php' </script>";
+    echo "<script>alert('新增成功!');window.location.href = './home_banner.php' </script>";
 }
+
+?>

@@ -26,6 +26,9 @@ try{
 
     $sql_str = "SELECT * FROM course WHERE isshow=1 AND focus=1 Limit 1";
     $RS_course = $conn -> query($sql_str);
+
+    $sql_str = "SELECT * FROM home_banner WHERE isshow=1";
+    $RS_banner = $conn -> query($sql_str);
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }
@@ -37,8 +40,9 @@ try{
 <div id="index_content">
     <h1 style="opacity: 0;position: absolute;top: -9999999px;">新竹市 補習班 推薦 冰芬文教</h1>
     <div class="responsive">
-        <div><a href="javascript:;"><img src="./images/banner.png" alt="新竹市冰芬文教補習班，選擇冰芬使你的未來繽紛。"></a></div>
-        <div><a href="javascript:;"><img src="./images/banner2.png" alt="冰芬文教x伊索教育"></a></div>
+        <?php foreach($RS_banner as $item){ ?>
+            <div><a href="<?php echo $item['link']; ?>"><img src="./images/img_upload/<?php echo $item['imgsrc']; ?>" alt="<?php echo $item['seo']; ?>"></a></div>
+        <?php } ?>
     </div>
     <div class="about">
         <div class="title">
