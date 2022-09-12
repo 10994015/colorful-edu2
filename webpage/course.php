@@ -25,9 +25,6 @@ if(isset($_GET['type'])){
 }
 ?>
 
-<head>
-    <title>冰芬文教｜新竹市補習班</title>
-</head>
 
 <div id="course">
     <nav class="nav">
@@ -60,3 +57,8 @@ if(isset($_GET['type'])){
         <?php } ?>
     </div>
 </div>
+
+
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>

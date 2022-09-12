@@ -34,9 +34,7 @@ try{
 }
 
 ?>
-<head>
-    <title>冰芬文教｜新竹市補習班</title>
-</head>
+
 <div id="index_content">
     <h1 style="opacity: 0;position: absolute;top: -9999999px;">新竹市 補習班 推薦 冰芬文教</h1>
     <div class="responsive">
@@ -157,7 +155,7 @@ try{
         <?php } ?>
     </div>
     </div>
-   
+
     <div class="news">
         <div class="title">
             <span class="line"></span>
@@ -299,7 +297,7 @@ try{
     
 
     <div class="cooperate">
-         <div class="title">
+        <div class="title">
             <span class="line"></span>
             <h2>Cooperation</h2>
             <span class="line"></span>
@@ -318,6 +316,8 @@ try{
     </div>
 </div>
 
+
+
 <link rel="stylesheet" type="text/css" href="./shared/slick-1.6.0/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="./shared/slick-1.6.0/slick/slick-theme.css"/>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -325,3 +325,7 @@ try{
 <script type="text/javascript" src="./shared/slick-1.6.0/slick/slick.min.js"></script>
 <script src="./js/slick.js"></script>
 <script src="./js/launch-time.js"></script>
+
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>

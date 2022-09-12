@@ -8,6 +8,9 @@ if(isset($_GET['id']) && $_GET['id']!=""){
         $stmt -> bindParam(':id', $id);
         $stmt -> execute();
         $row_post = $stmt -> fetch(PDO::FETCH_ASSOC);
+        if(count($row_post) <=1 || $row_post['isshow']==0){
+            header('Location:./?page=notfound');
+        }
         $tag = "";
         if($row_post['course']==1){
             $sql_str_tag = "SELECT * FROM news WHERE course=1 and isshow=1  ORDER BY id DESC Limit 4";
@@ -27,6 +30,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 
 
 ?>
+
 
 <div id="post">
     <div class="postContent">
@@ -57,6 +61,10 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 
 </div>
 
+
 <head>
     <title><?php echo $row_post['title']; ?></title>
+    <?php if($row_post['isshow']=='0'){ ?>
+        <meta name="robots" content="noindex">
+    <?php } ?>
 </head>

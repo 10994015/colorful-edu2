@@ -23,9 +23,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     $start_day = str_replace("-", "/",  $row_course['start_day']);
 }
 ?>
-<head>
-    <title><?php echo $row_course['title']; ?></title>
-</head>
+
 
 <div id="courseItem">
     <img src="./images/img_upload/<?php echo $row_course['imgsrc']; ?>" alt="<?php echo $row_course['title']; ?>">
@@ -59,4 +57,10 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     <a href="./?page=about#contact" class="apply">立即報名</a>
 </div>
 
+
+
 <script src="./js/launch-time.js"></script>
+
+<head>
+    <title><?php echo $row_course['title']; ?></title>
+</head>

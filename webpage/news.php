@@ -78,9 +78,8 @@ $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY lastdate DESC
 $RS_train = $conn -> query($sql_str);
 
 ?>
-<head>
-    <title>冰芬文教｜新竹市補習班</title>
-</head>
+
+
 <div id="newsPage">
     <div id="loading"><i class="fa-solid fa-spinner"></i></div>
     <div class="newsType">
@@ -240,4 +239,10 @@ $RS_train = $conn -> query($sql_str);
     </div>
     
 </div>
+
+
 <script src="./js/search.js"></script>
+
+<head>
+    <title>冰芬文教｜新竹市補習班</title>
+</head>
