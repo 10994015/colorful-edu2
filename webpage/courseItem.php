@@ -6,6 +6,9 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     $stmt -> bindParam(':id', $id);
     $stmt -> execute();
     $row_course = $stmt -> fetch(PDO::FETCH_ASSOC);
+    if(count($row_course) <=1 || $row_course['isshow']==0){
+        header('Location:./?page=notfound');
+    }
     if($row_course['week']!="8"){
         $weekViewArr = array();
         $week = explode(',' , $row_course['week']);
@@ -63,4 +66,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 
 <head>
     <title><?php echo $row_course['title']; ?></title>
+    <?php if($row_post['isshow']=='0'){ ?>
+        <meta name="robots" content="noindex">
+    <?php } ?>
 </head>
