@@ -61,19 +61,22 @@ if(isset($_SESSION['username'])){
             <div class="module">
                 <div class="header">編輯排序 <i class="fas fa-times" id="closeSortModule"></i> </div>
                 <form action="./update_banner_sort.php" method="post" class="content" id="sortForm" >
-                    <div class="sortNumber">
-                        <?php foreach($RS_banner3 as $key => $item){ ?>
+                    
+                    <div id="sortContent">
+                        <?php foreach($RS_banner2 as $key => $item){ ?>
                             <div class="item">
-                                <p><?php echo $key +1 ; ?></p>
+                                <p> <i class="fas fa-bars"></i> </p>
+                                <img src="../images/img_upload/<?php echo $item['imgsrc']; ?>" class="sortContentImg" id="homeBannerId<?php echo $item['id']; ?>">
                             </div>
                         <?php } ?>
                     </div>
-                    <div id="sortContent">
-                        <?php foreach($RS_banner2 as $key => $item){ ?>
-                            <img src="../images/img_upload/<?php echo $item['imgsrc']; ?>" class="sortContentImg" id="homeBannerId<?php echo $item['id']; ?>">
-                        <?php } ?>
+                    <div class="sortNumber">
+                    <?php foreach($RS_banner3 as $key => $item){ ?>
+                            <div class="item">
+                                 <p>Sort:<?php echo $key +1 ; ?></p>
+                            </div>
+                        <?php } ?> 
                     </div>
-                    
                     <input type="hidden" name="sortId" id="sortId">
                     <div id="sortFormHidden"></div>
                     <input type="submit" value="更新" id="updateSortSendBtn" onclick="updateSortFn()" name="sortChk">

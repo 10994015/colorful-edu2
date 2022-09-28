@@ -27,7 +27,7 @@ try{
     $sql_str = "SELECT * FROM course WHERE isshow=1 AND focus=1 Limit 1";
     $RS_course = $conn -> query($sql_str);
 
-    $sql_str = "SELECT * FROM home_banner WHERE isshow=1";
+    $sql_str = "SELECT * FROM home_banner WHERE isshow=1 ORDER BY sort ASC";
     $RS_banner = $conn -> query($sql_str);
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());

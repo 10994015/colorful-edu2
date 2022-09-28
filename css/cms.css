@@ -785,7 +785,7 @@ main#home_banner > .sortModule > .module {
 main#home_banner > .sortModule > .module > .header {
   width: 100%;
   height: 50px;
-  background: #25D0B6;
+  background: #04A0FC;
   color: #fff;
   text-align: center;
   line-height: 50px;
@@ -837,7 +837,7 @@ main#home_banner > .sortModule > .module > .content::-webkit-scrollbar-thumb {
   border-radius: 7px;
 }
 
-main#home_banner > .sortModule > .module > .content > div.sortNumber {
+main#home_banner > .sortModule > .module > .content > div.sortBars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -849,6 +849,34 @@ main#home_banner > .sortModule > .module > .content > div.sortNumber {
   width: 15px;
 }
 
+main#home_banner > .sortModule > .module > .content > div.sortBars > .item {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ccc;
+  margin: 8px auto;
+}
+
+main#home_banner > .sortModule > .module > .content > div.sortNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50px;
+  height: 100%;
+}
+
 main#home_banner > .sortModule > .module > .content > div.sortNumber > .item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -856,16 +884,20 @@ main#home_banner > .sortModule > .module > .content > div.sortNumber > .item {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
+  min-height: 80px;
+  margin: 8px 0;
+  padding-bottom: 10px;
 }
 
 main#home_banner > .sortModule > .module > .content > div.sortNumber > .item > p {
-  width: 15px;
+  width: 100%;
   text-align: center;
-  height: 100px;
-  margin: 8px 0;
-  display: block;
-  line-height: 100px;
+  color: #000;
+  font-size: 13px;
 }
 
 main#home_banner > .sortModule > .module > .content > div#sortContent {
@@ -876,12 +908,46 @@ main#home_banner > .sortModule > .module > .content > div#sortContent {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 300px;
+  width: 100%;
 }
 
-main#home_banner > .sortModule > .module > .content > div#sortContent > img {
-  width: 300px;
-  height: 100px;
+main#home_banner > .sortModule > .module > .content > div#sortContent .item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px #ccc solid;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+main#home_banner > .sortModule > .module > .content > div#sortContent .item > p {
+  width: 30px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main#home_banner > .sortModule > .module > .content > div#sortContent .item > p > i {
+  color: #000;
+}
+
+main#home_banner > .sortModule > .module > .content > div#sortContent .item > img {
+  width: 250px;
+  height: 80px;
   margin: 8px auto;
   display: block;
   -o-object-fit: cover;
@@ -901,7 +967,7 @@ main#home_banner > .sortModule > .module > .content > #updateSortSendBtn {
   color: #fff;
   outline: none;
   border: none;
-  background-color: #3BD5BE;
+  background-color: #04A0FC;
   font-weight: 600;
   font-size: 17px;
   cursor: pointer;
