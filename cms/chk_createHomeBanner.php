@@ -22,7 +22,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $stmt_sort->execute();
     $RS_sort = $stmt_sort->fetch();
 
-    echo $RS_sort[0];
+    // echo $RS_sort[0];
 
     $rand = strval(rand(1000,1000000));
     $link = $_POST['link'];

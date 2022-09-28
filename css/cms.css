@@ -617,6 +617,28 @@ main#home_banner > .bannerList > a#createBannerBtn > i {
   font-size: 14px;
 }
 
+main#home_banner > .bannerList > a#updateSortBtn {
+  position: absolute;
+  top: 30px;
+  right: 250px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#02C7E7), color-stop(#04A0FC), to(#02C7E7));
+  background-image: linear-gradient(to right, #02C7E7, #04A0FC, #02C7E7);
+}
+
+main#home_banner > .bannerList > a#updateSortBtn > i {
+  font-size: 14px;
+}
+
 main#home_banner > .bannerList > h4 {
   border-bottom: #FE8696 3px solid;
   width: 120px;
@@ -733,6 +755,385 @@ main#home_banner > .bannerList > .bannerItem > strong.delete > a {
   line-height: 35px;
   text-decoration: none;
   font-size: 16px;
+}
+
+main#home_banner > .sortModule {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999999999999999;
+  display: none;
+}
+
+main#home_banner > .sortModule > .module {
+  width: 450px;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 120px;
+}
+
+main#home_banner > .sortModule > .module > .header {
+  width: 100%;
+  height: 50px;
+  background: #25D0B6;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  position: relative;
+}
+
+main#home_banner > .sortModule > .module > .header > i {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  -webkit-transform: scale(1) translateY(-50%);
+          transform: scale(1) translateY(-50%);
+}
+
+main#home_banner > .sortModule > .module > .header > i:hover {
+  -webkit-transform: scale(1.2) translateY(-50%);
+          transform: scale(1.2) translateY(-50%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main#home_banner > .sortModule > .module > .content {
+  width: 100%;
+  overflow: scroll;
+  height: 100%;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 50px;
+}
+
+main#home_banner > .sortModule > .module > .content::-webkit-scrollbar {
+  widtH: 7px;
+  height: 7px;
+  background-color: #eee;
+}
+
+main#home_banner > .sortModule > .module > .content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 7px;
+}
+
+main#home_banner > .sortModule > .module > .content > div.sortNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 15px;
+  width: 15px;
+}
+
+main#home_banner > .sortModule > .module > .content > div.sortNumber > .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+main#home_banner > .sortModule > .module > .content > div.sortNumber > .item > p {
+  width: 15px;
+  text-align: center;
+  height: 100px;
+  margin: 8px 0;
+  display: block;
+  line-height: 100px;
+}
+
+main#home_banner > .sortModule > .module > .content > div#sortContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+}
+
+main#home_banner > .sortModule > .module > .content > div#sortContent > img {
+  width: 300px;
+  height: 100px;
+  margin: 8px auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+main#home_banner > .sortModule > .module > .content > #updateSortSendBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 150px;
+  height: 35px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background-color: #3BD5BE;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+main#update_home_banner > form.updateBannerForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+  color: #555;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic {
+  width: 800px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > img.previewImg {
+  width: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > input[type="file"] {
+  display: none;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label > input[type="text"] {
+  width: 100%;
+  height: 50px;
+  border: 1px #ccc solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label > input[type="text"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label > label.chooseFile {
+  width: 180px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB996), to(#FE8996));
+  background-image: linear-gradient(to right, #FFB996, #FE8996);
+  padding: 0;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 17px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .basic > label > #fileText {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced {
+  width: calc(100% - 800px);
+  min-width: 380px;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-top: 30px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border: 1px #ccc solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="text"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="checkbox"], main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label input[type="radio"] {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#bbb), to(#999));
+  background: linear-gradient(to right, #bbb, #999);
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="checkbox"]::before, main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="checkbox"]:checked, main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label input[type="radio"]:checked {
+  background: -webkit-gradient(linear, left top, right top, from(#FEB096), to(#FE7296));
+  background: linear-gradient(to right, #FEB096, #FE7296);
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="checkbox"]:checked::before, main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label input[type="radio"]:checked::before {
+  left: 25px;
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label > input[type="checkbox"]::after, main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > label input[type="radio"]::after {
+  content: '';
+}
+
+main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > #updateBannerBtn {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 19px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
+main#update_home_banner > form.updateBannerForm > #createArticleBtn {
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 19px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
+  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
 }
 
 main#createHomeBanner > form.createBannerForm {

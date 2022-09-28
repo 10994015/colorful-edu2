@@ -14,8 +14,6 @@ if($focus == 1){
 if($_FILES['imgsrc']['name']!=""){
     if(isset($_POST['id'])){
         try{
-
-
             $record_lastdate = date("Y-m-d H:i:s");
             $record_user = $_SESSION['username'];
             $record_type_name = "最新消息";
