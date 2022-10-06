@@ -72,7 +72,7 @@ if(isset($_SESSION['username'])){
         }
     }
     function focusFn(e){
-        console.log(123);
+        // console.log(123);
         
         let params = new URLSearchParams()
         let focusId = e.target.parentNode.getElementsByClassName('focusId')[0].value;
