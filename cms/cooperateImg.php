@@ -56,7 +56,7 @@ if(isset($_SESSION['username'])){
                     <p>新增圖片</p>
                     <i class="fas fa-times" id="closeCreateModule"></i>
                 </div>
-                <form name="uploadForm" enctype="multipart/form-data" method="POST" action="chk_cooperateImg.php">
+                <form name="uploadForm" enctype="multipart/form-data" method="POST" action="./chk_cooperateImg.php">
                     <input type="file" name="imgsrc"  hidden="hidden" id="fileimgBtn">
                     <label for="fileimgBtn" class="chooseFile"><i class="fa-solid fa-image"></i>選擇封面照</label>
                     <span id="fileText">尚未選擇圖片</span>

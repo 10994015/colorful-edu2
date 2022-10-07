@@ -43,7 +43,7 @@ if(isset($_SESSION['username'])){
         <div class="activityList">
             <h4>活動日誌</h4>
             <?php if($_SESSION['level']>=10){ ?>
-            <a href="./createMember.php" id="createMemberBtn">新增課程 <i class="fa-solid fa-plus"></i></a>
+            <!-- <a href="./createMember.php" id="createMemberBtn">新增課程 <i class="fa-solid fa-plus"></i></a> -->
             <?php } ?>
             <div class="activityItem activityItemTitle">
                 <strong class="username">帳號</strong>  
