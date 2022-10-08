@@ -30,10 +30,15 @@ if(isset($_SESSION['username'])){
 </head>
 <body>
     <input type="hidden" value="<?php echo $focusNav; ?>" id="focusNav">
+    <input type="hidden" value="<?php echo $_SESSION['username']; ?>" id="account">
     <?php include_once('./header.php');  ?>
     <main id="index">
         <div class="title"><span class="icon"><i class="fa-solid fa-cube"></i></span>CMS</div>
-        <div></div>
+        <div class="webInformationList">
+            <div class="webInformation"></div>
+            <div class="header"></div>
+            <div class="footer"></div>
+        </div>
         <div class="userList">
             <?php if($_SESSION['level'] >= 10){ ?>
             <a href="javascript:;" id="createUserBtn">新增使用者 <i class="fa-solid fa-plus"></i></a>
@@ -46,7 +51,7 @@ if(isset($_SESSION['username'])){
                 <strong class="lastdate">最後上線時間</strong>
                 <strong class="level">權限</strong>
                 <strong class="active">活動紀錄</strong>
-                <strong class="update">編輯</strong>
+                <strong class="update">查詢</strong>
                 <strong class="delete">刪除</strong>
             </div>
             <?php foreach($RS_user as $item){ ?>
@@ -57,7 +62,7 @@ if(isset($_SESSION['username'])){
                 <strong class="lastdate"><span><?php echo $item['lastdate']; ?></span></strong>
                 <strong class="level"><?php echo $levelArr[$item['level']]; ?></strong>
                 <strong class="active"><a href="javascript:;" class="activeBtn">活動紀錄</a></strong>
-                <strong class="update"><a href="javascript:;">編輯</a></strong>
+                <strong class="update"><a href="javascript:;" onclick="updateUserFn(<?php echo $item['id']; ?>)">查詢</a></strong>
                 <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)">刪除</a></strong>
             </div>
             <?php } ?>
@@ -86,13 +91,46 @@ if(isset($_SESSION['username'])){
                 <a href="javascript:;" class="createBtn" onclick="postUserData()">新增使用者 </a>
             </form>
         </div>
+        <div id="updateUser">
+            <form action="./chk_updateUser.php" method="post" enctype="multipart/form-data">
+                <div class="header"> <p>編輯</p> <i class="fas fa-times" id="closeUpdateUser"></i> </div>
+                <input type="file" name="imgsrc"  id="fileimgBtn_update">
+                <label for="">
+                    <label for="fileimgBtn_update" class="chooseFile">
+                        <i class="fa-solid fa-image"></i>選擇頭像
+                    </label>
+                    <span id="fileText_update">尚未選擇圖片</span>
+                </label>
+                <img src="" class="previewImg" id="previewImg_update">
+                <!-- <label for="">請輸入帳號:<input type="text" name="username" id="create_username"></label> -->
+                <label for="">更改密碼:<input type="text" name="password" id="update_password"></label>
+                <label for="">更改姓名:<input type="text" name="name" id="update_name"></label>
+                <select name="level"" id="update_level" >
+                    <option value="9" class="update_option">管理者</option>
+                    <option value="10" class="update_option">最高管理者</option>
+                </select>
+                <input type="submit" value="新增" hidden id="formUserBtn_update">
+                <input type="hidden" value="" name="id" id="update_id">
+                <a href="javascript:;" class="createBtn" onclick="postUpdateUserData()">編輯使用者 </a>
+            </form>
+        </div>
+
+        <div id="chkUser">
+            <div class="inputPwd">
+                <div class="header"> <p>資料驗證</p> <i class="fas fa-times" id="closeChkUser"></i></div>
+                <h3>請先輸入您的密碼</h3>
+                <p>Please enter your password first.</p>
+                <input type="password" placeholder="請輸入密碼..." id="chkpwd">
+                <input type="hidden" id="chkId">
+                <input type="hidden" value="" id="operate">
+                <button id="chkUserBtn" onclick="chkAccountFn('<?php echo $_SESSION['username']; ?>')">確認</button>
+            </div>
+        </div>
     </main>
 
 
 <script src="../js/cms/header.js"></script>
 <script>
-
-
 
     const fileimgBtn = document.getElementById('fileimgBtn');
     const fileText = document.getElementById('fileText');
@@ -111,25 +149,58 @@ if(isset($_SESSION['username'])){
         reader.readAsDataURL(file);
     });
 
+
+    const chkUser = document.getElementById('chkUser');
+    const chkUserBtn = document.getElementById('chkUserBtn');
+    const closeChkUser = document.getElementById('closeChkUser');
+    const operate = document.getElementById('operate');
+    closeChkUser.addEventListener('click',()=>{
+        chkUser.style.display = "none";
+    })
+    chkpwd.addEventListener('keyup',(e)=>{
+        if(e.keyCode == 13){
+            chkAccountFn(`${document.getElementById('account').value}`);
+        }
+    })
+     function chkAccountFn(username){
+        let params = new URLSearchParams()
+        let chkpwd = document.getElementById('chkpwd').value;
+        params.append('username',username );
+        params.append('password',chkpwd );
+         axios.post('./chkAccount.php',params).then(res=>{
+            if(res.data.chk == 1){
+                chkUser.style.display = "none";
+                if(operate.value == "create"){
+                    createUser.style.display = "flex";
+                }
+                if(operate.value == "update"){
+                    openUpdateFn(chkId.value);
+                }
+                operate.value = "";
+            }
+            else{
+                alert('密碼輸入錯誤!');
+            }
+            // let chkAccountCode = res.data;
+        })
+        
+        
+    }
+    
     const createUserBtn = document.getElementById('createUserBtn');
     const createUser = document.getElementById('createUser');
     let isOpenCreateUser = false;
     const closeCreateUser = document.getElementById('closeCreateUser');
     createUserBtn.addEventListener('click',()=>{
-        isOpenCreateUser = true;
-        chkOpenCreateUser();
+        chkUser.style.display = "flex";
+        operate.value = "create";
+        chkpwd.value = "";
+        // createUser.style.display = "flex";
     });
     closeCreateUser.addEventListener('click',()=>{
-        isOpenCreateUser = false;
-        chkOpenCreateUser();
+        createUser.style.display = "none";
     })
-    function chkOpenCreateUser(){
-        if(isOpenCreateUser){
-            createUser.style.display = "flex";
-        }else{
-            createUser.style.display = "none";
-        }
-    }
+   
     const create_username = document.getElementById('create_username');
     const create_password = document.getElementById('create_password');
     const create_name = document.getElementById('create_name');
@@ -140,11 +211,11 @@ if(isset($_SESSION['username'])){
             return;
         }
         if(create_password.value == ""){
-            alert('請輸入帳號!');
+            alert('請輸入密碼!');
             return;
         }
         if(create_name.value == ""){
-            alert('請輸入帳號!');
+            alert('請輸入姓名!');
             return;
         }
 
@@ -159,6 +230,76 @@ if(isset($_SESSION['username'])){
             alert('刪除成功!');
         }
     }
+    const updateUser = document.getElementById('updateUser');
+    let isOpenUpdateUser = false;
+    const closeUpdateUser = document.getElementById('closeUpdateUser');
+    const update_password = document.getElementById('update_password');
+    const update_name = document.getElementById('update_name');
+    const update_option = document.getElementById('update_level').getElementsByClassName('update_option');
+    const update_id = document.getElementById('update_id');
+    let userData = {}
+    function updateUserFn(id){
+        isOpenUpdateUser = true;
+        if(isOpenUpdateUser){
+            chkUser.style.display = "flex";
+            chkpwd.value = "";
+            chkId.value  = id ;
+            operate.value = "update";
+            
+            
+        }else{
+            chkUser.style.display = "none";
+        }
+    }
+    closeUpdateUser.addEventListener('click',()=>{
+        isOpenUpdateUser = false;
+        if(!isOpenUpdateUser){
+            updateUser.style.display = "none";
+        }
+    })
+    function openUpdateFn(id){
+        updateUser.style.display = "flex";
+        axios.get(`./selectUser.php?id=${id}`).then(res=>{
+            userData = res.data;
+            update_password.value = userData.password;
+            update_name.value = userData.name;
+            update_id.value = userData.id;
+            previewImg_update.src = `../images/cms/${userData.imgsrc}`;
+            for(let i=0;i<update_option.length;i++){
+                if(update_option[i].value == userData.level){
+                    update_option[i].selected="selected";
+                }
+            }
+        })
+    }
+    function postUpdateUserData(){
+        if(update_password.value == ""){
+            alert('密碼不得為空!');
+            return;
+        }
+        if(update_name.value == ""){
+            alert('姓名不得為空!');
+            return;
+        }
+        formUserBtn_update.click();
+    }
+
+    const fileimgBtn_update = document.getElementById('fileimgBtn_update');
+    const fileText_update = document.getElementById('fileText_update');
+    const previewImg_update = document.getElementById('previewImg_update');
+    fileimgBtn_update.addEventListener('change',()=>{
+        if(fileimgBtn_update.value){
+            fileText_update.innerHTML = fileimgBtn_update.value;
+        }else{
+            fileText_update.innerHTML = "尚未選擇圖片";
+        }
+        const file_update = fileimgBtn_update.files[0];
+        const reader_update = new FileReader;
+        reader_update.onload = function(e) {
+            previewImg_update.src = e.target.result;
+        };
+        reader_update.readAsDataURL(file_update);
+    });
 </script>
 </body>
 </html>

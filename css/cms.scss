@@ -643,6 +643,248 @@ main#index{
             
         }
     }
+    >#updateUser{
+        position: fixed;
+        top: 0;
+        left:0;
+        width:100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999998888888988;
+        display: none;
+       
+        >form{
+            width:500px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            align-items: center;
+            border-radius: 8px;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            animation: openCreateUser .2s linear;
+            @keyframes openCreateUser {
+                0%{
+                    opacity: .3;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+            >div.header{
+                position: absolute;
+                top: 0;
+                left:0;
+                width:100%;
+                height: 50px;
+                background-color: $mainColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:#fff;
+                >p{
+                    font-weight: 600;
+                }
+                >i{
+                    position: absolute;
+                    top: 50%;
+                    right:15px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+            }
+            >img.previewImg{
+                width:80px;
+                object-fit: contain;
+            }
+            >input[type="file"]{
+                display: none;
+            }
+            >label{
+                margin:10px 0;
+                height: auto;
+                width:80%;
+                display: block;
+               
+                >p{
+                    color:#333;
+                    font-size: 17px;
+                    margin-bottom: 3px;
+                }
+                >input[type="text"]{
+                    width:100%;
+                    height: 35px;
+                    border:1px #999 solid;
+                    outline: none;
+                    padding: 0 10px;
+                    font-size: 17px;
+                    transition: .5s;
+                    border-radius: 6px;
+                    &:focus{
+                        transition: .5s;
+                        border:1px #00A1FA solid;
+                    }
+                }
+                >label.chooseFile{
+                    width:180px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color:#fff;
+                    background-image: linear-gradient(to right, #FFB996, #FE8996);
+                    padding: 0;
+                    margin:10px 0;
+                    cursor: pointer;
+                    font-weight: 500;
+                    border-radius: 50px;
+                    font-size: 17px;
+                }
+                >#fileText_update{
+                    color:#999;
+                    font-size: 12px;
+                    margin-bottom: 15px;
+                    width:300px;
+                    overflow:hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                }
+            }
+            >select{
+                width:80%;
+                height: 35px;
+                border-radius: 6px;
+                transition: .5s;
+                margin:10px 0;
+                font-size: 17px;
+            }
+            >.createBtn{
+                width:80%;
+                height: 40px;
+                border-radius: 6px;
+                transition: .5s;
+                margin:10px 0;
+                background-color: #FE7296;
+                border:none;
+                outline: none;
+                color:#fff;
+                cursor: pointer;
+                font-size: 17px;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none;
+                line-height: 40px;
+            }
+            
+        }
+    }
+    #chkUser{
+        position: fixed;
+        top: 0;
+        left:0;
+        width:100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999998888888988;
+        display: none;
+        >div.inputPwd{
+            width:400px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            animation: openCreateUser .2s linear;
+            @keyframes openCreateUser {
+                0%{
+                    opacity: .3;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+            >div.header{
+                position: absolute;
+                top: 0;
+                left:0;
+                width:100%;
+                height: 50px;
+                background-color: $mainColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:#fff;
+                >p{
+                    font-weight: 600;
+                }
+                >i{
+                    position: absolute;
+                    top: 50%;
+                    right:15px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    font-size: 20px;
+                    color:#fff;
+                }
+            }
+            >h3{
+                font-weight: 600;
+                color:#333;
+            }
+            >p{
+                text-align: center;
+                color:#999;
+                font-size: 13px;
+                margin:5px 0;
+            }
+            >input[type="password"]{
+                width:80%;
+                height: 35px;
+                border:1px #999 solid;
+                outline: none;
+                padding: 0 10px;
+                font-size: 17px;
+                transition: .5s;
+                border-radius: 6px;
+                margin-top:10px;
+                &:focus{
+                    transition: .5s;
+                    border:1px #00A1FA solid;
+                }
+            }
+            >button{
+                width:80%;
+                height: 40px;
+                border-radius: 6px;
+                transition: .5s;
+                margin:10px 0;
+                background-color: #FE7296;
+                border:none;
+                outline: none;
+                color:#fff;
+                cursor: pointer;
+                font-size: 17px;
+                font-weight: 600;
+                text-align: center;
+                margin-top:20px;
+            }
+        }
+    }
     
 }
 main#home{

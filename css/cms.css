@@ -921,6 +921,331 @@ main#index > #createUser > form > .createBtn {
   line-height: 40px;
 }
 
+main#index > #updateUser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 9999998888888988;
+  display: none;
+}
+
+main#index > #updateUser > form {
+  width: 500px;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: openCreateUser .2s linear;
+          animation: openCreateUser .2s linear;
+}
+
+@keyframes openCreateUser {
+  0% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main#index > #updateUser > form > div.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #FE8696;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+main#index > #updateUser > form > div.header > p {
+  font-weight: 600;
+}
+
+main#index > #updateUser > form > div.header > i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+main#index > #updateUser > form > img.previewImg {
+  width: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main#index > #updateUser > form > input[type="file"] {
+  display: none;
+}
+
+main#index > #updateUser > form > label {
+  margin: 10px 0;
+  height: auto;
+  width: 80%;
+  display: block;
+}
+
+main#index > #updateUser > form > label > p {
+  color: #333;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+main#index > #updateUser > form > label > input[type="text"] {
+  width: 100%;
+  height: 35px;
+  border: 1px #999 solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+}
+
+main#index > #updateUser > form > label > input[type="text"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#index > #updateUser > form > label > label.chooseFile {
+  width: 180px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFB996), to(#FE8996));
+  background-image: linear-gradient(to right, #FFB996, #FE8996);
+  padding: 0;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 17px;
+}
+
+main#index > #updateUser > form > label > #fileText_update {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 15px;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main#index > #updateUser > form > select {
+  width: 80%;
+  height: 35px;
+  border-radius: 6px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+main#index > #updateUser > form > .createBtn {
+  width: 80%;
+  height: 40px;
+  border-radius: 6px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 10px 0;
+  background-color: #FE7296;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+main#index #chkUser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 9999998888888988;
+  display: none;
+}
+
+main#index #chkUser > div.inputPwd {
+  width: 400px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: openCreateUser .2s linear;
+          animation: openCreateUser .2s linear;
+}
+
+@keyframes openCreateUser {
+  0% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main#index #chkUser > div.inputPwd > div.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #FE8696;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+main#index #chkUser > div.inputPwd > div.header > p {
+  font-weight: 600;
+}
+
+main#index #chkUser > div.inputPwd > div.header > i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+}
+
+main#index #chkUser > div.inputPwd > h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+main#index #chkUser > div.inputPwd > p {
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+main#index #chkUser > div.inputPwd > input[type="password"] {
+  width: 80%;
+  height: 35px;
+  border: 1px #999 solid;
+  outline: none;
+  padding: 0 10px;
+  font-size: 17px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+main#index #chkUser > div.inputPwd > input[type="password"]:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  border: 1px #00A1FA solid;
+}
+
+main#index #chkUser > div.inputPwd > button {
+  width: 80%;
+  height: 40px;
+  border-radius: 6px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 10px 0;
+  background-color: #FE7296;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+}
+
 main#home > .chooseDiv {
   display: -webkit-box;
   display: -ms-flexbox;
