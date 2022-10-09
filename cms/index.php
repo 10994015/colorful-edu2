@@ -48,7 +48,7 @@ if(isset($_SESSION['username'])){
             <div class="webData">
                 <h3>基本資料設定</h3>
                 <p>LOGO、網站名稱、頁面...</p>
-                <a href="javascript:;">前往編輯</a>
+                <a href="./webInformation.php">前往編輯</a>
             </div>
             <div class="webFooter">
                 <h3>Footer設定</h3>

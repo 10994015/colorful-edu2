@@ -1,5 +1,6 @@
+
 <header id="header">
-    <a href="./" id="logo"> <img src="./images/logo.png" alt="新竹市東區補習班冰芬文教LOGO"> </a>
+    <a href="./" id="logo"> <img src="./images/cms/<?php echo $RS_infor['logo']; ?>" alt="<?php echo $RS_infor['seo']; ?>"> </a>
     <nav id="nav">
         <a href="./">home</a>
         <a href="./?page=course">course</a>

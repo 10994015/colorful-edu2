@@ -43,6 +43,6 @@
             </div>
         </div>
         <div class="copyright">
-            Copyright @2022 <a href="./">冰芬文教.</a>  All Rights Reserved.
+            Copyright @2022 <a href="./"><?php echo $RS_infor['web_name']; ?>.</a>  All Rights Reserved.
         </div>
     </footer>
