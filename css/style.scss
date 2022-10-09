@@ -2301,7 +2301,7 @@ div#toTop{
                 font-size: 18px;
                 margin-bottom: 30px;
             }
-            > button {
+            > a.send {
                 width:100px;
                 height: 40px;
                 background-color: #1B4F7D;
@@ -2312,6 +2312,12 @@ div#toTop{
                 cursor: pointer;
                 margin:auto;
                 font-size: 18px;
+                text-align: center;
+                line-height: 40px;
+                transition: .3s;
+                &:hover{
+                    background-color: rgb(3, 41, 75);
+                }
             }
 
         }

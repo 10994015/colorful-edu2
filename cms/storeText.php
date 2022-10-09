@@ -66,7 +66,7 @@ if(isset($_SESSION['username'])){
                 </div>
             </div>
         </div>
-        
+        <?php include('./footer.php'); ?>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="../js/cms/header.js"></script>

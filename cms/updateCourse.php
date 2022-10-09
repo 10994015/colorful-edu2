@@ -152,6 +152,8 @@ if(isset($_SESSION['username'])){
             </div>
             <input type="hidden" name="id" value="<?php echo $row_RS_course['id'];  ?>">
         </form>
+
+        <?php include('./footer.php'); ?>
     </main>
 
 <script src="../shared/ckeditor4/ckeditor.js"></script>

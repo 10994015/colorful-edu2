@@ -60,6 +60,8 @@ if(isset($_SESSION['username'])){
                 </form>
             </div>
         </div>
+
+        <?php include('./footer.php'); ?>
     </main>
 
     <script src="../js/cms/header.js"></script>

@@ -83,6 +83,8 @@ if(isset($_SESSION['username'])){
                 </form>
             </div>
         </div>
+
+        <?php include('./footer.php'); ?>
     </main>
 
     <script src="https://sortablejs.github.io/Sortable/Sortable.js"></script>

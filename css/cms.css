@@ -314,6 +314,25 @@ header#header > .rightDiv > i#logoutBtn {
   cursor: pointer;
 }
 
+footer {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 30px;
+  border-top: 1px #bbb  solid;
+  color: #9c9fa6;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
 nav#nav {
   width: 260px;
   height: auto;
@@ -456,7 +475,7 @@ nav#nav > .navList > a.newsItem > i {
 
 main {
   width: calc(100% - 260px);
-  padding: 50px 35px;
+  padding: 50px 35px 0px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
@@ -506,6 +525,81 @@ main#index > h2 {
   margin: 15px auto;
   font-weight: 300;
   font-size: 30px;
+}
+
+main#index > .webInformations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 50px 0;
+}
+
+main#index > .webInformations > div {
+  width: 30%;
+  height: 200px;
+  border-radius: 6px;
+  padding: 30px 35px;
+  color: #fff;
+}
+
+main#index > .webInformations > div > h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+main#index > .webInformations > div > p {
+  font-weight: 500;
+}
+
+main#index > .webInformations > div > a {
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 160px;
+  height: 45px;
+  text-align: center;
+  line-height: 43px;
+  border: 1px #fff solid;
+  border-radius: 6px;
+  margin-top: 30px;
+  font-size: 18px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main#index > .webInformations > div.webData {
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFBF96), to(#FE8596));
+  background-image: linear-gradient(to right, #FFBF96, #FE8596);
+}
+
+main#index > .webInformations > div.webData a:hover:hover {
+  background-color: #fff;
+  color: #FE8596;
+}
+
+main#index > .webInformations > div.webFooter {
+  background-image: -webkit-gradient(linear, left top, right top, from(#8DC8F8), to(#2992E6));
+  background-image: linear-gradient(to right, #8DC8F8, #2992E6);
+}
+
+main#index > .webInformations > div.webFooter a:hover:hover {
+  background-color: #fff;
+  color: #2992E6;
+}
+
+main#index > .webInformations > div.webColor {
+  background-image: -webkit-gradient(linear, left top, right top, from(#83D9D2), to(#29D1B8));
+  background-image: linear-gradient(to right, #83D9D2, #29D1B8);
+}
+
+main#index > .webInformations > div.webColor a:hover:hover {
+  background-color: #fff;
+  color: #29D1B8;
 }
 
 main#index > .userList {
@@ -574,6 +668,10 @@ main#index > .userList > .userItem > strong.img {
   width: 7%;
 }
 
+main#index > .userList > .userItem > strong.img.notTop {
+  width: 10%;
+}
+
 main#index > .userList > .userItem > strong.img > img {
   width: 40px;
   height: 40px;
@@ -592,6 +690,10 @@ main#index > .userList > .userItem > strong.username {
   font-size: 17px;
 }
 
+main#index > .userList > .userItem > strong.username.notTop {
+  width: 20%;
+}
+
 main#index > .userList > .userItem > strong.username > span {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -603,6 +705,10 @@ main#index > .userList > .userItem > strong.username > span {
 
 main#index > .userList > .userItem > strong.name {
   width: 16%;
+}
+
+main#index > .userList > .userItem > strong.name.notTop {
+  width: 20%;
 }
 
 main#index > .userList > .userItem > strong.name > span {
@@ -642,8 +748,16 @@ main#index > .userList > .userItem > strong.lastdate {
   padding-right: 10px;
 }
 
+main#index > .userList > .userItem > strong.lastdate.notTop {
+  width: 30%;
+}
+
 main#index > .userList > .userItem > strong.level {
   width: 10%;
+}
+
+main#index > .userList > .userItem > strong.level.notTop {
+  width: 20%;
 }
 
 main#index > .userList > .userItem > strong.level > input[type="radio"] {
@@ -4821,26 +4935,12 @@ main#activity > .activityList {
   position: relative;
 }
 
-main#activity > .activityList > a#createMemberBtn {
-  position: absolute;
-  top: 30px;
-  right: 80px;
-  width: 150px;
-  height: 40px;
+main#activity > .activityList > p {
+  float: right;
   text-align: center;
-  line-height: 40px;
   display: block;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  border-radius: 3px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
-  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
-}
-
-main#activity > .activityList > a#createMemberBtn > i {
-  font-size: 14px;
+  color: #222;
+  font-size: 16px;
 }
 
 main#activity > .activityList > h4 {

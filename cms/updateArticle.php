@@ -88,6 +88,8 @@ if(isset($_SESSION['username'])){
            <input type="hidden" name="user" value="<?php echo $_SESSION['name'];  ?>">
            <input type="hidden" name="id" value="<?php echo $row_RS_mb['id'];  ?>">
         </form>
+
+        <?php include('./footer.php'); ?>
     </main>
 <script src="../shared/ckeditor4/ckeditor.js"></script>
 <script src="../js/cms/header.js"></script>

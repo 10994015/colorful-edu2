@@ -53,7 +53,7 @@ if(isset($_SESSION['username'])){
             </div>
             <?php } ?>
         </div>
-       
+        <?php include('./footer.php'); ?>
     </main>
 
 <script src="../js/cms/header.js"></script>

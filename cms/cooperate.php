@@ -31,6 +31,7 @@ if(isset($_SESSION['username'])){
                 <a href="./storeText.php" class="btn3">特約廠商文字</a>
             </div>
         </div>
+        <?php include('./footer.php'); ?>
     </main>
 
     <script src="../js/cms/header.js"></script>

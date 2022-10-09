@@ -29,6 +29,8 @@ if(isset($_SESSION['username'])){
                 <a href="./home_banner.php" class="btn1">BANNER</a>
             </div>
         </div>
+
+        <?php include('./footer.php'); ?>
     </main>
     <script src="../js/cms/header.js"></script>
 </body>

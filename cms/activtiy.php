@@ -4,23 +4,54 @@ session_start();
 $focusNav = "ACTIVITY";
 $user = $_SESSION['username'];
 if(isset($_SESSION['username'])){
-    if($_SESSION['level'] >=10){
-        try{
-            $sql_str = "SELECT * FROM record ORDER BY lastdate DESC";
-            $RS_record = $conn -> query($sql_str);
-            $total_RS_record = $RS_record-> rowCount();
-        }catch(PDOException $e){
-            die('Error!:'.$e->getMessage());
+    if(isset($_GET['user']) && $_GET['user'] != ""){
+        if($_SESSION['level']>=10){
+            $get_user = $_GET['user'];
+            try{
+                
+                $sql_str = "SELECT * FROM record WHERE user = :get_user ORDER BY lastdate DESC";
+                $stmt = $conn -> prepare($sql_str);
+                $stmt -> bindParam(':get_user', $get_user);
+                $stmt -> execute();
+                $RS_record = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+                $total = $stmt -> rowCount();
+            }catch(PDOException $e){
+                die('Error!:'.$e->getMessage());
+            }
+        }else{
+            if(isset($_GET['user']) && $_GET['user'] == $user){
+                $get_user = $_GET['user'];
+                try{
+                    $sql_str = "SELECT * FROM record WHERE user = :get_user ORDER BY lastdate DESC";
+                    $stmt = $conn -> prepare($sql_str);
+                    $stmt -> bindParam(':get_user', $get_user);
+                    $stmt -> execute();
+                    $RS_record = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+                    $total = $stmt -> rowCount();
+                }catch(PDOException $e){
+                    die('Error!:'.$e->getMessage());
+                }
+            }else{
+                echo " <script> alert('你無權限訪問!');window.location.href = './activtiy.php' </script>";
+            }
         }
     }else{
         try{
-            $sql_str = "SELECT * FROM record WHERE user = '$user' ORDER BY lastdate DESC";
-            $RS_record = $conn -> query($sql_str);
-            $total_RS_record = $RS_record-> rowCount();
+            // $sql_str = "SELECT * FROM record WHERE user = '$user' ORDER BY lastdate DESC";
+            // $RS_record = $conn -> query($sql_str);
+            // $total_RS_record = $RS_record-> rowCount();
+
+            $sql_str = "SELECT * FROM record WHERE user = :user ORDER BY lastdate DESC";
+            $stmt = $conn -> prepare($sql_str);
+            $stmt -> bindParam(':user', $user);
+            $stmt -> execute();
+            $RS_record = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+            $total = $stmt -> rowCount();
         }catch(PDOException $e){
             die('Error!:'.$e->getMessage());
         }
     }
+    
  ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -42,6 +73,7 @@ if(isset($_SESSION['username'])){
 
         <div class="activityList">
             <h4>活動日誌</h4>
+            <p>共有 <?php echo $total; ?>筆</p>
             <?php if($_SESSION['level']>=10){ ?>
             <!-- <a href="./createMember.php" id="createMemberBtn">新增課程 <i class="fa-solid fa-plus"></i></a> -->
             <?php } ?>
@@ -66,6 +98,9 @@ if(isset($_SESSION['username'])){
             </div>
             <?php } ?>
         </div>
+
+
+        <?php include('./footer.php'); ?>
     </main>
 
 

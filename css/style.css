@@ -3454,7 +3454,7 @@ div#toTop > i {
   margin-bottom: 30px;
 }
 
-#about > .contact > form > button {
+#about > .contact > form > a.send {
   width: 100px;
   height: 40px;
   background-color: #1B4F7D;
@@ -3465,6 +3465,14 @@ div#toTop > i {
   cursor: pointer;
   margin: auto;
   font-size: 18px;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#about > .contact > form > a.send:hover {
+  background-color: #03294b;
 }
 
 #about > .contact > iframe {

@@ -39,95 +39,135 @@ if(isset($_SESSION['username'])){
             <div class="header"></div>
             <div class="footer"></div>
         </div>
+        <div class="webInformations">
+            <div class="webData">
+                <h3>網頁基本資料</h3>
+                <p>LOGO、網站名稱、頁面...</p>
+                <a href="javascript:;">前往編輯</a>
+            </div>
+            <div class="webFooter">
+                <h3>網頁Footer設定</h3>
+                <p>Footer文字、聯絡資訊...</p>
+                <a href="javascript:;">前往編輯</a>
+            </div>
+            <div class="webColor">
+                <h3>網頁顏色設定</h3>
+                <p>網站主顏色...</p>
+                <a href="javascript:;">前往編輯</a>
+            </div>
+        </div>
         <div class="userList">
             <?php if($_SESSION['level'] >= 10){ ?>
-            <a href="javascript:;" id="createUserBtn">新增使用者 <i class="fa-solid fa-plus"></i></a>
+            <a href="javascript:;" id="createUserBtn">新增管理者 <i class="fa-solid fa-plus"></i></a>
             <?php } ?>
             <h4>使用者列表</h4>
             <div class="userItem userItemTitle">
-                <strong class="img"">頭像</strong>  
-                <strong class="username"">帳號</strong>  
-                <strong class="name">使用者名稱</strong>
-                <strong class="lastdate">最後上線時間</strong>
-                <strong class="level">權限</strong>
-                <strong class="active">活動紀錄</strong>
-                <strong class="update">查詢</strong>
-                <strong class="delete">刪除</strong>
+                <?php  if($_SESSION['level'] < 10){ ?>
+                    <strong class="img notTop">頭像</strong>  
+                    <strong class="username notTop">帳號</strong>  
+                    <strong class="name notTop">使用者名稱</strong>
+                    <strong class="lastdate notTop">最後上線時間</strong>
+                    <strong class="level notTop">權限</strong>
+                <?php }else{ ?>
+                    <strong class="img">頭像</strong>  
+                    <strong class="username">帳號</strong>  
+                    <strong class="name">使用者名稱</strong>
+                    <strong class="lastdate">最後上線時間</strong>
+                    <strong class="level">權限</strong>
+                <?php } ?>
+                <?php if($_SESSION['level'] >=10){ ?>
+                    <strong class="active">活動紀錄</strong>
+                    <strong class="update">查詢</strong>
+                    <strong class="delete">刪除</strong>
+                <?php } ?>
             </div>
-            <?php foreach($RS_user as $item){ ?>
+            <?php foreach($RS_user as $item){ if($_SESSION['level'] >= $item['level']){ ?>
+                
             <div class="userItem">
-                <strong class="img"> <img src="../images/cms/<?php echo $item['imgsrc']; ?>" alt=""></strong>  
-                <strong class="username"> <span><?php echo $item['username']; ?></span></strong>  
-                <strong class="name"><span><?php echo $item['name']; ?></span></strong>
-                <strong class="lastdate"><span><?php echo $item['lastdate']; ?></span></strong>
-                <strong class="level"><?php echo $levelArr[$item['level']]; ?></strong>
-                <strong class="active"><a href="javascript:;" class="activeBtn">活動紀錄</a></strong>
-                <strong class="update"><a href="javascript:;" onclick="updateUserFn(<?php echo $item['id']; ?>)">查詢</a></strong>
-                <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)">刪除</a></strong>
+                <?php  if($_SESSION['level'] < 10){ ?>
+                    <strong class="img notTop"> <img src="../images/cms/<?php echo $item['imgsrc']; ?>" alt=""></strong>  
+                    <strong class="username notTop"> <span><?php echo $item['username']; ?></span></strong>  
+                    <strong class="name notTop"><span><?php echo $item['name']; ?></span></strong>
+                    <strong class="lastdate notTop"><span><?php echo $item['lastdate']; ?></span></strong>
+                    <strong class="level notTop"><?php echo $levelArr[$item['level']]; ?></strong>
+                <?php } else{ ?>
+                    <strong class="img"> <img src="../images/cms/<?php echo $item['imgsrc']; ?>" alt=""></strong>  
+                    <strong class="username"> <span><?php echo $item['username']; ?></span></strong>  
+                    <strong class="name"><span><?php echo $item['name']; ?></span></strong>
+                    <strong class="lastdate"><span><?php echo $item['lastdate']; ?></span></strong>
+                    <strong class="level"><?php echo $levelArr[$item['level']]; ?></strong>
+                <?php } ?>
+                <?php if($_SESSION['level'] >=10){ ?>
+                    <strong class="active"><a href="./activtiy.php?user=<?php echo $item['username']; ?>" class="activeBtn">活動紀錄</a></strong>
+                    <strong class="update"><a href="javascript:;" onclick="updateUserFn(<?php echo $item['id']; ?>)">查詢</a></strong>
+                    <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)">刪除</a></strong>
+                <?php } ?>
             </div>
-            <?php } ?>
+            <?php } } ?>
         </div>
-
-        <div id="createUser">
-            <form action="./chk_createUser.php" method="post" enctype="multipart/form-data">
-                <div class="header"> <p>新增使用者</p> <i class="fas fa-times" id="closeCreateUser"></i> </div>
-                <input type="file" name="imgsrc"  id="fileimgBtn">
-                <label for="">
-                    <label for="fileimgBtn" class="chooseFile">
-                        <i class="fa-solid fa-image"></i>選擇頭像
+        <?php if($_SESSION['level'] >= 10){ ?>
+            <div id="createUser">
+                <form action="./chk_createUser.php" method="post" enctype="multipart/form-data">
+                    <div class="header"> <p>新增使用者</p> <i class="fas fa-times" id="closeCreateUser"></i> </div>
+                    <input type="file" name="imgsrc"  id="fileimgBtn">
+                    <label for="">
+                        <label for="fileimgBtn" class="chooseFile">
+                            <i class="fa-solid fa-image"></i>選擇頭像
+                        </label>
+                        <span id="fileText">尚未選擇圖片</span>
                     </label>
-                    <span id="fileText">尚未選擇圖片</span>
-                </label>
-                <img src="" class="previewImg" id="previewImg">
-                <label for="">請輸入帳號:<input type="text" name="username" id="create_username"></label>
-                <label for="">請輸入密碼:<input type="text" name="password" id="create_password"></label>
-                <label for="">請輸入管理者姓名:<input type="text" name="name" id="create_name"></label>
-                <select name="level"" id="" >
-                    <option value="0" disabled>選擇權限</option>
-                    <option value="9">管理者</option>
-                    <option value="10">最高管理者</option>
-                </select>
-                <input type="submit" value="新增" hidden id="formUserBtn">
-                <a href="javascript:;" class="createBtn" onclick="postUserData()">新增使用者 </a>
-            </form>
-        </div>
-        <div id="updateUser">
-            <form action="./chk_updateUser.php" method="post" enctype="multipart/form-data">
-                <div class="header"> <p>編輯</p> <i class="fas fa-times" id="closeUpdateUser"></i> </div>
-                <input type="file" name="imgsrc"  id="fileimgBtn_update">
-                <label for="">
-                    <label for="fileimgBtn_update" class="chooseFile">
-                        <i class="fa-solid fa-image"></i>選擇頭像
-                    </label>
-                    <span id="fileText_update">尚未選擇圖片</span>
-                </label>
-                <img src="" class="previewImg" id="previewImg_update">
-                <!-- <label for="">請輸入帳號:<input type="text" name="username" id="create_username"></label> -->
-                <label for="">更改密碼:<input type="text" name="password" id="update_password"></label>
-                <label for="">更改姓名:<input type="text" name="name" id="update_name"></label>
-                <select name="level"" id="update_level" >
-                    <option value="9" class="update_option">管理者</option>
-                    <option value="10" class="update_option">最高管理者</option>
-                </select>
-                <input type="submit" value="新增" hidden id="formUserBtn_update">
-                <input type="hidden" value="" name="id" id="update_id">
-                <a href="javascript:;" class="createBtn" onclick="postUpdateUserData()">編輯使用者 </a>
-            </form>
-        </div>
-
-        <div id="chkUser">
-            <div class="inputPwd">
-                <div class="header"> <p>資料驗證</p> <i class="fas fa-times" id="closeChkUser"></i></div>
-                <h3>請先輸入您的密碼</h3>
-                <p>Please enter your password first.</p>
-                <input type="password" placeholder="請輸入密碼..." id="chkpwd">
-                <input type="hidden" id="chkId">
-                <input type="hidden" value="" id="operate">
-                <button id="chkUserBtn" onclick="chkAccountFn('<?php echo $_SESSION['username']; ?>')">確認</button>
+                    <img src="" class="previewImg" id="previewImg">
+                    <label for="">請輸入帳號:<input type="text" name="username" id="create_username"></label>
+                    <label for="">請輸入密碼:<input type="text" name="password" id="create_password"></label>
+                    <label for="">請輸入管理者姓名:<input type="text" name="name" id="create_name"></label>
+                    <select name="level"" id="" >
+                        <option value="0" disabled>選擇權限</option>
+                        <option value="9">管理者</option>
+                        <option value="10">最高管理者</option>
+                    </select>
+                    <input type="submit" value="新增" hidden id="formUserBtn">
+                    <a href="javascript:;" class="createBtn" onclick="postUserData()">新增使用者 </a>
+                </form>
             </div>
-        </div>
+            <div id="updateUser">
+                <form action="./chk_updateUser.php" method="post" enctype="multipart/form-data">
+                    <div class="header"> <p>編輯</p> <i class="fas fa-times" id="closeUpdateUser"></i> </div>
+                    <input type="file" name="imgsrc"  id="fileimgBtn_update">
+                    <label for="">
+                        <label for="fileimgBtn_update" class="chooseFile">
+                            <i class="fa-solid fa-image"></i>選擇頭像
+                        </label>
+                        <span id="fileText_update">尚未選擇圖片</span>
+                    </label>
+                    <img src="" class="previewImg" id="previewImg_update">
+                    <!-- <label for="">請輸入帳號:<input type="text" name="username" id="create_username"></label> -->
+                    <label for="">更改密碼:<input type="text" name="password" id="update_password"></label>
+                    <label for="">更改姓名:<input type="text" name="name" id="update_name"></label>
+                    <select name="level"" id="update_level" >
+                        <option value="9" class="update_option">管理者</option>
+                        <option value="10" class="update_option">最高管理者</option>
+                    </select>
+                    <input type="submit" value="新增" hidden id="formUserBtn_update">
+                    <input type="hidden" value="" name="id" id="update_id">
+                    <a href="javascript:;" class="createBtn" onclick="postUpdateUserData()">編輯使用者 </a>
+                </form>
+            </div>
+            <div id="chkUser">
+                <div class="inputPwd">
+                    <div class="header"> <p>資料驗證</p> <i class="fas fa-times" id="closeChkUser"></i></div>
+                    <h3>請先輸入您的密碼</h3>
+                    <p>Please enter your password first.</p>
+                    <input type="password" placeholder="請輸入密碼..." id="chkpwd">
+                    <input type="hidden" id="chkId">
+                    <input type="hidden" value="" id="operate">
+                    <button id="chkUserBtn" onclick="chkAccountFn('<?php echo $_SESSION['username']; ?>')">確認</button>
+                </div>
+            </div>
+        <?php } ?>
+
+       <?php include('./footer.php'); ?>
     </main>
-
+   
 
 <script src="../js/cms/header.js"></script>
 <script>

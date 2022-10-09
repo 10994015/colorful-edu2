@@ -72,6 +72,8 @@ if(isset($_SESSION['username'])){
            </div>
            <input type="hidden" name="user" value="<?php echo $_SESSION['name'];  ?>">
         </form>
+
+        <?php include('./footer.php'); ?>
     </main>
 <script src="../shared/ckeditor4/ckeditor.js"></script>
 <script src="../js/cms/header.js"></script>

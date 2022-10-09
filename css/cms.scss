@@ -200,6 +200,18 @@ header#header{
         }
     }
 }
+footer{
+    width:100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30px;
+    border-top: 1px #bbb  solid;
+    color:#9c9fa6 ;
+    margin-top: 50px;
+    font-size: 14px;
+}
 nav#nav{
     width:260px;
     height:auto;
@@ -289,7 +301,7 @@ nav#nav{
 }
 main{
     width:calc(100% - 260px);
-    padding:50px 35px;
+    padding:50px 35px 0px;
     transition:all .5s ease;
     &.close{
         width:calc(100% - 70px);
@@ -321,6 +333,69 @@ main#index{
         margin:15px auto;
         font-weight: 300;
         font-size: 30px;
+    }
+    >.webInformations{
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+        margin:50px 0;
+        >div{
+            width:30%;
+            height: 200px;
+            border-radius: 6px;
+            padding: 30px 35px;
+            color:#fff;
+            >h3{
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            >p{
+                font-weight: 500;
+            }
+            >a{
+                float:right;
+                color:#fff;
+                text-decoration: none;
+                display: block;
+                width:160px;
+                height: 45px;
+                text-align: center;
+                line-height: 43px;
+                border:1px #fff solid;
+                border-radius: 6px;
+                margin-top: 30px;
+                font-size: 18px;
+                transition: .3s;
+                
+            }
+        }
+        >div.webData{
+            background-image: linear-gradient(to right, #FFBF96, #FE8596);
+            a:hover{
+                &:hover{
+                    background-color: #fff;
+                    color:#FE8596;
+                }
+            }
+        }
+        >div.webFooter{
+            background-image: linear-gradient(to right, #8DC8F8, #2992E6);
+            a:hover{
+                &:hover{
+                    background-color: #fff;
+                    color:#2992E6;
+                }
+            }
+        }
+        >div.webColor{
+            background-image: linear-gradient(to right, #83D9D2, #29D1B8);
+            a:hover{
+                &:hover{
+                    background-color: #fff;
+                    color:#29D1B8;
+                }
+            }
+        }
     }
     >.userList{
         margin-top: 30px;
@@ -370,6 +445,9 @@ main#index{
             }
             >strong.img{
                 width: 7%;
+                &.notTop{
+                    width:10%;
+                }
                 >img{
                     width:40px;
                     height: 40px;
@@ -381,7 +459,9 @@ main#index{
                 display: flex;
                 align-items: center;
                 font-size: 17px;
-                
+                &.notTop{
+                    width:20%;
+                }
                 >span{
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -395,6 +475,9 @@ main#index{
             
             >strong.name{
                 width:16%;
+                &.notTop{
+                    width:20%;
+                }
                 >span{
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -409,7 +492,7 @@ main#index{
             }
             >strong.active{
                 width:10%;
-                >a{
+                                >a{
                     display: block;
                     width:80%;
                     height: 35px;
@@ -426,9 +509,15 @@ main#index{
                 width:20%;
                 font-size: 17px;
                 padding-right: 10px;
+                &.notTop{
+                    width:30%;
+                }
             }
             >strong.level{
                 width:10%;
+                &.notTop{
+                    width:20%;
+                }
                 >input[type="radio"]{
                     position: relative;
                     // width:120px;
@@ -3654,24 +3743,12 @@ main#activity{
         border-radius: 5px;
         background-color: #fff;
         position: relative;
-        >a#createMemberBtn{
-            position: absolute;
-            top: 30px;
-            right:80px;
-            width:150px;
-            height: 40px;
+        >p{
+            float: right;
             text-align: center;
-            line-height: 40px;
             display: block;
-            text-decoration: none;
-            color:#fff;
-            font-weight: 600;
-            font-size: 18px;
-            border-radius: 3px;
-            background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-            >i{
-                font-size: 14px;
-            }
+            color:#222;
+            font-size: 16px;
         }
         >h4{
             border-bottom: $mainColor 3px solid;
