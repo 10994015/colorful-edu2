@@ -8,7 +8,12 @@ try{
     $stmt = $conn -> prepare($sql_str);
     $stmt -> execute();
     $RS_user = $stmt -> fetchAll(PDO::FETCH_ASSOC);
- 
+    
+    $sql_str = "SELECT * FROM letter ORDER BY send_time DESC";
+    $stmt2 = $conn -> prepare($sql_str);
+    $stmt2 -> execute();
+    $RS_letter = $stmt2 -> fetchAll(PDO::FETCH_ASSOC);
+    $total_letter = $stmt2 -> rowCount();
  
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
@@ -41,17 +46,17 @@ if(isset($_SESSION['username'])){
         </div>
         <div class="webInformations">
             <div class="webData">
-                <h3>網頁基本資料</h3>
+                <h3>基本資料設定</h3>
                 <p>LOGO、網站名稱、頁面...</p>
                 <a href="javascript:;">前往編輯</a>
             </div>
             <div class="webFooter">
-                <h3>網頁Footer設定</h3>
+                <h3>Footer設定</h3>
                 <p>Footer文字、聯絡資訊...</p>
                 <a href="javascript:;">前往編輯</a>
             </div>
             <div class="webColor">
-                <h3>網頁顏色設定</h3>
+                <h3>顏色設定</h3>
                 <p>網站主顏色...</p>
                 <a href="javascript:;">前往編輯</a>
             </div>
@@ -102,6 +107,28 @@ if(isset($_SESSION['username'])){
                 <?php } ?>
             </div>
             <?php } } ?>
+        </div>
+        <div class="letterList">
+            <h4>信件列表</h4>
+            <p>共<?php echo $total_letter; ?>筆</p>
+            <div class="letterItem letterItemTitle">
+                <strong class="name">姓名</strong>  
+                <strong class="email">Email</strong>
+                <strong class="title">主旨</strong>
+                <strong class="time">寄送時間</strong>
+                <strong class="view">查看</strong>
+                <strong class="delete">刪除</strong>
+            </div>
+            <?php foreach($RS_letter as $item){ ?>
+            <div class="letterItem">
+                <strong class="name"> <span><?php echo $item['name']; ?></span></strong>  
+                <strong class="email"><span><?php echo $item['email']; ?></span></strong>
+                <strong class="title"><span><?php echo $item['title']; ?></span></strong>
+                <strong class="time"> <span><?php echo $item['send_time']; ?></span></strong>
+                <strong class="view"><a href="./viewLetter.php?id=<?php echo $item['id']; ?>">查看</a></strong>
+                <strong class="delete"><a href="javascript:;" onclick="deleteLetterFn(<?php echo $item['id']; ?>)">刪除</a></strong>
+            </div> 
+            <?php } ?>
         </div>
         <?php if($_SESSION['level'] >= 10){ ?>
             <div id="createUser">
@@ -338,6 +365,13 @@ if(isset($_SESSION['username'])){
         };
         reader_update.readAsDataURL(file_update);
     });
+
+    function deleteLetterFn(id){
+        let chk = confirm("確定要刪除嗎?");
+        if(chk){
+            window.location.href = `./deleteLetter.php?id=${id}`;
+        }
+    }
 </script>
 </body>
 </html>

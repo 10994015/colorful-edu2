@@ -838,6 +838,137 @@ main#index > .userList > .userItem > strong.delete > a {
   font-size: 16px;
 }
 
+main#index > .letterList {
+  margin-top: 30px;
+  width: 100%;
+  padding: 50px 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+}
+
+main#index > .letterList > h4 {
+  border-bottom: #FE8696 3px solid;
+  width: 120px;
+  font-size: 24px;
+  padding: 5px 0;
+}
+
+main#index > .letterList > p {
+  float: right;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+main#index > .letterList > .letterItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  font-size: 17px;
+  border-bottom: 2px #ddd solid;
+}
+
+main#index > .letterList > .letterItem > strong {
+  font-weight: normal;
+}
+
+main#index > .letterList > .letterItem.letterItemTitle {
+  font-size: 18px;
+}
+
+main#index > .letterList > .letterItem > strong.name {
+  width: 15%;
+}
+
+main#index > .letterList > .letterItem > strong.name > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 15px;
+}
+
+main#index > .letterList > .letterItem > strong.email {
+  width: 20%;
+}
+
+main#index > .letterList > .letterItem > strong.email > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 15px;
+}
+
+main#index > .letterList > .letterItem > strong.title {
+  width: 25%;
+}
+
+main#index > .letterList > .letterItem > strong.title > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 15px;
+}
+
+main#index > .letterList > .letterItem > strong.time {
+  width: 20%;
+}
+
+main#index > .letterList > .letterItem > strong.time > span {
+  font-size: 15px;
+  color: #555;
+}
+
+main#index > .letterList > .letterItem > strong.view {
+  width: 10%;
+}
+
+main#index > .letterList > .letterItem > strong.view > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#8DC8F8), to(#2D94E7));
+  background-image: linear-gradient(to right, #8DC8F8, #2D94E7);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+main#index > .letterList > .letterItem > strong.delete {
+  width: 10%;
+}
+
+main#index > .letterList > .letterItem > strong.delete > a {
+  display: block;
+  width: 80%;
+  height: 35px;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#D42C25), to(#A12C25));
+  background-image: linear-gradient(to right, #D42C25, #A12C25);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
 main#index > #createUser {
   position: fixed;
   top: 0;
@@ -2289,6 +2420,70 @@ main#createHomeBanner > form.createBannerForm > #createArticleBtn {
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+}
+
+main#viewLetter > .letter {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 50px 70px;
+  letter-spacing: 1.2px;
+  margin-top: 50px;
+}
+
+main#viewLetter > .letter > .personal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+main#viewLetter > .letter > .personal h3.name {
+  color: #000;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+main#viewLetter > .letter > .personal p.email {
+  color: #555;
+}
+
+main#viewLetter > .letter > .personal > p.time {
+  margin-left: auto;
+}
+
+main#viewLetter > .letter > .title {
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+main#viewLetter > .letter > .content {
+  margin-top: 30px;
+}
+
+main#viewLetter > .letter > .content > p {
+  padding: 20px 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+main#viewLetter > .letter > a.back {
+  width: 150px;
+  height: 45px;
+  display: block;
+  text-decoration: none;
+  line-height: 45px;
+  background-color: #FFD000;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+  margin: 100px auto 0;
 }
 
 main#news > .newsList {
