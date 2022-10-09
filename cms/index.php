@@ -78,7 +78,6 @@ if(isset($_SESSION['username'])){
                 <?php if($_SESSION['level'] >=10){ ?>
                     <strong class="active">活動紀錄</strong>
                     <strong class="update">查詢</strong>
-                    <strong class="delete">刪除</strong>
                 <?php } ?>
             </div>
             <?php foreach($RS_user as $item){ if($_SESSION['level'] >= $item['level']){ ?>
@@ -100,7 +99,6 @@ if(isset($_SESSION['username'])){
                 <?php if($_SESSION['level'] >=10){ ?>
                     <strong class="active"><a href="./activtiy.php?user=<?php echo $item['username']; ?>" class="activeBtn">活動紀錄</a></strong>
                     <strong class="update"><a href="javascript:;" onclick="updateUserFn(<?php echo $item['id']; ?>)">查詢</a></strong>
-                    <strong class="delete"><a href="javascript:;" onclick="deleteFn(<?php echo $item['id']; ?>)">刪除</a></strong>
                 <?php } ?>
             </div>
             <?php } } ?>

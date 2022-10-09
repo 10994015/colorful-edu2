@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 require_once('../config/conn.php');
 session_start();
@@ -30,6 +30,14 @@ if(isset($_GET['id']) && $_GET['id'] != ""){
     $stmt = $conn -> prepare($sql_str);
     $stmt -> bindParam(':id', $id);
     $stmt -> execute();
-
-    header('Location:./index.php');
+    ?>
+    <script>
+        alertFn();
+        function alertFn(){
+            alert('刪除成功!'); window.location.href='./';
+        }
+    </script>
+    <?php
 }
+
+?> -->

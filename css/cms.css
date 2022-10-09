@@ -725,7 +725,7 @@ main#index > .userList > .userItem > strong.name img {
 }
 
 main#index > .userList > .userItem > strong.active {
-  width: 10%;
+  width: 12%;
 }
 
 main#index > .userList > .userItem > strong.active > a {
@@ -753,7 +753,7 @@ main#index > .userList > .userItem > strong.lastdate.notTop {
 }
 
 main#index > .userList > .userItem > strong.level {
-  width: 10%;
+  width: 16%;
 }
 
 main#index > .userList > .userItem > strong.level.notTop {
@@ -803,7 +803,7 @@ main#index > .userList > .userItem > strong.level > input[type="radio"]::after {
 }
 
 main#index > .userList > .userItem > strong.update {
-  width: 10%;
+  width: 12%;
 }
 
 main#index > .userList > .userItem > strong.update > a {
