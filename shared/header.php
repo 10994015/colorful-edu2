@@ -13,8 +13,8 @@
 </div>
 <nav id="mobile-nav">
     <a href="./" class="home">home</a>
-    <a href="./?page=news" class="course">news</a>
     <a href="./?page=course" class="news">course</a>
+    <a href="./?page=news" class="course">news</a>
     <a href="./?page=cooperate" class="cooperation">Cooperation</a>
     <a href="./?page=about" class="about">about</a>
 </nav>
