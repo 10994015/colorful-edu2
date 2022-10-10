@@ -312,7 +312,7 @@ try{
             <a href="https://www.esoleducation.com/"><img src="./images/esol.png" alt=""></a>
             <a href="https://www.cavesbooks.com.tw/"><img src="./images/caves.png" alt=""></a> -->
         </div>
-        <a href="./?page=cooperate" class="seemore">All cooperate</a>
+        <a href="./?page=cooperate" class="seemore">All Cooperation</a>
     </div>
 </div>
 

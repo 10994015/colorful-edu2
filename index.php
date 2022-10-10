@@ -43,8 +43,8 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
 
     <?php include_once('./shared/footer.php'); ?>
     
-    <script src="./js/script.js"></script>
     <script src="./js/header.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/toTop.js"></script>
 </body>
 </html>

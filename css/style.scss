@@ -92,6 +92,9 @@ header#header{
                 color:#1484c4;
                 transform: translateY(-2px);
             }
+            &.active{
+                color:#1484c4;
+            }
         }
     }
 }
@@ -153,6 +156,9 @@ nav#mobile-nav{
         display: block;
         text-align: center;
         &:hover{
+            color:#1484c4;
+        }
+        &.active{
             color:#1484c4;
         }
     }

@@ -143,6 +143,10 @@ header#header > nav#nav > a:hover {
           transform: translateY(-2px);
 }
 
+header#header > nav#nav > a.active {
+  color: #1484c4;
+}
+
 div#menu {
   position: fixed;
   top: 25px;
@@ -231,6 +235,10 @@ nav#mobile-nav > a {
 }
 
 nav#mobile-nav > a:hover {
+  color: #1484c4;
+}
+
+nav#mobile-nav > a.active {
   color: #1484c4;
 }
 
