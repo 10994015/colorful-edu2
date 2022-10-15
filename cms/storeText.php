@@ -4,8 +4,10 @@ session_start();
 $focusNav = "COOPERATION";
 try{
     $sql_str = "SELECT * FROM store_text ORDER BY id DESC";
-    $RS_text = $conn -> query($sql_str);
-    $total_RS_text = $RS_text -> rowCount();
+    $stmt = $conn -> prepare($sql_str);
+    $stmt -> execute();
+    $RS_text = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    $total_RS_text = $stmt -> rowCount();
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }

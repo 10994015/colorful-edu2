@@ -5,8 +5,10 @@ $focusNav = "COURSE";
 if(isset($_SESSION['username'])){
     try{
         $sql_str = "SELECT * FROM course ORDER BY lastdate DESC";
-        $RS_course = $conn -> query($sql_str);
-        $total_RS_course = $RS_course -> rowCount();
+        $stmt = $conn -> prepare($sql_str);
+        $stmt -> execute();
+        $RS_course = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        $total_RS_course = $stmt -> rowCount();
     }catch(PDOException $e){
         die('Error!:'.$e->getMessage());
     }

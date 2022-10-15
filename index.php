@@ -46,5 +46,6 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <script src="./js/header.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/toTop.js"></script>
+    <script src="./js/about.php"></script>
 </body>
 </html>

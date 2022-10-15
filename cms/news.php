@@ -4,8 +4,10 @@ session_start();
 $focusNav = "NEWS";
 try{
     $sql_str = "SELECT * FROM news ORDER BY lastdate DESC";
-    $RS_news = $conn -> query($sql_str);
-    $total_RS_news = $RS_news -> rowCount();
+    $stmt = $conn -> prepare($sql_str);
+    $stmt -> execute();
+    $RS_news = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    $total_RS_news = $stmt -> rowCount();
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }

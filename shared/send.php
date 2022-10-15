@@ -1,7 +1,7 @@
 <?php
 require_once('../config/conn.php');
-ini_set ( 'date.timezone' , 'Asia/Taipei' );  
-date_default_timezone_set('Asia/Taipei');
+// ini_set ( 'date.timezone' , 'Asia/Taipei' );  
+// date_default_timezone_set('Asia/Taipei');
 
 if(isset($_POST['name'])){
     try{
@@ -73,7 +73,7 @@ function sendMail($name,$email,$title,$content){
                 .'訊息:<br>'.$content;
                 
 
-    $header = "From: a0938599191@gmail.com\r\n";
+    // $header = "From: a0938599191@gmail.com\r\n";
     $header = "From: service@ice-finland.pro\r\n";
     $header .= "Content-type: text/html; charset=utf8";
 

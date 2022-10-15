@@ -4,8 +4,10 @@ session_start();
 $focusNav = "COOPERATION";
 try{
     $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
-    $RS_img = $conn -> query($sql_str);
-    $total_RS_img = $RS_img -> rowCount();
+    $stmt = $conn -> prepare($sql_str);
+    $stmt -> execute();
+    $RS_img = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    $total_RS_img = $stmt -> rowCount();
 }catch(PDOException $e){
     die('Error!:'.$e->getMessage());
 }

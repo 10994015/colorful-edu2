@@ -1,7 +1,7 @@
 <?php
 require_once('../config/conn.php');
 session_start();
-$focusNav = "ACTIVITY";
+$focusNav = "CMS";
 $user = $_SESSION['username'];
 if(isset($_SESSION['username'])){
     if(isset($_GET['user']) && $_GET['user'] != ""){
