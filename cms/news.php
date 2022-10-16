@@ -81,7 +81,8 @@ if(isset($_SESSION['username'])){
         params.append('focusId',focusId );
         axios.post('./update_newsFocus.php',params).then(res=>{
             alert('更新成功!');
-            window.location.reload();
+            // console.log(res);
+            // window.location.reload();
         })
     }
 </script>
