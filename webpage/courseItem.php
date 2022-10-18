@@ -66,7 +66,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
 
 <head>
     <title><?php echo $row_course['title']; ?></title>
-    <?php if($row_post['isshow']=='0'){ ?>
+    <?php if($row_course['isshow']=='0'){ ?>
         <meta name="robots" content="noindex">
     <?php } ?>
 </head>

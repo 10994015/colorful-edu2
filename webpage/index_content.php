@@ -25,7 +25,10 @@ try{
     $RS_cooperate = $conn -> query($sql_str);
 
     $sql_str = "SELECT * FROM course WHERE isshow=1 AND focus=1 Limit 1";
-    $RS_course = $conn -> query($sql_str);
+    // $RS_course = $conn -> query($sql_str);
+    $stmt_course = $conn -> prepare($sql_str);
+    $stmt_course -> execute();
+    $RS_course = $stmt_course -> fetch(PDO::FETCH_ASSOC);
 
     $sql_str = "SELECT * FROM home_banner WHERE isshow=1 ORDER BY sort ASC";
     $RS_banner = $conn -> query($sql_str);
@@ -137,22 +140,21 @@ try{
             </div>
         </div>
         <div class="comingSoon">
-        <?php foreach($RS_course as $item){ ?>
         <div class="comingSoonBox">
-            <span id="comngSoonDay"><?php echo $item['start_day']; ?></span>
-            <h3><?php echo $item['title']; ?><br>即將開班</h3>
+            <span id="comngSoonDay"><?php echo $RS_course['start_day']; ?></span>
+            <h3><?php echo $RS_course['title']; ?><br><p id="courseing">即將開班</p></h3>
             <article>
-                <?php echo nl2br($item['focus_text']); ?>
+                <?php echo nl2br($RS_course['focus_text']); ?>
             </article>
-            <a href="./?page=courseItem&id=<?php echo $item['id']; ?>">View courses</a>
+            <a href="./?page=courseItem&id=<?php echo $RS_course['id']; ?>">View courses</a>
             <div class="launch-time">
                 <div><p id="days">00</p><span>Days</span></div>
                 <div><p id="hours">00</p><span>Houes</span></div>
                 <div><p id="minutes">00</p><span>Minutes</span></div>
                 <div><p id="seconds">00</p><span>Seconds</span></div>
             </div>
+           
         </div>
-        <?php } ?>
     </div>
     </div>
 
