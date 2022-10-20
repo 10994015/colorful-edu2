@@ -45,7 +45,8 @@
             Copyright @2022 <a href="./"><?php echo $RS_infor['web_name']; ?>.</a>  All Rights Reserved.
         </div>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/jquery-qrcode.min.js"></script>
     <script>
         $("#jquery-qrcode").qrcode({
             render: 'div',

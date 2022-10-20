@@ -35,9 +35,7 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/jquery-qrcode.min.js"></script>
-</head>
+    </head>
 <body>
     <?php include_once('./shared/header.php'); ?>
    
