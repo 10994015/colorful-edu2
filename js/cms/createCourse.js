@@ -23,6 +23,24 @@ const weekLabel = document.getElementsByClassName('weekLabel');
 const weekInput = document.getElementsByClassName('weekInput');
 let weekArr = [];
 
+const createSubmit = document.getElementById('createSubmit');
+const courseTitle = document.getElementById('courseTitle');
+const start_day = document.getElementById('start_day');
+createSubmit.addEventListener('click',()=>{
+    if(fileimgBtn.value == ""){
+        alert('請選擇圖片！');
+        return;
+    }
+    if(courseTitle.value == ""){
+        alert('請輸入標題！')
+        return
+    }
+    if(start_day.value==""){
+        alert('請輸入開課日期！');
+        return;
+    }
+    createCourseBtn.click();
+})
 const focus = document.getElementById('focus');
 const focusLabel = document.getElementById('focusLabel');
 focus.addEventListener('change',()=>{

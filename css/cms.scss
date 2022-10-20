@@ -1598,7 +1598,7 @@ main#update_home_banner{
                 
             }
         }
-        >#createArticleBtn{
+        >#createArticleBtn, #createSubmit{
             margin-right:  auto;
             width:200px;
             height: 50px;
@@ -1611,7 +1611,10 @@ main#update_home_banner{
             font-size: 19px;
             font-weight: 600;
             background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-            
+            text-align: center;
+            line-height: 50px;
+            display: block;
+            text-decoration: none;
         }
         
     }
@@ -1762,7 +1765,10 @@ main#createHomeBanner{
                         
                     }
                 }
-                >#createBannerBtn{
+                >a{
+                    display: block;
+                }
+                >#createBannerBtn, #createSubmit{
                     margin:  0 auto;
                     margin-top: 50px;
                     width:100%;
@@ -1776,12 +1782,14 @@ main#createHomeBanner{
                     font-size: 19px;
                     font-weight: 600;
                     background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-                    
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 50px;
                 }
                 
             }
         }
-        >#createArticleBtn{
+        >#createArticleBtn, #createSubmit{
             margin-right:  auto;
             width:200px;
             height: 50px;
@@ -1794,7 +1802,10 @@ main#createHomeBanner{
             font-size: 19px;
             font-weight: 600;
             background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-            
+            text-align: center;
+            line-height: 50px;
+            display: block;
+            text-decoration: none;
         }
         
     }
@@ -2486,7 +2497,10 @@ main#createArticle{
                         }
                     }
                 }
-                >#createArticleBtn{
+                >a{
+                    display: block;
+                }
+                >#createArticleBtn,#createSubmit{
                     margin:  0 auto;
                     margin-top: 50px;
                     width:100%;
@@ -2500,7 +2514,9 @@ main#createArticle{
                     font-size: 19px;
                     font-weight: 600;
                     background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-                    
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 50px;
                 }
                 
             }
@@ -2843,7 +2859,10 @@ main#createCourse{
                     
                    
                 }
-                >#createCourseBtn{
+                >a{
+                    display: block;
+                }
+                >#createCourseBtn, #createSubmit{
                     margin:  0 auto;
                     margin-top: 50px;
                     width:100%;
@@ -2857,7 +2876,9 @@ main#createCourse{
                     font-size: 19px;
                     font-weight: 600;
                     background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-                    
+                    text-align: center;
+                    line-height: 50px;
+                    text-decoration: none;
                 }
                 
             }
@@ -3043,7 +3064,10 @@ main#updateArticle{
                         }
                     }
                 }
-                >#updateArticleBtn{
+                >a{
+                    display: block;
+                }
+                >#updateArticleBtn, #updateSubmit{
                     margin:  0 auto;
                     margin-top: 50px;
                     width:100%;
@@ -3057,26 +3081,14 @@ main#updateArticle{
                     font-size: 19px;
                     font-weight: 600;
                     background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-                    
+                    text-align: center;
+                    line-height: 50px;
+                    text-decoration: none;
                 }
                 
             }
         }
-        >#updateArticleBtn{
-            margin-right:  auto;
-            width:200px;
-            height: 50px;
-            outline: none;
-            border:none;
-            color:#fff;
-            font-size: 17px;
-            cursor: pointer;
-            transition: .5s;
-            font-size: 19px;
-            font-weight: 600;
-            background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-            
-        }
+       
         
     }
 }
@@ -3394,7 +3406,10 @@ main#updateCourse{
                     }
                    
                 }
-                >#createCourseBtn{
+                >a{
+                    display: block;
+                }
+                >#createCourseBtn, #createSubmit{
                     margin:  0 auto;
                     margin-top: 50px;
                     width:100%;
@@ -3408,7 +3423,9 @@ main#updateCourse{
                     font-size: 19px;
                     font-weight: 600;
                     background-image: linear-gradient(to right, #47D9C2, #28D0B7,#00D0A9);
-                    
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 50px;
                 }
                 
             }

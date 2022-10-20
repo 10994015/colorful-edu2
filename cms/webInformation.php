@@ -28,7 +28,7 @@ if(isset($_SESSION['username'])){
         <div class="information">
             <h4>網站基本資訊</h4>
             <form action="./chk_createInformation.php" method="POST" enctype="multipart/form-data">
-                <input type="file" name="imgsrc"  id="fileimgBtn">
+                <input type="file" name="imgsrc"  id="fileimgBtn" >
                 <label for="">
                     <label for="fileimgBtn" class="chooseFile">
                         <i class="fa-solid fa-image"></i>LOGO上傳
@@ -48,6 +48,7 @@ if(isset($_SESSION['username'])){
                     <p>網站簡介:</p>
                     <textarea name="intro" id="intro" cols="30" rows="10" placeholder="網站簡介"><?php echo $RS_infor['intro']; ?></textarea>
                 </label>
+                <input type="hidden" name="isimg" value="<?php echo $RS_infor['logo']; ?>" id="isimg">
                 <input type="submit" value="送出" id="submit" hidden>
                 <a href="javascript:;" id="send" onclick="sendFn()">送出</a>
             </form>
@@ -59,6 +60,8 @@ if(isset($_SESSION['username'])){
         const fileimgBtn = document.getElementById('fileimgBtn');
         const fileText = document.getElementById('fileText');
         const previewImg = document.getElementById('previewImg');
+        console.log(isimg.value);
+        
         fileimgBtn.addEventListener('change',()=>{
             if(fileimgBtn.value){
                 fileText.innerHTML = fileimgBtn.value;

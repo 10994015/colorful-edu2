@@ -1,6 +1,6 @@
 <?php
 require_once('../config/conn.php');
-
+session_start();
 if(isset($_POST['focusId'])){
     ini_set ( 'date.timezone' , 'Asia/Taipei' );  
     date_default_timezone_set('Asia/Taipei');

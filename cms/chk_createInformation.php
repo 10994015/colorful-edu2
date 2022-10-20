@@ -11,22 +11,29 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
     $intro = $_POST['intro'];
     $lastdate = date("Y-m-d H:i:s");
     $user = $_SESSION['username'];
-
+    $isimg = $_POST['isimg'];
+    $seo = $_POST['seo'];
     $file      = $_FILES['imgsrc'];       //上傳檔案信息
     $file_name = $file['name'];                //上傳檔案的原來檔案名稱
     $file_type = $file['type'];                //上傳檔案的類型(副檔名)
     $tmp_name  = $file['tmp_name'];            //上傳到暫存空間的路徑/檔名
     $file_size = $file['size'];                //上傳檔案的檔案大小(容量)
     $error     = $file['error'];   
-    $imgsrc = $rand.$file_name;
+    
 
-    $sql_str = "INSERT INTO web_information (logo, web_name, intro, lastdate, user) VALUES (:logo, :web_name, :intro, :lastdate, :user)";
+    if($file_name == ""){
+      $imgsrc = $isimg;
+    }else{
+      $imgsrc = $rand.$file_name;
+    }
+    $sql_str = "INSERT INTO web_information (logo, web_name, intro, lastdate, user, seo) VALUES (:logo, :web_name, :intro, :lastdate, :user, :seo)";
     $stmt = $conn -> prepare($sql_str);
     $stmt -> bindParam(":logo", $imgsrc);
     $stmt -> bindParam(":web_name", $title);
     $stmt -> bindParam(":intro", $intro);
     $stmt -> bindParam(":lastdate", $lastdate);
     $stmt -> bindParam(":user", $user);
+    $stmt -> bindParam(":seo", $seo);
     $stmt -> execute();
 
     $allow_ext = array('jpeg', 'jpg', 'png', 'gif','JPG','JPEG','PNG','GIF');

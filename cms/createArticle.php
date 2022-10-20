@@ -37,11 +37,11 @@ if(isset($_SESSION['username'])){
                     <img src="" class="previewImg" id="previewImg">
                     <label for="">
                         <p>文章標題</p>
-                        <input type="text" name="title" placeholder="文章標題...">
+                        <input type="text" name="title" placeholder="文章標題..." id="articleTitle">
                     </label>
                     <label for="">
                         <p>文章內容</p>
-                        <textarea name="content" placeholder="文章內容..." id="content"></textarea>
+                        <textarea name="content" placeholder="文章內容..." id="content" ></textarea>
                     </label>
                 </div>
                 <div class="advanced">
@@ -66,8 +66,8 @@ if(isset($_SESSION['username'])){
                             <div class="group"><input type="checkbox" id="typeTrain" name="train"><label for="typeTrain"> <i class="fa-solid fa-check"></i>培訓</label></div>
                         </div>
                     </label>
-                    <input type="submit" value="發佈文章" id="createArticleBtn">
-                    
+                    <input type="submit" value="發佈文章" id="createArticleBtn" hidden="hidden" >
+                    <a href="javascript:;" id="createSubmit">發佈文章</a>
                 </div>
            </div>
            <input type="hidden" name="user" value="<?php echo $_SESSION['name'];  ?>">
@@ -97,7 +97,22 @@ if(isset($_SESSION['username'])){
 
 
     });
-
+    const createArticleBtn = document.getElementById('createArticleBtn');
+    const createSubmit = document.getElementById('createSubmit');
+    const articleTitle = document.getElementById('articleTitle');
+    const content = document.getElementById('content');
+    createSubmit.addEventListener('click',()=>{
+        
+        if(fileimgBtn.value == ""){
+            alert('請選擇封面圖！');
+            return;
+        }
+        if(articleTitle.value==""){
+            alert('標題不得為空！');
+            return;
+        }
+        createArticleBtn.click();
+    })
     CKEDITOR.replace('content',{
         extraplugins:'filebrowser',
         height:300,

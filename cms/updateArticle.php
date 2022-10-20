@@ -52,7 +52,7 @@ if(isset($_SESSION['username'])){
                         <!-- <img src="" class="previewImg" id="previewImg"> -->
                         <label for="">
                             <p>文章標題</p>
-                            <input type="text" name="title" placeholder="文章標題..." value="<?php echo $row_RS_mb['title']; ?>">
+                            <input type="text" name="title" placeholder="文章標題..." value="<?php echo $row_RS_mb['title']; ?>" id="articleTitle">
                         </label>
                         <label for="">
                             <p>文章內容</p>
@@ -81,8 +81,8 @@ if(isset($_SESSION['username'])){
                                 <div class="group"><input type="checkbox" id="typeTrain" name="train" <?php if($row_RS_mb['train'] == 1){echo 'checked'; } ?> ><label for="typeTrain"> <i class="fa-solid fa-check"></i>培訓</label></div>
                             </div>
                         </label>
-                        <input type="submit" value="更新" id="updateArticleBtn">
-                        
+                        <input type="submit" value="更新" id="updateArticleBtn" hidden />
+                        <a href="javascript:;" id="updateSubmit">更新</a>
                     </div>
             </div>
            <input type="hidden" name="user" value="<?php echo $_SESSION['name'];  ?>">
@@ -110,7 +110,16 @@ if(isset($_SESSION['username'])){
         };
         reader.readAsDataURL(file);
     });
-
+    const updateSubmit = document.getElementById('updateSubmit');
+    const articleTitle = document.getElementById('articleTitle');
+    const content = document.getElementById('content');
+    updateSubmit.addEventListener('click',()=>{
+        if(articleTitle.value==""){
+            alert('標題不得為空！');
+            return;
+        }
+        updateArticleBtn.click();
+    })
     CKEDITOR.replace('content',{
             extraplugins:'filebrowser',
             height:300,

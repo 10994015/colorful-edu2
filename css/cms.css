@@ -2176,7 +2176,7 @@ main#update_home_banner > form.updateBannerForm > div.formContent > .advanced > 
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
 }
 
-main#update_home_banner > form.updateBannerForm > #createArticleBtn {
+main#update_home_banner > form.updateBannerForm > #createArticleBtn, main#update_home_banner > form.updateBannerForm #createSubmit {
   margin-right: auto;
   width: 200px;
   height: 50px;
@@ -2191,6 +2191,10 @@ main#update_home_banner > form.updateBannerForm > #createArticleBtn {
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-align: center;
+  line-height: 50px;
+  display: block;
+  text-decoration: none;
 }
 
 main#createHomeBanner > form.createBannerForm {
@@ -2387,7 +2391,11 @@ main#createHomeBanner > form.createBannerForm > div.formContent > .advanced > la
   content: '';
 }
 
-main#createHomeBanner > form.createBannerForm > div.formContent > .advanced > #createBannerBtn {
+main#createHomeBanner > form.createBannerForm > div.formContent > .advanced > a {
+  display: block;
+}
+
+main#createHomeBanner > form.createBannerForm > div.formContent > .advanced > #createBannerBtn, main#createHomeBanner > form.createBannerForm > div.formContent > .advanced #createSubmit {
   margin: 0 auto;
   margin-top: 50px;
   width: 100%;
@@ -2403,9 +2411,12 @@ main#createHomeBanner > form.createBannerForm > div.formContent > .advanced > #c
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
 }
 
-main#createHomeBanner > form.createBannerForm > #createArticleBtn {
+main#createHomeBanner > form.createBannerForm > #createArticleBtn, main#createHomeBanner > form.createBannerForm #createSubmit {
   margin-right: auto;
   width: 200px;
   height: 50px;
@@ -2420,6 +2431,10 @@ main#createHomeBanner > form.createBannerForm > #createArticleBtn {
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-align: center;
+  line-height: 50px;
+  display: block;
+  text-decoration: none;
 }
 
 main#webInformation > .information {
@@ -3276,7 +3291,11 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > labe
   background-image: linear-gradient(to right, #bbb, #A3A3A3);
 }
 
-main#createArticle > form.createArticleForm > div.formContent > .advanced > #createArticleBtn {
+main#createArticle > form.createArticleForm > div.formContent > .advanced > a {
+  display: block;
+}
+
+main#createArticle > form.createArticleForm > div.formContent > .advanced > #createArticleBtn, main#createArticle > form.createArticleForm > div.formContent > .advanced #createSubmit {
   margin: 0 auto;
   margin-top: 50px;
   width: 100%;
@@ -3292,6 +3311,9 @@ main#createArticle > form.createArticleForm > div.formContent > .advanced > #cre
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
 }
 
 main#createArticle > form.createArticleForm > #createArticleBtn {
@@ -3726,7 +3748,11 @@ main#createCourse form.createCourseForm > .formContent > .advanced > label#focus
   transition: all .3s ease;
 }
 
-main#createCourse form.createCourseForm > .formContent > .advanced > #createCourseBtn {
+main#createCourse form.createCourseForm > .formContent > .advanced > a {
+  display: block;
+}
+
+main#createCourse form.createCourseForm > .formContent > .advanced > #createCourseBtn, main#createCourse form.createCourseForm > .formContent > .advanced #createSubmit {
   margin: 0 auto;
   margin-top: 50px;
   width: 100%;
@@ -3742,6 +3768,9 @@ main#createCourse form.createCourseForm > .formContent > .advanced > #createCour
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
 }
 
 main#updateArticle > form.updateArticleForm {
@@ -3989,7 +4018,11 @@ main#updateArticle > form.updateArticleForm > div.formContent > .advanced > labe
   background-image: linear-gradient(to right, #bbb, #A3A3A3);
 }
 
-main#updateArticle > form.updateArticleForm > div.formContent > .advanced > #updateArticleBtn {
+main#updateArticle > form.updateArticleForm > div.formContent > .advanced > a {
+  display: block;
+}
+
+main#updateArticle > form.updateArticleForm > div.formContent > .advanced > #updateArticleBtn, main#updateArticle > form.updateArticleForm > div.formContent > .advanced #updateSubmit {
   margin: 0 auto;
   margin-top: 50px;
   width: 100%;
@@ -4005,23 +4038,9 @@ main#updateArticle > form.updateArticleForm > div.formContent > .advanced > #upd
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
-}
-
-main#updateArticle > form.updateArticleForm > #updateArticleBtn {
-  margin-right: auto;
-  width: 200px;
-  height: 50px;
-  outline: none;
-  border: none;
-  color: #fff;
-  font-size: 17px;
-  cursor: pointer;
-  -webkit-transition: .5s;
-  transition: .5s;
-  font-size: 19px;
-  font-weight: 600;
-  background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
-  background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
 }
 
 main#updateCourse form.updateCourseForm {
@@ -4428,7 +4447,11 @@ main#updateCourse form.updateCourseForm > .formContent > .advanced > label#focus
   display: none;
 }
 
-main#updateCourse form.updateCourseForm > .formContent > .advanced > #createCourseBtn {
+main#updateCourse form.updateCourseForm > .formContent > .advanced > a {
+  display: block;
+}
+
+main#updateCourse form.updateCourseForm > .formContent > .advanced > #createCourseBtn, main#updateCourse form.updateCourseForm > .formContent > .advanced #createSubmit {
   margin: 0 auto;
   margin-top: 50px;
   width: 100%;
@@ -4444,6 +4467,9 @@ main#updateCourse form.updateCourseForm > .formContent > .advanced > #createCour
   font-weight: 600;
   background-image: -webkit-gradient(linear, left top, right top, from(#47D9C2), color-stop(#28D0B7), to(#00D0A9));
   background-image: linear-gradient(to right, #47D9C2, #28D0B7, #00D0A9);
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
 }
 
 main#cooperate > .chooseDiv {

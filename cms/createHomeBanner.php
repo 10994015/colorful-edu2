@@ -50,8 +50,8 @@ if(isset($_SESSION['username'])){
                         <p>SEO文字(選填)</p>
                         <input type="text" name="seo">
                     </label>
-                    <input type="submit" value="發佈文章" id="createBannerBtn">
-                    
+                    <input type="submit" value="上傳" id="createBannerBtn" hidden>
+                    <a href="javascript:;" id="createSubmit">上傳</a>
                 </div>
            </div>
         </form>
@@ -78,8 +78,14 @@ if(isset($_SESSION['username'])){
 
 
     });
-
- 
+    const createSubmit = document.getElementById('createSubmit');
+    createSubmit.addEventListener('click',()=>{
+        if(fileimgBtn.value == ""){
+            alert('請選擇圖片！');
+            return;
+        }
+        createBannerBtn.click();
+    });
 </script>
 </body>
 </html>

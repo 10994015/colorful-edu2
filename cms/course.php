@@ -74,6 +74,7 @@ if(isset($_SESSION['username'])){
         let focusId = e.target.parentNode.getElementsByClassName('focusId')[0].value;
         params.append('focusId',focusId );
         axios.post('./update_courseFocus.php',params).then(res=>{
+            
             alert('更新成功!');
             window.location.reload();
         })

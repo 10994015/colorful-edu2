@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])){
             <div class="formContent">
                 <div class="basic">
                     <h4>新增課程</h4>
-                    <input type="file" name="imgsrc"  id="fileimgBtn" required>
+                    <input type="file" name="imgsrc"  id="fileimgBtn">
                     
                     <label for="">
                         <label for="fileimgBtn" class="chooseFile">
@@ -36,7 +36,7 @@ if(isset($_SESSION['username'])){
                     <img src="" class="previewImg" id="previewImg">
                     <label for="">
                         <p>課程名稱</p>
-                        <input type="text" name="title" placeholder="課程名稱..." required>
+                        <input type="text" name="title" placeholder="課程名稱..." required id="courseTitle">
                     </label>
                     <label for="">
                         <p>課程內容介紹</p>
@@ -47,7 +47,7 @@ if(isset($_SESSION['username'])){
                     <h4>進階選項</h4>
                     <label for="">
                         <p>開課日期</p>
-                        <input type="date" name="start_day" required>
+                        <input type="date" name="start_day" required id="start_day">
                     </label>
                     <label for="">
                         <p>上課星期</p>
@@ -108,7 +108,8 @@ if(isset($_SESSION['username'])){
                         <textarea name="focus_text" class="focusText"></textarea>
                     </label>
                     <input type="hidden" id="week" name="week">
-                    <input type="submit" value="新增課程" id="createCourseBtn">
+                    <input type="submit" value="新增課程" id="createCourseBtn" hidden>
+                    <a href="javascript:;" id="createSubmit">新增課程</a>
                 </div>
             </div>
         </form>
