@@ -3679,7 +3679,7 @@ main#cooperateImg{
                     background-color: transparent;
                     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
                 }
-                >input[type="submit"]{
+                >input[type="submit"], a#createSubmitBtn{
                     width:180px;
                     margin-top: 15px;
                     cursor: pointer;
@@ -3691,6 +3691,9 @@ main#cooperateImg{
                     border-radius: 25PX;
                     font-size: 17px;
                     font-weight: 600;
+                    text-align: center;
+                    line-height: 45px;
+                    text-decoration: none;
                 }
             }
         }
@@ -3780,7 +3783,7 @@ main#cooperateImg{
                 background-color: transparent;
                 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
             }
-            >input[type="submit"]{
+            >input[type="submit"], a#updateSubmitBtn{
                 width:180px;
                 margin-top: 15px;
                 cursor: pointer;
@@ -3792,6 +3795,9 @@ main#cooperateImg{
                 border-radius: 25PX;
                 font-size: 17px;
                 font-weight: 600;
+                text-align: center;
+                line-height:45px;
+                text-decoration: none;
             }
         }
         }

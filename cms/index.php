@@ -51,9 +51,9 @@ if(isset($_SESSION['username'])){
                 <a href="./webInformation.php">前往編輯</a>
             </div>
             <div class="webFooter">
-                <h3>Footer設定</h3>
-                <p>Footer文字、聯絡資訊...</p>
-                <a href="javascript:;">前往編輯</a>
+                <h3>聯絡資訊設定</h3>
+                <p>商家電話、地址等聯絡方式...</p>
+                <a href="./webContact.php">前往編輯</a>
             </div>
             <div class="webColor">
                 <h3>顏色設定</h3>

@@ -22,6 +22,7 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
   $rand = strval(rand(1000,1000000));
   
   $url = $_POST['url'];
+  $name = $_POST['name'];
   $user = $_SESSION['name'];  
   $lastdate = date("Y-m-d H:i:s");
   
@@ -34,12 +35,13 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
   $imgsrc = $rand.$file_name;
 
  
-  $sql_str = "INSERT INTO cooperate_img (imgsrc,user,lastdate,url) VALUES (:imgsrc,:user,:lastdate,:url)";
+  $sql_str = "INSERT INTO cooperate_img (imgsrc,user,lastdate,url,name) VALUES (:imgsrc,:user,:lastdate,:url,:name)";
   $stmt = $conn -> prepare($sql_str);
   
   $stmt -> bindParam(':lastdate' ,$lastdate);
   $stmt -> bindParam(':imgsrc' ,$imgsrc);
   $stmt -> bindParam(':url' ,$url);
+  $stmt -> bindParam(':name' ,$name);
   $stmt -> bindParam(':user' ,$user);
   $stmt ->execute();
 

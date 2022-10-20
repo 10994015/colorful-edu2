@@ -67,9 +67,9 @@
             <i class="fa-solid fa-phone"></i>
             <h2>來電詢問</h2>
             <p>
-                冰芬美語文理補習班<br />
-                300新竹市東區光復路一段271號3樓(原聯合補習班址、台新銀行樓上)<br />
-                連絡電話：03-567-0018
+                <?php echo $RS_contact['name']; ?><br />
+                <?php echo $RS_contact['address']; ?><br />
+                連絡電話：<?php echo $RS_contact['phone']; ?>
             </p>
             <span>03-567-0018</span>
         </div>
@@ -78,9 +78,9 @@
             <h2>線上詢問</h2>
             <p>歡迎於以下官方臉書專頁、Instagram及line@訊息詢問更多優惠課程及相關資訊內容喔！</p>
             <div>
-                <a target="_blank" href="https://www.facebook.com/icefinland/" class="icon"><i class="fab fa-facebook-square"></i></a>
-                <a target="_blank" href="https://www.instagram.com/colorful.institute/" class="icon"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://lin.ee/7TPK9Fd" class="icon"><i class="fab fa-line"></i></a>
+                <a target="_blank" href="<?php echo $RS_contact['fb']; ?>" class="icon"><i class="fab fa-facebook-square"></i></a>
+                <a target="_blank" href="<?php echo $RS_contact['ig']; ?>" class="icon"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="<?php echo $RS_contact['line']; ?>" class="icon"><i class="fab fa-line"></i></a>
             </div>
         </div>
     </div>

@@ -32,17 +32,18 @@ if(isset($_SESSION['username'])){
     <main id="cooperateImg">
         <div class="title"><span class="icon"><i class="fa-solid fa-people-group"></i></span>Cooperate</div>
         <div class="cooperateImgDiv">
-        <a href="javascript:;" id="createCooperateBtn">新增圖片 <i class="fa-solid fa-plus"></i></a>
+        <a href="javascript:;" id="createCooperateBtn">新增廠商 <i class="fa-solid fa-plus"></i></a>
             <h4>企業合作</h4>
             <div class="cooperateList">
                 <?php foreach($RS_img as $item){ ?>
                 <div class="cooperateItem">
                     <img src="../images/cooperate/<?php echo $item['imgsrc']; ?>">
+                    <p>廠商:<?php echo $item['name']; ?></p>
                     <p>連結:<br><span><?php echo $item['url']; ?></span></p>
                     <p>編輯者:<?php echo $item['user']; ?></p>
                     <p>上次修改時間:<br><span><?php echo $item['lastdate']; ?></span></p>
                     <div class="btnBox">
-                        <a href="javascript:;" class="update" onclick="updateFn(<?php echo $item['id']; ?>, '<?php echo $item['url']; ?>')" >修改連結</a>
+                        <a href="javascript:;" class="update" onclick="updateFn(<?php echo $item['id']; ?>, '<?php echo $item['url']; ?>','<?php echo $item['name']; ?>')" >編輯</a>
                         <a href="javascript:;" class="delete" onclick="deleteFn(<?php echo $item['id']; ?>)" >刪除</a>
                     </div>
                 </div>
@@ -55,15 +56,17 @@ if(isset($_SESSION['username'])){
         <div id="createModule">
             <div class="module">
                 <div class="header">
-                    <p>新增圖片</p>
+                    <p>新增廠商</p>
                     <i class="fas fa-times" id="closeCreateModule"></i>
                 </div>
                 <form name="uploadForm" enctype="multipart/form-data" method="POST" action="./chk_cooperateImg.php">
                     <input type="file" name="imgsrc"  hidden="hidden" id="fileimgBtn">
                     <label for="fileimgBtn" class="chooseFile"><i class="fa-solid fa-image"></i>選擇封面照</label>
                     <span id="fileText">尚未選擇圖片</span>
-                    <input type="text" placeholder="連結..." name="url" class="url">
-                    <input type="submit" value="確定上傳">
+                    <input type="text" placeholder="連結..." name="url" class="url" id="createURL">
+                    <input type="text" placeholder="廠商名稱" name="name" class="url" id="createName">
+                    <input type="submit" value="確定上傳" hidden id="createSubmit"> 
+                    <a href="javascript:;" id="createSubmitBtn">確定上傳</a>
                 </form>
             </div>
         </div>
@@ -75,8 +78,10 @@ if(isset($_SESSION['username'])){
                 </div>
                 <form name="uploadForm" method="POST" action="update_cooperateImg.php">
                     <input type="text" placeholder="連結..." name="url" class="url" id="updateUrl">
+                    <input type="text" placeholder="廠商名稱..." name="name" class="url" id="updateName">
                     <input type="hidden" name="id" value="" id="updateId">
-                    <input type="submit" value="編輯">
+                    <input type="submit" value="編輯" hidden id="updateSubmit">
+                    <a href="javascript:;" id="updateSubmitBtn">編輯</a>
                 </form>
             </div>
         </div>
@@ -95,7 +100,12 @@ if(isset($_SESSION['username'])){
         const updateId = document.getElementById('updateId');
         const closeUpdateModule = document.getElementById('closeUpdateModule');
         const updateModule = document.getElementById('updateModule');
-        
+        const createSubmit = document.getElementById('createSubmit');
+        const createSubmitBtn = document.getElementById('createSubmitBtn');
+        const createName = document.getElementById('createName');
+        const updateSubmitBtn = document.getElementById('updateSubmitBtn');
+        const updateName = document.getElementById('updateName');
+        const updateSubmit = document.getElementById('updateSubmit');
         fileimgBtn.addEventListener('change',()=>{
             if(fileimgBtn.value){
                 fileText.innerHTML = fileimgBtn.value;
@@ -121,11 +131,31 @@ if(isset($_SESSION['username'])){
             updateUrl.value = "";
             updateId.value = "";
         })
-        function updateFn(id, url){
+        function updateFn(id, url, name){
             updateModule.style.display = "flex";
             updateUrl.value = url;
             updateId.value = id;
+            updateName.value = name;
         }
+        createSubmitBtn.addEventListener('click',()=>{
+            if(fileimgBtn.value == ""){
+                alert('請選擇圖片！');
+                return;
+            }
+            if(createName.value == ""){
+                alert('請輸入廠商名稱！');
+                return;
+            }
+
+            createSubmit.click();
+        });
+        updateSubmitBtn.addEventListener('click',()=>{
+            if(updateName.value==""){
+                alert('請輸入廠商名稱！')
+                return;
+            }
+            updateSubmit.click();
+        });
     </script>
 </body>
 </html>

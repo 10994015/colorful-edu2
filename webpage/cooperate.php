@@ -1,12 +1,5 @@
 <?php 
- $sql_str = "SELECT * FROM cooperate_img ORDER BY id DESC";
- $cooperate_img = $conn -> query($sql_str);
 
- $sql_str = "SELECT * FROM store_img ORDER BY id DESC";
- $store_img = $conn -> query($sql_str);
-
- $sql_str = "SELECT * FROM store_text ORDER BY id DESC";
- $store_text = $conn -> query($sql_str);
 
 ?>
 

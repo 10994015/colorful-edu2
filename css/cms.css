@@ -4822,7 +4822,7 @@ main#cooperateImg > #createModule > .module > form > #fileText {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-main#cooperateImg > #createModule > .module > form > input[type="submit"] {
+main#cooperateImg > #createModule > .module > form > input[type="submit"], main#cooperateImg > #createModule > .module > form a#createSubmitBtn {
   width: 180px;
   margin-top: 15px;
   cursor: pointer;
@@ -4834,6 +4834,9 @@ main#cooperateImg > #createModule > .module > form > input[type="submit"] {
   border-radius: 25PX;
   font-size: 17px;
   font-weight: 600;
+  text-align: center;
+  line-height: 45px;
+  text-decoration: none;
 }
 
 main#cooperateImg > #updateModule {
@@ -4965,7 +4968,7 @@ main#cooperateImg > #updateModule > .module > form > #fileText {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-main#cooperateImg > #updateModule > .module > form > input[type="submit"] {
+main#cooperateImg > #updateModule > .module > form > input[type="submit"], main#cooperateImg > #updateModule > .module > form a#updateSubmitBtn {
   width: 180px;
   margin-top: 15px;
   cursor: pointer;
@@ -4977,6 +4980,9 @@ main#cooperateImg > #updateModule > .module > form > input[type="submit"] {
   border-radius: 25PX;
   font-size: 17px;
   font-weight: 600;
+  text-align: center;
+  line-height: 45px;
+  text-decoration: none;
 }
 
 main#storeText > .storeTextDiv {
