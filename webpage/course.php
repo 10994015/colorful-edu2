@@ -1,6 +1,11 @@
 <?php 
 $sql_str = "SELECT * FROM course WHERE isshow=1 ORDER BY id DESC";
 $RS_course = $conn -> query($sql_str);
+
+$sql_str = "SELECT * FROM pagebg WHERE id = '1' ";
+$stmt_bg = $conn -> prepare($sql_str);
+$stmt_bg -> execute();
+$RS_bg = $stmt_bg -> fetch(PDO::FETCH_ASSOC);
 $intro_text = "我們提供了安全的環境、還有常態課程幫助孩子升學、另開特色課程挖掘孩子們的興趣、此外還有師培課程，培訓每個想要成為專業教師的人才。且冰芬文教的教師皆是受過專業受訓認證的，還有完善的設備提供給大家，能讓學習更加專心舒適。";
 if(isset($_GET['type'])){
     if($_GET['type']=="normal"){
@@ -25,8 +30,14 @@ if(isset($_GET['type'])){
 }
 ?>
 
-
+<?php if($RS_bg['isshow']==1){ ?>
+    <div class="coverBox">
+        <img src="./images/cms/<?php echo $RS_bg['imgsrc']; ?>" class="coverImg">
+        <h3><?php echo $RS_bg['pagename']; ?></h3>
+    </div>
+<?php } ?>
 <div id="course">
+    
     <nav class="nav">
         <a href="./?page=course" class="color0 <?php if($_GET['type']=="normal" || $_GET['type']=="special" ||  $_GET['type']=="teacher"){echo "disabled";} ?>">所有課程</a>
         <a href="./?page=course&type=normal" class="color1 <?php if($_GET['type']!="normal"){echo "disabled";} ?>">常態課程</a>

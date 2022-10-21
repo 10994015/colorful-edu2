@@ -28,6 +28,46 @@ body {
   }
 }
 
+.coverBox {
+  width: 100%;
+  position: relative;
+}
+
+.coverBox > img.coverImg {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.coverBox > h3 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .coverBox > h3 {
+    left: 30%;
+  }
+}
+
+.coverBox > h3::before {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  content: "";
+  width: 100px;
+  height: 5px;
+  background-color: #FFC934;
+}
+
 header#header {
   width: 100%;
   padding: 30px 0;
@@ -1694,6 +1734,46 @@ div#toTop > i {
   #newsPage {
     padding: 50px 15px;
   }
+}
+
+#newsPage > .coverBox {
+  width: 100%;
+  position: relative;
+}
+
+#newsPage > .coverBox > img.coverImg {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+#newsPage > .coverBox > h3 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #newsPage > .coverBox > h3 {
+    left: 30%;
+  }
+}
+
+#newsPage > .coverBox > h3::before {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  content: "";
+  width: 100px;
+  height: 5px;
+  background-color: #FFC934;
 }
 
 #newsPage > #loading {
@@ -3720,6 +3800,46 @@ div#toTop > i {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+#course > .coverBox {
+  width: 100%;
+  position: relative;
+}
+
+#course > .coverBox > img.coverImg {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+#course > .coverBox > h3 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #course > .coverBox > h3 {
+    left: 30%;
+  }
+}
+
+#course > .coverBox > h3::before {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  content: "";
+  width: 100px;
+  height: 5px;
+  background-color: #FFC934;
 }
 
 #course > nav.nav {

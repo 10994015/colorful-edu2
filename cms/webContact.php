@@ -60,6 +60,7 @@ if(isset($_SESSION['username'])){
                 <a href="javascript:;" id="send" onclick="sendFn()">編輯</a>
             </form>
         </div>
+        <?php include('footer.php'); ?>
     </main>
 
     <script src="../js/cms/header.js"></script>

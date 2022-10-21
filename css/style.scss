@@ -22,7 +22,36 @@ body{
         padding-top: 90px;
     }
 }
-
+.coverBox{
+    width:100%;
+    position: relative;
+    >img.coverImg{
+        width:100%;
+        height: 300px;
+        object-fit: cover;
+        filter: brightness(.5);
+    }
+    >h3{
+        position: absolute;
+        top: 50%;
+        left:20%;
+        transform: translate(-50%,-50%);
+        color:#fff;
+        font-size: 30px;
+        @media screen and (max-width:600px){
+            left:30%;
+        }
+        &::before{
+            position: absolute;
+            left:0;
+            bottom:-15px;
+            content:"";
+            width:100px;
+            height: 5px;
+            background-color: #FFC934;
+        }
+    }
+}
 header#header{
     width:100%;
     padding: 30px 0;
@@ -1142,6 +1171,36 @@ div#toTop{
     }
     @media screen and (max-width:700px){
         padding: 50px 15px;
+    }
+    >.coverBox{
+        width:100%;
+        position: relative;
+        >img.coverImg{
+            width:100%;
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(.5);
+        }
+        >h3{
+            position: absolute;
+            top: 50%;
+            left:20%;
+            transform: translate(-50%,-50%);
+            color:#fff;
+            font-size: 30px;
+            @media screen and (max-width:600px){
+                left:30%;
+            }
+            &::before{
+                position: absolute;
+                left:0;
+                bottom:-15px;
+                content:"";
+                width:100px;
+                height: 5px;
+                background-color: #FFC934;
+            }
+        }
     }
     >#loading{
         width:100%;
@@ -2513,6 +2572,36 @@ div#toTop{
     width:100%;
     max-width: 1200px;
     margin:0 auto;
+    >.coverBox{
+        width:100%;
+        position: relative;
+        >img.coverImg{
+            width:100%;
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(.5);
+        }
+        >h3{
+            position: absolute;
+            top: 50%;
+            left:20%;
+            transform: translate(-50%,-50%);
+            color:#fff;
+            font-size: 30px;
+            @media screen and (max-width:600px){
+                left:30%;
+            }
+            &::before{
+                position: absolute;
+                left:0;
+                bottom:-15px;
+                content:"";
+                width:100px;
+                height: 5px;
+                background-color: #FFC934;
+            }
+        }
+    }
     >nav.nav{
         display: flex;
         justify-content: center;

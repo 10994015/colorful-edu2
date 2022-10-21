@@ -19,6 +19,14 @@ $store_img = $conn -> query($sql_str);
 
 $sql_str = "SELECT * FROM store_text ORDER BY id DESC";
 $store_text = $conn -> query($sql_str);
+
+$sql_str = "SELECT * FROM about ORDER BY id DESC";
+$stmt_about = $conn->prepare($sql_str);
+$stmt_about -> execute();
+$RS_about =  $stmt_about->fetch(PDO::FETCH_ASSOC);
+
+$sql_str = "SELECT * FROM service ORDER BY id DESC";
+$RS_service = $conn -> query($sql_str);
 if( isset($_GET['page']) && $_GET['page']!='' ){
   $page =$_GET['page'];
   $path = './webpage/'.$page.".php";

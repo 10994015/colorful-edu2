@@ -77,11 +77,21 @@ $RS_daily = $conn -> query($sql_str);
 $sql_str = "SELECT * FROM news WHERE train=1 AND isshow=1 ORDER BY lastdate DESC Limit 3";
 $RS_train = $conn -> query($sql_str);
 
+$sql_str = "SELECT * FROM pagebg WHERE id = '2' ";
+$stmt_bg = $conn -> prepare($sql_str);
+$stmt_bg -> execute();
+$RS_bg = $stmt_bg -> fetch(PDO::FETCH_ASSOC);
 ?>
 
-
+<?php if($RS_bg['isshow']==1){ ?>
+    <div class="coverBox">
+        <img src="./images/cms/<?php echo $RS_bg['imgsrc']; ?>" class="coverImg">
+        <h3><?php echo $RS_bg['pagename']; ?></h3>
+    </div>
+    <?php } ?>
 <div id="newsPage">
     <div id="loading"><i class="fa-solid fa-spinner"></i></div>
+    
     <div class="newsType">
         <a href="./?page=news" class="newsTypeBtn <?php if(!isset($_GET['tag'])){echo 'focus';} ?>">全部</a>
         <a href="./?page=news&tag=course" class="newsTypeBtn <?php if($_GET['tag']=='course'){echo 'focus';} ?>">課程</a>

@@ -56,9 +56,9 @@ if(isset($_SESSION['username'])){
                 <a href="./webContact.php">前往編輯</a>
             </div>
             <div class="webColor">
-                <h3>顏色設定</h3>
-                <p>網站主顏色...</p>
-                <a href="javascript:;">前往編輯</a>
+                <h3>頁面封面圖</h3>
+                <p>每個頁面的封面圖...</p>
+                <a href="./pageBg.php">前往編輯</a>
             </div>
         </div>
         <div class="userList">

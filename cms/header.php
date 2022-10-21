@@ -37,6 +37,7 @@
         <a href="./news.php" class="newsItem"><p class="newsListText">NEWS</p><i class="fa-solid fa-file-lines"></i></a>
         <a href="./cooperate.php" class="newsItem"><p class="newsListText">COOPERATION</p><i class="fa-solid fa-people-group"></i></a>
         <a href="./course.php" class="newsItem"><p class="newsListText">COURSE</p><i class="fa-solid fa-landmark"></i></a>
+        <a href="./about.php" class="newsItem"><p class="newsListText">ABOUT</p><i class="fa-solid fa-address-card"></i></a>
     </div>
 </nav>
 <script>

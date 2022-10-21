@@ -1,14 +1,18 @@
 <?php 
-
-
+$sql_str = "SELECT * FROM pagebg WHERE id = '3'";
+$stmt = $conn -> prepare($sql_str);
+$stmt -> execute();
+$RS_bg = $stmt -> fetch(PDO::FETCH_ASSOC);
 ?>
 
 
 <div id="cooperate">
+    <?php if($RS_bg['isshow']==1){ ?>
     <div class="coverBox">
-        <img src="./images/0002.jpg" class="coverImg">
-        <h3>COOPERATION</h3>
+        <img src="./images/cms/<?php echo $RS_bg['imgsrc']; ?>" class="coverImg">
+        <h3><?php echo $RS_bg['pagename']; ?></h3>
     </div>
+    <?php } ?>
     <div class="cooperateContent">
         <div class="title">
             <span class="line"></span>
