@@ -25,7 +25,7 @@ $stmt_about = $conn->prepare($sql_str);
 $stmt_about -> execute();
 $RS_about =  $stmt_about->fetch(PDO::FETCH_ASSOC);
 
-$sql_str = "SELECT * FROM service ORDER BY id DESC";
+$sql_str = "SELECT * FROM service ORDER BY id ASC";
 $RS_service = $conn -> query($sql_str);
 if( isset($_GET['page']) && $_GET['page']!='' ){
   $page =$_GET['page'];

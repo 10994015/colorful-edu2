@@ -30,6 +30,11 @@ try{
     $stmt_course -> execute();
     $RS_course = $stmt_course -> fetch(PDO::FETCH_ASSOC);
 
+    $sql_str = "SELECT * FROM course WHERE isshow=1 AND focus=1";
+    $stmt_courseFocus = $conn -> prepare($sql_str);
+    $stmt_courseFocus -> execute();
+    $RS_course_focus = $stmt_courseFocus -> fetchAll(PDO::FETCH_ASSOC);
+
     $sql_str = "SELECT * FROM home_banner WHERE isshow=1 ORDER BY sort ASC";
     $RS_banner = $conn -> query($sql_str);
 
@@ -108,23 +113,25 @@ try{
                 <a href="./?page=course&type=teacher" class="seemore seemore3">SEE MORE</a>
             </div>
         </div>
+        <?php  if(count($RS_course_focus) >=1 ){ ?>
         <div class="comingSoon">
-        <div class="comingSoonBox">
-            <span id="comngSoonDay"><?php echo $RS_course['start_day']; ?></span>
-            <h3><?php echo $RS_course['title']; ?><br><p id="courseing">即將開班</p></h3>
-            <article>
-                <?php echo nl2br($RS_course['focus_text']); ?>
-            </article>
-            <a href="./?page=courseItem&id=<?php echo $RS_course['id']; ?>">View courses</a>
-            <div class="launch-time">
-                <div><p id="days">00</p><span>Days</span></div>
-                <div><p id="hours">00</p><span>Houes</span></div>
-                <div><p id="minutes">00</p><span>Minutes</span></div>
-                <div><p id="seconds">00</p><span>Seconds</span></div>
+            <div class="comingSoonBox">
+                <span id="comngSoonDay"><?php echo $RS_course['start_day']; ?></span>
+                <h3><?php echo $RS_course['title']; ?><br><p id="courseing">即將開班</p></h3>
+                <article>
+                    <?php echo nl2br($RS_course['focus_text']); ?>
+                </article>
+                <a href="./?page=courseItem&id=<?php echo $RS_course['id']; ?>">View courses</a>
+                <div class="launch-time">
+                    <div><p id="days">00</p><span>Days</span></div>
+                    <div><p id="hours">00</p><span>Houes</span></div>
+                    <div><p id="minutes">00</p><span>Minutes</span></div>
+                    <div><p id="seconds">00</p><span>Seconds</span></div>
+                </div>
+            
             </div>
-           
         </div>
-    </div>
+        <?php } ?>
     </div>
 
     <div class="news">
