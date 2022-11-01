@@ -11,16 +11,16 @@ $RS_course = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     <form action="./shared/singupsend.php" method="post">
         <h2>報名表單</h2>
         <span>姓名</span>
-        <input type="text" required name="name" placeholder="姓名" id="name">
-        <span>電話</span>
-        <input type="text" required name="phone" placeholder="電話" id="phone">
+        <input type="text" required name="name" placeholder="請輸入姓名..." id="name">
+        <span>手機</span>
+        <input type="text" required name="phone" placeholder="請輸入手機號碼..." id="phone">
         <span>電子郵件</span>
-        <input type="email" required name="email" placeholder="email" id="email">
+        <input type="email" required name="email" placeholder="請輸入Email..." id="email">
         <span>出生年月日</span>
         <input type="date" name="age"  id="age" require>
         <span>報名課程</span>
         <select name="courseSelect"  id="courseSelect">
-            <option value="" disabled selected >選擇課程</option>
+            <option value="" disabled selected >請選擇課程</option>
             <?php foreach($RS_course as $item){ ?>
                 <option value="<?php echo $item['title']; ?>"><?php echo $item['title']; ?></option>
             <?php } ?>

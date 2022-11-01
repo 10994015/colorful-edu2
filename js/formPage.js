@@ -27,6 +27,19 @@ send.addEventListener('click',()=>{
             confirmButtonText: '確定'
           }
         )
+        
+        return;
+    }
+    var reg = /^0[9]\d{8}$/;
+    if(!reg.test(phone.value)){
+      Swal.fire({
+            title: 'Error',
+            text: "手機格式錯誤！",
+            icon: 'error',
+            confirmButtonColor: '#1B4F7D',
+            confirmButtonText: '確定'
+          }
+        )
         return;
     }
     if(email.value ==""){
@@ -51,5 +64,6 @@ send.addEventListener('click',()=>{
         )
         return;
     }
+    
     submit.click();
 })
