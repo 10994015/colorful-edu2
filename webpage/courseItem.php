@@ -57,7 +57,7 @@ if(isset($_GET['id']) && $_GET['id']!=""){
     <article class="content">
       <?php echo $row_course['content']; ?>
     </article>
-    <a href="./?page=about#contact" class="apply">立即報名</a>
+    <a href="./?page=formPage" class="apply">立即報名</a>
 </div>
 
 

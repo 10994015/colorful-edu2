@@ -4266,6 +4266,103 @@ div#toTop > i {
   font-size: 15px;
 }
 
+#formPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+#formPage > form {
+  -webkit-box-shadow: 0 5px 25px #aaa;
+          box-shadow: 0 5px 25px #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px 50px;
+}
+
+@media screen and (max-width: 414px) {
+  #formPage > form {
+    padding: 20px 25px;
+  }
+}
+
+#formPage > form > h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+#formPage > form > span {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+#formPage > form > input[type="text"], #formPage > form > input[type="email"], #formPage > form > input[type="date"], #formPage > form select {
+  outline: none;
+  border: 1px #aaa solid;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-family: "微軟正黑體";
+  -webkit-box-shadow: 0 5px 25px #f4f4f4;
+          box-shadow: 0 5px 25px #f4f4f4;
+}
+
+#formPage > form > textarea {
+  resize: none;
+  resize: vertical;
+  outline: none;
+  border: 1px #aaa solid;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#formPage > form > a.send {
+  width: 100px;
+  height: 40px;
+  background-color: #1B4F7D;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  font-size: 18px;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#formPage > form > a.send:hover {
+  background-color: #03294b;
+}
+
 footer#footer {
   background-color: #001632;
   width: 100%;

@@ -28,3 +28,5 @@ catch ( PDOException $e ){
  
 //$conn = null; //關閉資料庫的連線
 ?>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

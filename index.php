@@ -43,6 +43,7 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 <body>
     <?php include_once('./shared/header.php'); ?>
@@ -68,6 +69,5 @@ if( isset($_GET['page']) && $_GET['page']!='' ){
     <script src="./js/header.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/toTop.js"></script>
-    <script src="./js/about.php"></script>
 </body>
 </html>

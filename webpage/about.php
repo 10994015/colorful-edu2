@@ -93,19 +93,47 @@ const submit = document.getElementById('submit');
 send.addEventListener('click',sendLetter)
 function sendLetter (){
     if(name.value === ""){
-        alert('請輸入姓名！');
+        Swal.fire({
+            title: 'Error',
+            text: "姓名不得為空",
+            icon: 'error',
+            confirmButtonColor: '#1B4F7D',
+            confirmButtonText: '確定'
+          }
+        )
         return
     }
     if(email.value === ""){
-        alert('請輸入Email！');
+        Swal.fire({
+            title: 'Error',
+            text: "Email不得為空",
+            icon: 'error',
+            confirmButtonColor: '#1B4F7D',
+            confirmButtonText: '確定'
+          }
+        )
         return
     }
     if(title.value === ""){
-        alert('請輸入主旨！');
+        Swal.fire({
+            title: 'Error',
+            text: "請輸入主旨",
+            icon: 'error',
+            confirmButtonColor: '#1B4F7D',
+            confirmButtonText: '確定'
+          }
+        )
         return
     }
     if(content.value === ""){
-        alert('請輸入內容！');
+        Swal.fire({
+            title: 'Error',
+            text: "請輸入內容",
+            icon: 'error',
+            confirmButtonColor: '#1B4F7D',
+            confirmButtonText: '確定'
+          }
+        )
         return
     }
     submit.click();
