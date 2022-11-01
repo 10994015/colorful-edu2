@@ -13,7 +13,7 @@ if(isset($_POST['member'])){
         $RS = $conn -> prepare($sql_str);
        
         $username = $_POST['username'];  //接收登入的帳號
-        $password  = $_POST['password'];   //接收登入的密碼  
+        $password  = md5($_POST['password']);   //接收登入的密碼  
        
         $RS -> bindParam(':username', $username);
         $RS -> bindParam(':password', $password);
