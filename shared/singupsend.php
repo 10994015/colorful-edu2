@@ -32,11 +32,8 @@ if(isset($_POST['name'])){
             window.onload = ()=>{
                 alertFn();
                 function alertFn(){
-                    Swal.fire(
-                    '發送成功！',
-                    '我們將盡快與您聯絡！',
-                    'success'
-                    );
+                    alert('發送成功！我們將盡快與您聯絡！');
+                    
                     window.location.href = '../?page=formPage';
                 }
             }
@@ -48,11 +45,7 @@ if(isset($_POST['name'])){
             window.onload = ()=>{
                 alertFn();
                 function alertFn(){
-                    Swal.fire(
-                    '發送成功！',
-                    '我們將盡快與您聯絡！',
-                    'success'
-                    );
+                    alert('發送成功！我們將盡快與您聯絡！');
                     window.location.href = '../?page=formPage';
                 }
             }
@@ -62,11 +55,8 @@ if(isset($_POST['name'])){
             window.onload = ()=>{
                 alertFn();
                 function alertFn(){
-                    Swal.fire(
-                    '發送失敗',
-                    '訊息格式錯誤或伺服器錯誤',
-                    'error'
-                    );
+                    alert('發送失敗`!訊息格式錯誤或伺服器錯誤');
+                    
                     window.location.href = '../?page=formPage';
                 }
             }
