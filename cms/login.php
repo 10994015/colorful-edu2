@@ -1,7 +1,6 @@
 <?php 
 require_once('../config/conn.php');
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
