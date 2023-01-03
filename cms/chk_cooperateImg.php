@@ -91,5 +91,4 @@ if(isset($_FILES['imgsrc']) && $_FILES['imgsrc']!=""){
   echo "<script>alert('新增成功!');window.location.href = './cooperateImg.php' </script>";
 }
 
-
 ?>
